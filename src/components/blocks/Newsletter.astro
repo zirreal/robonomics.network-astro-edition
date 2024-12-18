@@ -1,0 +1,26 @@
+---
+import RoboButton from '../utils/Button.astro';
+
+const status = 'init';
+---
+
+<form id="newsletter">
+  <h4>Sign up for updates</h4>
+  <input type="email" data-gsp-name="Email" :data-gsp-data="email" v-model="email" placeholder="Your email" class="block" required />
+  <input type="hidden" data-gsp-name="Location" :data-gsp-data="location" />
+  <input type="hidden" data-gsp-name="Tags" :data-gsp-data="tags.toString()" />
+  <RoboButton class="block" loading={status === 'process'} type="buttontype">Submit</RoboButton>
+  <!-- <span v-if="message">{message}</span>  -->
+
+  <div class="text-small">
+      By clicking on the button “Submit” you agree to receive regular emails from Robonomics.
+  </div>
+</form>
+
+<style>
+  form {
+    max-width: 294px;
+    width: calc(100% - var(--space));
+  }
+
+</style>

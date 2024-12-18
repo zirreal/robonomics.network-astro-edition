@@ -1,0 +1,74 @@
+---
+const localesList = ['en', 'ru', 'zh']; // Replace with your actual locales
+const translated = false; // Set based on your requirements
+let initialLocale = 'en';
+
+// Check for localStorage availability and set the initial locale
+if (typeof window !== 'undefined') {
+  initialLocale = localStorage.getItem('locale') || 'en';
+}
+---
+
+<div class="select-wrapper" id="select-wrapper">
+  <select id="locale-select" aria-label="choose preferably language" tabindex="0">
+    {localesList.map((item) => (
+      <option value={item} selected={item === initialLocale}>
+        {item}
+      </option>
+    ))}
+  </select>
+  {initialLocale !== 'en' && !translated && <span>AI</span>}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Ensure localStorage is available before accessing it
+    const localeSelect = document.getElementById('locale-select');
+
+    const generatePath = (currentPath, locale) => {
+      // Example implementation: prepend the locale to the current path
+      return `/${locale}${currentPath}`;
+    };
+
+    localeSelect.addEventListener('change', (event) => {
+      const newLocale = event.target.value;
+
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('locale', newLocale); // Store the selected locale
+      }
+
+      const newPath = generatePath(window.location.pathname, newLocale);
+      window.location.href = newPath; // Redirect to the new path
+    });
+  });
+</script>
+
+
+<style>
+
+  .select-wrapper {
+    position: relative;
+  }
+
+  .select-wrapper span{
+    position: absolute;
+    top: 2px;
+    right: -5px;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--base-font-size) * 0.6);
+    font-weight: 600;
+    color: var(--color-dark);
+    z-index: -1;
+  }
+
+  select {
+    --border-width: 0;
+    --input-padding: .2rem;
+    text-transform: uppercase;
+    font-size: 80%;
+  }
+</style>

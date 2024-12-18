@@ -1,0 +1,70 @@
+---
+// components import
+import LoaderSpin from './LoaderSpin.astro';
+
+const { loading, type = 'primary', to } = Astro.props;
+
+// Determine the type of component to render
+const ComponentType = Astro.props.to ? 'a' : 'button';
+
+// Compute the button classes
+const classes = `robo-button robo-button-${type}`;
+---
+
+<ComponentType class:list={classes} disabled={loading ? 'disabled' : ''} {...Astro.props}>
+  <slot name="iconleft" />
+
+  {loading && (
+    <div class="robo-button-loader">
+      <LoaderSpin />
+    </div>
+  )}
+
+  <span class="robo-button-content">
+    <slot />
+  </span>
+
+  <slot name="iconright" />
+</ComponentType>
+
+<style>
+      .robo-button {
+        --color-background: var(--color-blue);
+        --color-text: var(--color-light);
+        --input-padding: .8rem;
+
+        background-color: var( --color-background);
+        border: 1px solid var(--color-dark);
+        box-shadow: .2rem .2rem 0 var(--color-dark);
+        color: var(--color-text);
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        align-items: center;
+        display: inline-flex;
+        gap: var(--input-padding);
+        justify-content: center;
+    }
+
+    .robo-button:hover {
+        --color-background: var(--color-blue-dark);
+    }
+
+    .robo-button-ok {
+        --color-background: var(--color-green);
+    }
+
+    .robo-button-error {
+        --color-background: var(--color-red);
+    }
+
+    .robo-button-na, .robo-button[disabled] {
+        --color-background: var(--color-gray-mid);
+    }
+
+    .robo-button-ok, .robo-button-error, .robo-button-na, .robo-button[disabled] {
+        cursor: default;
+        pointer-events: none;
+    }
+</style>
