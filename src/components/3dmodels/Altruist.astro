@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+
+// default
 import Altruist1 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-1.webp"
 import Altruist2 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-2.webp"
 import Altruist3 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-3.webp"
@@ -8,6 +10,16 @@ import Altruist5 from "../../assets/images/hardware-2025/altruist/Altruist-Layou
 import Altruist6 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-6.webp"
 import Altruist7 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-7.webp"
 import Altruist8 from "../../assets/images/hardware-2025/altruist/Altruist-Layout-v-8.webp"
+
+// vertical
+import Altruist1v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-1.webp"
+import Altruist2v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-2.webp"
+import Altruist3v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-3.webp"
+import Altruist4v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-4.webp"
+import Altruist5v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-5.webp"
+import Altruist6v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-6.webp"
+import Altruist7v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-7.webp"
+import Altruist8v from "../../assets/images/hardware-2025/altruist/Altruist-Layout-8.webp"
 
 const images = [
   Altruist1,
@@ -19,18 +31,36 @@ const images = [
   Altruist7,
   Altruist8
 ];
+
+const imagesV = [
+  Altruist1v,
+  Altruist2v,
+  Altruist3v,
+  Altruist4v,
+  Altruist5v,
+  Altruist6v,
+  Altruist7v,
+  Altruist8v
+]
+
+const { vertical = false, noanimation = false,  class: className, ...attrs} = Astro.props;
+
 ---
 
-<div class="model" id="altruist" aria-label="3d model for outdoor sensor Altruist">
-
-  {images.map((src, index) => (
-    <Image
-      src={src}
-      class="model-image"
-      alt={`Altruist Layout Image ${index + 1}`}
-    />
+<div
+  id="altruist"
+  class={`model ${vertical ? 'model-vertical' : 'model-horizontal'} ${
+    noanimation ? 'model-noanimation' : ''} ${className}`}
+  aria-label="3D model for outdoor sensor Altruist"
+  {...attrs}
+>
+  {!vertical && images.map((src, index) => (
+    <Image src={src} alt={`3D model frame ${index + 1}`} loading="lazy" />
   ))}
 
+  {vertical && imagesV.map((src, index) => (
+    <Image src={src} alt={`3D model frame ${index + 1}`} loading="lazy" />
+  ))}
 </div>
 
 <script>
@@ -55,7 +85,7 @@ const images = [
 </script>
 
 <style>
-  
+
   @property --koef {
     syntax: '<number>';
     initial-value: 0;
@@ -63,6 +93,7 @@ const images = [
   }
 
   @keyframes openmodel {
+    /* 0% {--koef: 0} */
     100% {--koef: 1}
   }
 
@@ -77,15 +108,36 @@ const images = [
   }
 
   .model img {
-    animation: closemodel 0.5s ease-in-out forwards;
-    --opengap: 60px;
     display: block;
+    height: unset;
+  }
+
+  .model:not(.model-noanimation) img {
+    animation: openmodel 0.5s ease-in-out forwards;
+    --opengap: 60px;
+  }
+
+  .model.model-noanimation img {
+    --opengap: 20px;
+    --koef: 1;
+  }
+
+  .model:not(.in-viewport):not(.model-noanimation) img {
+    animation: closemodel 0.5s linear forwards;
+  }
+
+  .model-horizontal img {
     width: calc(100% - var(--opengap) * 8);
     height: 100%;
   }
 
-  .model.in-viewport img {
-    animation: openmodel 0.5s linear forwards;
+  .model-vertical img:first-child {
+    margin-bottom: calc(var(--opengap) * var(--koef) * 6);
+  }
+
+  .model-vertical img {
+    width: 100%;
+    /* height: 100%; */
   }
 
   .model img:not(:first-child) {
@@ -97,67 +149,118 @@ const images = [
   .model img:nth-child(1) {
     position: relative;
     z-index: 8;
-    /* left: calc(var(--opengap) * var(--koef) * 0); */
   }
 
   .model img:nth-child(2) {
     z-index: 7;
+  }
+
+  .model-horizontal img:nth-child(2) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 6));
-    /* left: calc(var(--opengap) * var(--koef) * 6); */
+  }
+
+  .model-vertical img:nth-child(2) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 6));
   }
 
   .model img:nth-child(3) {
     z-index: 6;
-    /* left: calc(var(--opengap) * var(--koef) * 1); */
+  }
+
+  .model-horizontal img:nth-child(3) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 1));
+  }
+
+  .model-vertical img:nth-child(3) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 1));
   }
 
   .model img:nth-child(4) {
     z-index: 5;
-    /* left: calc(var(--opengap) * var(--koef) * 2); */
+  }
+
+  .model-horizontal img:nth-child(4) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 2));
+  }
+
+  .model-vertical img:nth-child(4) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 2));
   }
 
   .model img:nth-child(5) {
     z-index: 3;
-    /* left: calc(var(--opengap) * var(--koef) * 3); */
+  }
+
+  .model-horizontal img:nth-child(5) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 3));
+  }
+
+  .model-vertical img:nth-child(5) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 3));
   }
 
   .model img:nth-child(6) {
     z-index: 4;
-    /* left: calc(var(--opengap) * var(--koef) * 4); */
+  }
+
+  .model-horizontal img:nth-child(6) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 4));
+  }
+
+  .model-vertical img:nth-child(6) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 4));
   }
 
   .model img:nth-child(7) {
     z-index: 2;
-    /* left: calc(var(--opengap) * var(--koef) * 5); */
+  }
+
+  .model-horizontal img:nth-child(7) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 5));
+  }
+
+  .model-vertical img:nth-child(7) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 5));
   }
 
   .model img:nth-child(8) {
     z-index: 1;
-    /* left: calc(var(--opengap) * var(--koef) * 6); */
+  }
+
+  .model-horizontal img:nth-child(8) {
     transform: translateX(calc(var(--opengap) * var(--koef) * 6));
+  }
+
+  .model-vertical img:nth-child(8) {
+    transform: translateY(calc(var(--opengap) * var(--koef) * 6));
+  }
+
+  .model-hide {
+    display: none;
   }
 
   /* + media query fallback */
   @media screen and (max-width: 850px) {
     .model img {
-      --opengap: 50px;
+      --opengap: 50px !important;
     }
+  }
+
+  @media screen and (width < 600px) {
+    .model-hide { display: block; }
+    .model-hide-mobile { display: none; }
   }
 
   @media screen and (max-width: 650px) {
     .model img {
-      --opengap: 30px;
+      --opengap: 30px !important;
     }
   }
 
+
   @media screen and (max-width: 400px) {
     .model img {
-      --opengap: 20px;
+      --opengap: 20px !important;
     }
   }
   /* - media query fallback */

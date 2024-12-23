@@ -5,7 +5,7 @@ import ModelAltruist from '../3dmodels/Altruist.astro';
 
 // images
 import { Image } from 'astro:assets';
-import Tamagotchi from "../../assets/images/hardware-2025/tamagotchi.webp"
+import Tamagotchi from "../../assets/images/hardware-2025/hikikomori.webp"
 import EnergyMonitor from "../../assets/images/hardware-2025/energy-monitor.webp"
 
 // styles
@@ -70,6 +70,7 @@ const products = [
           <Image
             src={Tamagotchi}
             alt={`${product.title} picture`}
+            class="product-picture--hikikomori"
           />
         )}
         {product.code === 'energy-monitor' && (
@@ -87,6 +88,13 @@ const products = [
 <style>
   .product-picture .product-picture--energy-monitor {
     max-width: 540px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .product-picture .product-picture--hikikomori {
+    max-width: 240px;
     width: 100%;
     display: block;
     margin: 0 auto;

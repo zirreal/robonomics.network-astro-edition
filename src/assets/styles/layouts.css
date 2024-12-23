@@ -83,6 +83,12 @@
 		background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><text x="20" y="20" font-size="20" fill="%23374275">•</text></svg>');
 		background-size: 50px 50px;
   }
+	
+	.section-vivid-green {
+		background: var(--rb-color-green-accent);
+    border-radius: 4px;
+    padding: var(--space);
+	}
 
   section section:first-child, .section section:first-child {
 	  margin-top: 0;

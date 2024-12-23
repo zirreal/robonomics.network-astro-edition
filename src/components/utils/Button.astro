@@ -2,7 +2,7 @@
 // components import
 import LoaderSpin from './LoaderSpin.astro';
 
-const { loading, type = 'primary', to } = Astro.props;
+const { loading, type = 'primary', to} = Astro.props;
 
 // Determine the type of component to render
 const ComponentType = Astro.props.to ? 'a' : 'button';

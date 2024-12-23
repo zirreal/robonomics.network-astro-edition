@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// data
+import devices from '../../data/devices.js';
+
+// components import 
+import DeviceBuySection from '../../components/blocks/DevicesBuySection.astro';
+import RiscVModel from '../../components/3dmodels/Server.astro';
+
+// images
+
+// Filter products to get the current one
+const riscv = devices.products.filter(product => product.code === 'server');
+---
+
+
+<Layout 
+  title={riscv[0].title} 
+  description="The first server for a smart home built entirely on open-source — from CPU to decentralized cloud."
+  ogImage="/og-pics/devices-riscv.webp"
+  pageTitle={riscv[0].title} 
+  backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
+>
+
+  <DeviceBuySection price="$275">
+    <RiscVModel noanimation />
+  </DeviceBuySection>
+
+  <article class="layout layout__text space-b-2">
+    <p>Take control of your smart home data with an open-source server and stay connected using Web3 remote control technologies.</p>
+    <p>Experience the power of true DePIN (Decentralized Physical Infrastructure Network) — a revolutionary technological movement brought to life and thriving for years on our <a aria-label="go to decentralized sensor map" href="https://sensors.social/" target="_blank">decentralized sensor map</a>.</p>
+  </article>
+
+  <article class="layout space-b-2">
+    <div class="grid-3">
+      <section class="oldy">
+        <h5 class="space-b-05">Worldwide available</h5>
+        <p>There are no restrictions on using this smart home server anywhere in the world.</p>
+      </section>
+      <section class="oldy">
+        <h5 class="space-b-05">Free from vendor lock-in</h5>
+        <p>Available over 3,000 integrations with devices from a wide range of manufacturers.</p>
+      </section>
+      <section class="oldy">
+        <h5 class="space-b-05">Secure Web3 Cloud</h5>
+        <p>No hidden data logs on corporate servers while still allowing remote control.</p>
+      </section>
+    </div>
+  </article>
+
+
+  <h2 class="layout title-lined"><span>Well-engineered hardware architecture</span></h2>
+
+  <article class="layout layout__text space-b-2">
+    <p>RISC-V is an open and modular processor architecture based on a reduced instruction set (RISC). Unlike proprietary solutions, it offers flexibility for customization without licensing restrictions, making it ideal for IoT devices and servers. RISC-V enables highly efficient and cost-effective designs, which translate into lower power consumption and better performance of your home server.</p>
+    <ul>
+        <li>Processor: </b> StarFive JH-7110 with RISC-V 4-core CPU, 2 MB L2 cache, up to 1.5 GHz, RV64GC ISA support</li>
+        <li><b>GPU:</b> IMG BXE-4-32 MC1, up to 600 MHz</li>
+        <li><b>Memory:</b> 8 GB LPDDR4 SDRAM, up to 2800 Mbps</li>
+        <li><b>Storage:</b> 32 GB TF card (minimum)</li>
+        <li><b>Interfaces:</b> 2x Gigabit Ethernet ports, 4x USB 3.0 Type-A ports, 40-pin GPIO header, M.2 connector,  eMMC socket, 2-pin fan header</li>
+        <li><b>Power:</b> 5V DC via USB-C, up to 30 W (minimum 3 A) or 5V input via 40-pin GPIO</li>
+        <li><b>OS:</b> Ubuntu 24.04 LTS</li>
+      </ul>
+  </article>
+
+  <h2 class="layout title-lined"><span>Broad device range with open-source software</span></h2>
+
+  <article class="layout layout__text space-b-2">
+    <p>By installing an open-source platform Home Assistant on this server, you can create a smart home with a wide variety of devices from different manufacturers, without being tied to a specific brand.</p>
+    <p>With extensive integrations for Zigbee and Wi-Fi, Home Assistant connects nearly 4,000 devices, from temperature sensors to energy monitors, right out of the box using Zigbee2MQTT.</p>
+  </article>
+
+  <h2 class="layout title-lined"><span>Truly decentralized cloud for quick remote control</span></h2>
+  
+  <article class="layout layout__text space-b-2">
+    <p>With over 10 years of expertise in decentralized technologies, we deliver exceptional peer-to-peer communication for your smart home. Enjoy remote device access via parachain or Libp2p, cryptographic user access control, and secure storage of backups and digital twins of your smart home in an encrypted decentralized cloud.</p>
+  </article>
+
+  <h2 class="layout title-lined"><span>Help & support</span></h2>
+  <article class="layout layout__text space-b-2">
+    <ul>
+      <li><a class="highlight" href="https://wiki.robonomics.network/docs/home-server-on-risc/#ubuntu-installation" target="_blank">Home server on RISC V</a></li>
+      <li><a class="highlight" href="https://wiki.robonomics.network/docs/home-server-on-risc/#home-assistant-core-installation" target="_blank">Home Assistant Core Installation</a></li>
+      <li><a class="highlight" href="https://wiki.robonomics.network/docs/home-server-on-risc/#robonomics-integration-installation" target="_blank">Robonomics Integration Installation</a></li>
+      <li><a class="highlight" href="https://wiki.robonomics.network/docs/zigbee-devices/" target="_blank">Zigbee Devices in Zigbee2MQTT</a></li>
+    </ul>
+  </article>
+</Layout>

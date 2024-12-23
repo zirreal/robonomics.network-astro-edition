@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// data
+import devices from '../../data/devices.js';
+
+// components import 
+import DeviceBuySection from '../../components/blocks/DevicesBuySection.astro';
+
+// images
+import HikikomoriImage from "../../assets/images/hardware-2025/hikikomori.webp";
+
+// Filter products to get the current one
+const hikikomori = devices.products.filter(product => product.code === 'hikikomori');
+---
+
+
+<Layout 
+  title={hikikomori[0].title} 
+  description="A smart home assistant you’ll enjoy caring for, even when you’re away. Only devs."
+  ogImage="/og-pics/devices-hikikomori.webp"
+  pageTitle={hikikomori[0].title} 
+  backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
+>
+
+  <DeviceBuySection price="$75">
+    <Image src={HikikomoriImage} alt={'Hikikomori smart Tamagotchi picture'}/>
+  </DeviceBuySection>
+
+  <article class="layout layout__text space-b-2">
+    <p>HIKIKOMORI <b>ESP32-C6-LCD-1.47</b> is a microcontroller development board with 2.4GHz Wi-Fi 6 and Bluetooth BLE 5 support, integrates 4MB Flash. </p>
+    <p>Onboard 1.47inch LCD screen can smoothly run GUI programs such as LVGL. Combined with various peripheral interfaces, suitable for the quick development of the HMI and other ESP32-C6 applications.</p>
+  </article>
+
+
+  <h2 class="layout title-lined"><span>Device Specifications</span></h2>
+
+  <article class="layout layout__text space-b-2">
+    <ul>
+      <li> Equipped with a high-performance <b>32-bit RISC-V processor</b> with clock speed up to 160 MHz, and a low-power 32-bit RISC-V processor with clock speed up to 20MHz</li>
+      <li><b>Supports</b> 2.4GHz Wi-Fi 6 (802.11 b/g/n) and Bluetooth 5 (LE), with onboard antenna </li>
+      <li> <b> Built in</b> 320KB ROM, 512KB of HP SRAM, 16KB LP SRAM and 4MB Flash memory</li>
+      <li><b>Onboard</b> 1.47inch LCD display, 172x320 resolution, 262K color</li>
+      <li> <b>Adapting</b> multiple IO interfaces, <b>integrates</b> full-speed USB-С port
+      </li>
+      <li> Onboard TF card slot</b> for external TF card storage of pictures or files</li>
+      <li><b>Supports accurate control</b> such as flexible clock and multiple power modes to realize low power consumption in different scenarios</li>
+      <li><b>Built-in RGB LED</b> with clear acrylic sandwich panel for cool lighting effect</li>
+      <li><b>Battery Level Gauge'</b></li>
+      <li><b>Low-Power I2C Temperature sensor</b></li>
+      <li><b>RV-3032-C7 Real-Time Clock Module</b></li>
+      <li><b>Battery 180mA</b></li>
+    </ul>
+  </article>
+
+</Layout>
+
+
+<style>
+  img {
+    height: 100%;
+  }
+</style>
