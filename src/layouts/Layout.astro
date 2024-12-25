@@ -50,7 +50,7 @@ import '../assets/styles/main.css';
       <main class="main screen hide">
         <Header translated={translated}/>
 
-        {pageTitle && <h1 set:html={title} class="pagetitle" />}
+        {pageTitle && <h1 set:html={pageTitle} class="pagetitle" />}
         {backlink && <a class="backlink" href={backlink.link} aria-label={backlink.label}>&larr; {backlink.title}</a>}
 
          <slot/>
