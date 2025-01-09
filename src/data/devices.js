@@ -3,7 +3,7 @@ export default {
     {
       code: 'altruist',
       title: 'Outdoor sensor “Altruist“',
-      text: `A smart sensor that collects environmental data - noise, dust, and temperature, and stores them on a decentralized <a aria-label="see decentralized sensor map" href="https://sensors.social/" target="_blank">sensor map</a>.`,
+      text: `A smart sensor that collects environmental data and integrates it into a decentralized sensor map.`,
       cases: 'Become a provider of environmental data to your friends and neighbors in the area. Access truly decentralized measurements of air quality, noise, temperature, and other environmental conditions on the sensor map.',
       casesImages: ['altruist-cases-1.webp', 'altruist-cases-2.webp', 'altruist-cases-3.webp', 'altruist-cases-4.webp'],
       titleLink: '/devices/altruist'
@@ -18,15 +18,15 @@ export default {
     },
     {
       code: 'hikikomori',
-      title: 'Smart Tamagochi “Hikikomori“',
-      text: 'Finally, a smart Tamagotchi that’s more than just a game! A smart wearable station that checks the status of sensors from your home or clothing.',
+      title: 'Smart Tamagotchi “Hikikomori“',
+      text: 'A microcontroller development board designed to integrate with Web3 systems. It can be your smart home tamagotchi, a gaming controller, an educational tool - anything you design!',
       cases: 'Connect your smart home and smart clothing to the Hikikomori to monitor sensor data—right at your fingertips. Literally.',
       titleLink: '/devices/hikikomori'
     },
     {
       code: 'energy-monitor',
       title: 'Energy monitor with USB-C',
-      text: 'A non-invasive device for installation in electrical panels with DIN rail mounting. Built on the Espressif ESP32C6 chip with open RISC-V architecture.',
+      text: 'A non-invasive device designed for DIN rail mounting in electrical panels, tracks electricity consumption and generation.',
       titleLink: '/devices/energy-monitor'
     },
   ],

@@ -1,10 +1,10 @@
 /* default */
 @import "./variables.css";
-@import './base.css';
-@import './utils.css';
-@import './typography.css';
-@import './layouts.css';
 @import './reset.css';
+@import './base.css';
+@import './layouts.css';
+@import './typography.css';
+@import './utils.css';
 
 /* extras */
 @import "./animation.css";

@@ -4,13 +4,17 @@
   background-repeat: repeat-y;
   padding-left:calc(var(--space) * 2);
   position: relative;
+  text-align: center;
 }
 
 .product h2 {
   align-items: center;
   display: flex;
   gap: calc(var(--space) /2);
-  text-align: left;
+}
+
+.product h2 a {
+  width: 100%;
 }
 
 .product h2 span:first-child {
@@ -39,6 +43,43 @@
   z-index: 10;
   width: 305px;
   height: 330px;
+}
+
+.unitree {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  text-align: left;
+  margin-top: calc(var(--space) * 3);
+}
+
+.unitree h2, .unitree h3 {
+  position: relative;
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+  z-index: 5;
+}
+
+html[lang="ar"] .unitree h2, .unitree h3, .unitree p  {
+  margin-right: 20px;
+}
+
+.unitree h3, .unitree .label {
+  margin-bottom: var(--space);
+}
+
+.unitree .label {
+  background-color: var(--rb-color-green-accent);
+  display: inline-block;
+  font-variation-settings: var(--font-flex-bold);
+  letter-spacing: 0.5px;
+  padding: 0 4px;
+  text-transform: uppercase;
+  transform: rotate(-15deg);
+}
+
+.unitree > div {
+  position: relative;
 }
 
 @media screen and (width < 800px) {

@@ -11,44 +11,18 @@ import EnergyMonitor from "../../assets/images/hardware-2025/energy-monitor.webp
 // styles
 import '../../assets/styles/components/3dmodels.css'
 
-const products = [
-  {
-    code: 'altruist',
-    title: 'Outdoor sensor “Altruist“',
-    text: `A smart sensor that collects environmental data - noise, dust, and temperature, and stores them on a decentralized <a aria-label="see decentralized sensor map" href="https://sensors.social/" target="_blank">sensor map</a>.`,
-    cases: 'Become a provider of environmental data to your friends and neighbors in the area. Access truly decentralized measurements of air quality, noise, temperature, and other environmental conditions on the sensor map.',
-    casesImages: ['altruist-cases-1.webp', 'altruist-cases-2.webp', 'altruist-cases-3.webp', 'altruist-cases-4.webp'],
-    titleLink: '/devices/altruist',
-  },
-  {
-    code: 'server',
-    title: 'Risc-v open source server',
-    text: 'The most open-source smart home server, powered by RISC-V, with a Web3 cloud replacing Google servers under the hood.',
-    cases: 'Smart WI-FI MQTT devices with open-source firmware Tasmota on the board fully compatible with Home Assistant.',
-    casesImages: ['risc-v-cases-1.webp', 'risc-v-cases-2.webp', 'risc-v-cases-3.webp', 'risc-v-cases-4.webp'],
-    titleLink: '/devices/risc-v',
-  },
-  {
-    code: 'hikikomori',
-    title: 'Hikikomori smart Tamagotchi',
-    text: 'Finally, a smart Tamagotchi that’s more than just a game! A smart wearable station that checks the status of sensors from your home or clothing.',
-    cases: 'Connect your smart home and smart clothing to the Hikikomori to monitor sensor data—right at your fingertips. Literally.',
-    titleLink: '/devices/hikikomori'
-  },
-  {
-    code: 'energy-monitor',
-    title: 'Energy Monitor',
-    text: 'A non-invasive device for installation in electrical panels with DIN rail mounting. Built on the Espressif ESP32C6 chip with open RISC-V architecture.',
-    titleLink: '/devices/energy-monitor'
-  },
-];
+// data
+
+import items from '../../data/devices.js'
+
+
 ---
 
+
 <section class="products">
-  {products.map((product, i) => (
+  {items.products.map((product, i) => (
     <article class="product">
       <h2>
-        <span>{i + 1}</span>
         {product.titleLink ? (
           <a href={product.titleLink}>{product.title}</a>
         ) : (
@@ -56,10 +30,10 @@ const products = [
         )}
       </h2>
       {product.text && <p  set:html={product.text}></p>}
-      {product.cases && (
+      {/* {product.cases && (
           <h5>Use cases:</h5>
           <p>{product.cases}</p>
-      )}
+      )} */}
       <div class="product-picture">
         {product.code === 'altruist' && <ModelAltruist />}
         {product.code === 'server' && (
@@ -80,9 +54,26 @@ const products = [
             alt={`${product.title} picture`}
           />
         )} 
+        {product.titleLink && (
+          <a href={product.titleLink} class="link-cover"></a>
+        )}
       </div>
     </article>
   ))}
+</section>
+
+<section class="unitree">
+  <div>
+    <img src="/src/assets/images/unitree-g1/unitree-g1-hello.webp" alt="Unitree G1 Humanoid Robot image" />
+    <a href="/devices/rent-unitree-humanoid" class="link-cover"></a>
+  </div>
+
+  <div>
+    <div class="label">Special offer</div>
+    <h2><a href="/devices/rent-unitree-humanoid" target="_blank" aria-label="go rent Unitree G1 Humanoid Robot">Unitree G1 Humanoid Robot</a></h2>
+    <h3>Rent in California, USA</h3>
+    <p>Get exclusive access to one of the first commercially available humanoid robots. Flexible rental options for research, programming and entertainment needs.</p>
+  </div>
 </section>
 
 <style>
@@ -99,4 +90,8 @@ const products = [
     display: block;
     margin: 0 auto;
   }
+
+  
 </style>
+
+
