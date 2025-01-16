@@ -19,7 +19,7 @@ const classes = [
 ].filter(Boolean).join(' ');
 
 // Determine the component type
-const componentType = attrs.href ? 'a' : 'button';
+const componentType = attrs.href || link ? 'a' : 'button';
 
 // Define the smooth scroll directive replacement
 const smoothScroll = anchor ? { updateHistory: false, offset: -250 } : null;
