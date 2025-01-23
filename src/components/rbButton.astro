@@ -7,6 +7,7 @@ const {
   link,
   scale = '1',
   disabled = false,
+  extraCls = '',
   ...attrs
 } = Astro.props;
 
@@ -16,6 +17,7 @@ const classes = [
   block && 'rb-button-block',
   buttonstyle && `rb-button-${buttonstyle}`,
   buttoncolor && `rb-button-${buttoncolor}`,
+  extraCls
 ].filter(Boolean).join(' ');
 
 // Determine the component type
@@ -32,6 +34,7 @@ const smoothScroll = anchor ? { updateHistory: false, offset: -250 } : null;
     style={`transform: scale(${scale});`}
     smooth-scroll={JSON.stringify(smoothScroll)}
     onclick={attrs.onClick}
+    target="_blank"
   >
     <slot />
   </a>
