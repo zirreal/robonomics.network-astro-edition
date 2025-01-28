@@ -21,7 +21,7 @@ import '../assets/styles/main.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title + ' / Robonomics Network' || siteName}</title>
+		<title>{title || siteName + ' / Robonomics Network' || siteName}</title>
 
 		<meta name="description" content={description || siteDescription}>
 

@@ -268,3 +268,9 @@
   text-indent: -9999px;
   z-index: 1000;
 }
+
+lite-youtube {
+  width: 100%;
+  max-width: unset !important;
+  margin-bottom: calc(var(--space) * 2);
+}

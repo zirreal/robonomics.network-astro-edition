@@ -1,0 +1,159 @@
+---
+// components
+
+import Layout from '../layouts/Layout.astro';
+import PostCard from '../components/post/PostCard.astro';
+
+// data
+
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+
+const postsPerPage = 6;
+
+const urlParams = new URLSearchParams(Astro.url.search);
+const currentPage = parseInt(urlParams.get('page') || '1', 10);
+const totalPages = Math.ceil(posts.length / postsPerPage);
+const paginatedPosts = posts
+  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date)) // Sort by date
+  .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+
+function generateRoute(page) {
+  return page === 1 ? '/blog/' : `/blog?page=${page}`;
+}
+---
+
+<Layout
+  title="Blog"
+  description="Futuristic, secure, and server-less IoT platform on top of Ethereum and Polkadot. Bringing economy of robots into the 4th industrial revolution."
+  ogImage="/website_cover_blogs.jpg"
+  pageTitle="Tech blog & updates"
+>
+
+  {paginatedPosts.length === 0 ? (
+    <div class="blog__no-post align-center">
+      <blockquote>No posts yet</blockquote>
+    </div>
+  ) : (
+    <section class="layout blog_grid">
+      {paginatedPosts.map(post => (
+        <PostCard post={{...post.data, url: post.id}} />
+      ))}
+    </section>
+  )} 
+
+  <div class="pagination">
+    <a href={generateRoute(1)} aria-label="Go to first page" class={currentPage === 1 ? 'disabled' : ''}>
+      
+    </a>
+
+    <a href={generateRoute(currentPage - 1)} aria-label="Go to previous page" class={currentPage === 1 ? 'disabled' : ''}>
+      
+    </a>
+
+    {Array.from({ length: totalPages }).map((_, i) => {
+      const page = i + 1;
+      return (
+        <a href={generateRoute(page)} class={currentPage === page ? 'active' : ''}>
+          {page}
+        </a>
+      );
+    })}
+
+    <a href={generateRoute(currentPage + 1)} aria-label="Go to next page" class={currentPage === totalPages ? 'disabled' : ''}>
+      
+    </a>
+
+    <a href={generateRoute(totalPages)} aria-label="Go to last page" class={currentPage === totalPages ? 'disabled' : ''}>
+      
+    </a>
+  </div>
+</Layout>
+
+<style>
+  blockquote {
+    border-left: none;
+  }
+
+  .blog__no-post .oldy {
+    text-align: center;
+  }
+
+  .blog__no-post .oldy p {
+    margin-bottom: calc(var(--space) * 0.7);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .blog__no-post .oldy li {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .blog__no-post .oldy li:not(:last-child) {
+    margin-bottom: calc(var(--space) * 0.3);
+  }
+
+  /* pagination */
+
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--space) 0;
+  }
+
+  .pagination a {
+    color: var(--color-blue);
+    text-decoration: none;
+  }
+
+  .pagination a:not(:last-child) {
+    margin-right: 45px;
+  }
+
+
+  .pagination a.active {
+    color: var(--color-dark);
+  }
+
+  .pagination a:hover {
+    opacity: 0.5;
+  }
+
+  .pagination a[aria-label="Go to first page"],
+  .pagination a[aria-label^="Go to last page"],
+  .pagination a[aria-label^="Go to previous page"],
+  .pagination a[aria-label^="Go to next page"]
+   {
+    font-family: 'customIcons';
+    font-size: 1.5rem;
+  }
+
+  .pagination a[aria-label="Go to first page"],
+  .pagination a[aria-label^="Go to previous page"]
+  {
+    color: var(--color-dark);
+  }
+
+  .pagination a[aria-label^="Go to last page"],
+  .pagination a[aria-label^="Go to next page"] {
+    display: inline-block;
+    transform: scale(-1);
+  }
+
+  .pagination .disabled {
+    display: none !important;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    .pagination a:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  /* end of pagination  */
+
+</style> 

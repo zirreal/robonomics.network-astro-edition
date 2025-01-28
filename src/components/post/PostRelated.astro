@@ -1,0 +1,54 @@
+---
+// components
+import PostCard from './PostCard.astro';
+
+// data
+import { getCollection } from 'astro:content';
+
+const pageRelated = Astro.props.pageRelated; // Page data passed via props
+const pages = await getCollection('blog'); // All posts
+
+const related = (() => {
+
+  if (!pages || !pageRelated) {
+    return [];
+  }
+
+  const relatedTitles = pageRelated ; // Array of related titles
+  return pages.filter(post => relatedTitles.includes(post.data.title));
+})();
+---
+
+<section class="layout layout__text">
+  <h3>Related posts:</h3>
+  <section class="relatedPosts">
+    {related.map(post => (
+      <PostCard post={{...post.data, url: post.id}} />
+    ))}
+  </section>
+
+</section>
+
+<style is:global>
+  .relatedPosts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media screen and (max-width:570px){
+       .relatedPosts { grid-template-columns: 1fr; }
+    }
+
+    .relatedPosts .post-card:not(:last-child) {
+      margin-bottom: var(--space);
+    }
+
+    .relatedPosts .post-card__header { 
+      margin-bottom : 0;
+    }
+
+    .relatedPosts h4 {
+      font-size: 90%
+    }
+</style>
