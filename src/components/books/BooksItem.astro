@@ -7,7 +7,7 @@ const { book, gateway } = Astro.props;
 
 <li class="e-books__item">
   <a class="e-books__img" href={gateway + book.options[0].link}>
-    <img src={`/src/assets/images/books/${book.img}`} alt={book.title} loading="lazy" />
+    <img src={`/images/books/${book.img}`} alt={book.title} loading="lazy" />
   </a>
 
   <div class="e-books__content">

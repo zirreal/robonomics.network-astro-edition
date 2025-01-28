@@ -23,7 +23,7 @@ const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 <Layout
   title={post.data.title}
   description={post.data.description}
-  ogImage={`/src/images/${post.data.cover_image}`}
+  ogImage={`/blog/${post.data.cover_image}`}
   pageImageHeight="576"
 >
   <section class="postpage">
@@ -52,7 +52,7 @@ const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     {post.data.abstractAuthor && (<b class="abstract layout layout__text"> {post.data.abstractAuthor }</b>)}
 
 
-    {post.data.cover_image && (<img alt={post.data.title} src={`/src/blog/${post.data.cover_image}`} aria-hidden="true" class="poster" />)}
+    {post.data.cover_image && (<img alt={post.data.title} src={`/blog/${post.data.cover_image}`} aria-hidden="true" class="poster" />)}
 
     <section class="post layout layout__text">
       <Content />

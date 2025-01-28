@@ -6,7 +6,7 @@ const {post, locale, isCase} = Astro.props;
   {!isCase && (
     <div class="post-card__header">
       {post.cover_image && 
-         <img alt={post.title} class="post-card__image" src={'/src/blog/' + post.cover_image} />
+         <img alt={post.title} class="post-card__image" src={'/blog/' + post.cover_image} />
       }
     </div>
   )}
