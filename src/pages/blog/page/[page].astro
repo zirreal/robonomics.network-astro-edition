@@ -1,18 +1,23 @@
 ---
-// components
-import Layout from '../layouts/BlogLayout.astro';
-import PostCard from '../components/post/PostCard.astro';
-
-// data
+import Layout from '../../../layouts/BlogLayout.astro';
+import PostCard from '../../../components/post/PostCard.astro';
 import { getCollection } from 'astro:content';
-const posts = await getCollection('blog');
 
-const postsPerPage = 12;
+export async function getStaticPaths() {
+  const posts = await getCollection('blog'); // Fetch posts inside getStaticPaths
+  const postsPerPage = 12;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
-const currentPage = 1;
-const totalPages = Math.ceil(posts.length / postsPerPage);
+  return Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: (i + 1).toString() },
+    props: { posts, totalPages, postsPerPage }, // Pass posts & totalPages as props
+  }));
+}
+
+const { posts, totalPages, postsPerPage } = Astro.props; // Get the passed props
+const currentPage = parseInt(Astro.params.page || '1', 10);
 const paginatedPosts = posts
-  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date)) // Sort by date
+  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
   .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
 ---
@@ -21,7 +26,6 @@ const paginatedPosts = posts
   totalPages={totalPages}
   currentPage={currentPage}
 >
-
   {paginatedPosts.length === 0 ? (
     <div class="blog__no-post align-center">
       <blockquote>No posts yet</blockquote>
@@ -32,9 +36,9 @@ const paginatedPosts = posts
         post.data.published && <PostCard post={{...post.data, url: post.id}} />)
       )}
     </section>
-  )} 
-
+  )}
 </Layout>
+
 
 <style>
   blockquote {

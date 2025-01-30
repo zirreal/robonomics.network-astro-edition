@@ -17,7 +17,7 @@ const isGif = (src) => {
   return format === '.gif';
 };
 
-const picture = type === 'markdown' ? `/blog/${src}` : `${src}`;
+const picture = src;
 
 const linkDone = link ? link : null;
 const zoomDone = zoom ? picture : null; 

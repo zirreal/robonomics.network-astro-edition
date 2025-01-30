@@ -9,7 +9,8 @@ const {
   overlap = true,
   icon,
   image,
-  imageLocal,
+  className,
+  imageExternal,
   imageSize = 'small',
   imageRound = true,
   orientation = 'horizontal',
@@ -23,7 +24,7 @@ const {
 const card_classes = [
   'card',
   icon && 'icon',
-  (image || imageLocal) && `image`,
+  (image || imageExternal) && `image`,
   orientation && `${orientation}`,
   back && `${back}`,
   shadow && `card-shadow-${shadow}`,
@@ -31,13 +32,14 @@ const card_classes = [
   `alignContentV-${alignContentV}`,
   back != `transparent` && `oldy`,
   link && `oldy__link`,
+  className && className
 ].filter(Boolean).join(' ');
 
 const pic_classes = [
   `pic`,
   imageRound && `round`,
   icon && `icon`,
-  (image || imageLocal) && `image`,
+  (image || imageExternal) && `image`,
   imageSize
 ].filter(Boolean).join(' ');
 
@@ -50,10 +52,10 @@ const link_classes = [
 
 const pic_src = () => {
   if (icon || image) {
-    return icon || image
+    return `/images/${image ? image : icon}`
   }
-  if (imageLocal) {
-    return `/images/${imageLocal}`
+  if (imageExternal) {
+    return imageExternal
   }
 };
 
@@ -64,7 +66,7 @@ const slot2 = Astro.slots.has('default');
 
 <div class={card_classes}>
 
-  {(icon || image || imageLocal) && (
+  {(icon || image || imageExternal) && (
     <div class={pic_classes}>
       <img aria-hidden="true" alt="" src={pic_src()}/>
     </div>
