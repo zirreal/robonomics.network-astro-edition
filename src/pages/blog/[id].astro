@@ -48,7 +48,7 @@ const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
       </div>
     </section>
 
-    {post.data.abstract && (<p class="abstract layout layout__text" class:list={{'space-b-05': post.data.abstractAuthor}}>{post.data.abstract}</p>)}
+    {post.data.abstract && (<p class="abstract layout layout__text" class:list={{'space-b-05': post.data.abstractAuthor}} set:html={post.data.abstract}/>)}
     {post.data.abstractAuthor && (<b class="abstract layout layout__text"> {post.data.abstractAuthor }</b>)}
 
 

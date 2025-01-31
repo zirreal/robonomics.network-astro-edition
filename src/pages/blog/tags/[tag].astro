@@ -2,8 +2,10 @@
 // components
 import Layout from '../../../layouts/Layout.astro';
 import PostCard from '../../../components/post/PostCard.astro';
+import BlogTagsBanner from '../../../components/blocks/BlogTagsBanner.astro';
 
 import { getCollection } from 'astro:content';
+
 
 // data
 export async function getStaticPaths() {
@@ -39,6 +41,8 @@ const { posts } = Astro.props;
   title={`Robonomics blog, ${tag}`}
   pageImage = "/website_cover_blogs.jpg"
 >
+
+  <BlogTagsBanner activeTag={tag}/>
 
   <section class="layout blog_grid">
     {posts.map((post: any) => <PostCard post={{...post.data, url: post.id}}/>)}
