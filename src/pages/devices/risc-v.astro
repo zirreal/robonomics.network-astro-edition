@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import devices from '../../data/devices.js';
 
 // components import 
-import DeviceBuySection from '../../components/blocks/DevicesBuySection.astro';
+import DeviceBuySection from '../../components/blocks/DevicesBuySection.vue';
 import RiscVModel from '../../components/3dmodels/Server.astro';
 
 // images
@@ -23,7 +23,7 @@ const riscv = devices.products.filter(product => product.code === 'server');
   backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
 >
 
-  <DeviceBuySection price="$275">
+  <DeviceBuySection price="$275" client:only>
     <RiscVModel noanimation />
   </DeviceBuySection>
 

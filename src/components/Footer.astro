@@ -1,13 +1,13 @@
 ---
 import Navigation from './blocks/Navigation.astro';
 import Socials from './blocks/Socials.astro';
-import Newsletter from './blocks/Newsletter.astro';
+import Newsletter from './blocks/Newsletter.vue';
 ---
 
 <footer>
   <div class="footer-form">
       <div class="footer-form-content">
-          <Newsletter />
+          <Newsletter client:only />
       </div>
   </div>
 
@@ -53,6 +53,12 @@ import Newsletter from './blocks/Newsletter.astro';
 
 
   /* + Newsletter */
+
+ .footer-form form {
+        max-width: 294px;
+        width: calc(100% - var(--space));
+ }
+
   .footer-form {
       text-align: center;
       width: 100%;

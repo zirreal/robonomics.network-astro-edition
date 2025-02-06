@@ -6,7 +6,7 @@ import { Image } from 'astro:assets';
 import devices from '../../data/devices.js';
 
 // components import 
-import DeviceBuySection from '../../components/blocks/DevicesBuySection.astro';
+import DeviceBuySection from '../../components/blocks/DevicesBuySection.vue';
 
 // images
 import EMonitorImage from "../../assets/images/hardware-2025/energy-monitor-nobg.webp";
@@ -24,7 +24,7 @@ const eMonitor = devices.products.filter(product => product.code === 'energy-mon
   backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
 >
 
-  <DeviceBuySection price="$45">
+  <DeviceBuySection price="$45" client:only>
     <Image src={EMonitorImage} alt={'Energy Monitor picture'}/>
   </DeviceBuySection>
 

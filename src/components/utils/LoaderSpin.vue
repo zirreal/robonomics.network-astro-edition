@@ -1,8 +1,5 @@
----
-const {size = '1rem'} = Astro.props;
----
-
-<div class="robo-loader" style={`width: ${size}; height: ${size};`}>
+<template>
+<div class="robo-loader">
   <svg class="robo-loader-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
     <path class="robo-loader--fill" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
       <animateTransform 
@@ -36,13 +33,31 @@ const {size = '1rem'} = Astro.props;
       </path>
     </svg>
 </div>
+</template>
+
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  size: {
+    type: String,
+    default: '1rem',
+  },
+});
+
+const getSize = computed(() => {return props.size} );
+</script>
+
 
 <style >
   .robo-loader {
     --loader-color: currentColor;
+    --loader-size: v-bind(getSize);
 
     display: inline-block;
     vertical-align: middle;
+    width: var(--loader-size);
+    height: var(--loader-size);
     color: var(--loader-color);
     line-height: 1;
   }

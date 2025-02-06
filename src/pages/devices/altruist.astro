@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import devices from '../../data/devices.js';
 
 // components import 
-import DeviceBuySection from '../../components/blocks/DevicesBuySection.astro';
+import DeviceBuySection from '../../components/blocks/DevicesBuySection.vue';
 import ModelAltruist from '../../components/3dmodels/Altruist.astro';
 
 // images
@@ -23,7 +23,7 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
   backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
 >
 
-  <DeviceBuySection price="$95">
+  <DeviceBuySection price="$95" client:only>
     <ModelAltruist vertical noanimation class="model-hide-mobile" />
     <ModelAltruist noanimation class="model-hide"/>
   </DeviceBuySection>
