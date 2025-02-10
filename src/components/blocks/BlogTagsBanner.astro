@@ -27,11 +27,11 @@ const {activeTag} = Astro.props;
         <div class="blog-banner__tags-wrapper" v-show="tags.length">
           <ul class="list blog-banner__tags-list animate-inside-fast" v-in-viewport.once>
             <li class="blog-banner__tags-item">
-              <a class="blog-banner__tags-link" href="/blog/" aria-label="go to all posts">#'All posts</a>
+              <a class="blog-banner__tags-link" href="/blog/" aria-label="go to all posts">#{$tr('All posts')}</a>
             </li>
             {tags.map(tag => (
               <li class="blog-banner__tags-item">
-                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}`}>#{tag}</a>
+                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}`}>#{$tr(tag)}</a>
               </li>
             ))}
 

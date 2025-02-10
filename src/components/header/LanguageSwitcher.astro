@@ -1,12 +1,10 @@
 ---
-const localesList = ['en', 'ru', 'zh']; // Replace with your actual locales
-const translated = false; // Set based on your requirements
-let initialLocale = 'en';
+import { getLocale } from "astro-i18n-aut";
 
-// Check for localStorage availability and set the initial locale
-if (typeof window !== 'undefined') {
-  initialLocale = localStorage.getItem('locale') || 'en';
-}
+const locale = getLocale(Astro.url);
+const localesList = ["ar","de","el","en","es","fr","it","ja","ko","nl","pt","ru","uk","zh"]; // Replace with your actual locales
+const translated = false; // Set based on your requirements
+let initialLocale = locale ? locale : 'en';
 ---
 
 <div class="select-wrapper" id="select-wrapper">
@@ -25,10 +23,29 @@ if (typeof window !== 'undefined') {
     // Ensure localStorage is available before accessing it
     const localeSelect = document.getElementById('locale-select');
 
-    const generatePath = (currentPath, locale) => {
-      // Example implementation: prepend the locale to the current path
-      return `/${locale}${currentPath}`;
-    };
+    const path = window.location.href;
+    let splitPath = path.split('/');
+    let newPath = '';
+    const allLanguages = ["ar","de","el","en","es","fr","it","ja","ko","nl","pt","ru","uk","zh"];
+
+    const changeURL = (newLocale) => {
+      // splitting paths according to chosen locale
+			if(allLanguages.includes(splitPath[3]) && newLocale !== 'en') {
+				splitPath = path.replace(`${splitPath[3]}`, '/').split('/')
+				newPath = `/${newLocale}/` + splitPath.slice(5, splitPath.length - 1).join("/") + '/';
+			} else if (newLocale === 'en') {
+				splitPath = path.replace(splitPath[3], '/').split('/')
+				if(splitPath.slice(4, splitPath.length - 1).length) {
+					newPath = splitPath.slice(4, splitPath.length - 1).join("/") + '/';
+				} else {
+					newPath = '/' + splitPath.slice(4, splitPath.length - 1).join("/") + '/';
+				}
+			} else {
+				newPath = `/${newLocale}/` + splitPath.slice(3, splitPath.length - 1).join("/") + '/';
+			}
+
+      window.location.href = newPath;
+    }
 
     localeSelect.addEventListener('change', (event) => {
       const newLocale = event.target.value;
@@ -36,10 +53,14 @@ if (typeof window !== 'undefined') {
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('locale', newLocale); // Store the selected locale
       }
+      changeURL(newLocale)
 
-      const newPath = generatePath(window.location.pathname, newLocale);
-      window.location.href = newPath; // Redirect to the new path
     });
+
+    if(localStorage.getItem('locale') && !path.includes(localStorage.getItem('locale')) && localStorage.getItem('locale') !== 'en' ) {
+      changeURL(localStorage.getItem('locale'))
+      return
+    }
   });
 </script>
 

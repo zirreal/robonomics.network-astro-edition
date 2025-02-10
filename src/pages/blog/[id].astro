@@ -37,7 +37,7 @@ const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
           <span> in
             {post.data.tags.map((tag, index) => (
               <>
-                <a href={`/blog/tags/${tag.toLowerCase()}`}>{ tag }</a>
+                <a href={`/blog/tags/${tag.toLowerCase()}/`}>{ tag }</a>
                 {index + 1 !== post.data.tags.length && (<span class="tagdivide">,</span>)}
               </>
             ))}

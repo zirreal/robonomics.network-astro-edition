@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # vscode
 .vscode/
+
+astro_tmp_pages_*

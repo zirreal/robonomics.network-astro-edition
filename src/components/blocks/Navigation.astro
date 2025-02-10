@@ -1,8 +1,18 @@
+---
+import { getLocale } from "astro-i18n-aut";
+const locale = getLocale(Astro.url);
+
+const generatePath = (path) => {
+  return locale === 'en' ? path : `/${locale}${path}`
+}
+---
+
+
 <nav class="navigation">
   <ul aria-label="Use it">
-    <li><a aria-label="Robonomics smart devices" href="/devices/">Smart devices</a></li>
+    <li><a aria-label="Robonomics smart devices" href={generatePath("/devices/")}>Smart devices</a></li>
     <li><a aria-label="Robonomics dapp" href="https://robonomics.app/">dapp</a></li>
-    <li><a aria-label="Robonomics merch" href="/merch/">Wearable merch</a></li>
+    <li><a aria-label="Robonomics merch" href={generatePath("/merch/")}>Wearable merch</a></li>
   </ul>
 
   <ul aria-label="Learn">
@@ -11,17 +21,17 @@
   </ul>
 
   <ul :aria-label="Explore website">
-    <li><a aria-label="about XRT" href="/xrt/"> Tokenomics</a></li>
-    <li><a aria-label="Robonomics papers" href="/papers/">Science & White paper</a></li>
+    <li><a aria-label="about XRT" href={generatePath("/xrt/")}> Tokenomics</a></li>
+    <li><a aria-label="Robonomics papers" href={generatePath("/papers/")}>Science & White paper</a></li>
     <!-- <li><a aria-label="use cases" href="/cases/">Cases</a></li> -->
-    <li><a aria-label="timeline" href="/timeline/">Timeline</a></li>
-    <li><a aria-label="assets" href="/logos-and-assets/">Brand assets</a></li>
-    <li><a aria-label="wallpapers" href="/wallpapers/">Wallpapers</a></li>
-    <li><a aria-label="Home assistant themes" href="/home-assistant-themes/">Home assistant themes</a></li>
-    <li><a aria-label="Robonomics NFT" href="/nft/">NFT</a></li>
-    <li><a aria-label="books" href="/books/">Books</a></li>
-    <li><a aria-label="blog" href="/blog/">Blog</a></li>
-    <li><a aria-label="contact us" href="/contact/">Contacts</a></li>
+    <li><a aria-label="timeline" href={generatePath("/timeline/")}>Timeline</a></li>
+    <li><a aria-label="assets" href={generatePath("/logos-and-assets/")}>Brand assets</a></li>
+    <li><a aria-label="wallpapers" href={generatePath("/wallpapers/")}>Wallpapers</a></li>
+    <li><a aria-label="Home assistant themes" href={generatePath("/home-assistant-themes/")}>Home assistant themes</a></li>
+    <li><a aria-label="Robonomics NFT" href={generatePath("/nft/")}>NFT</a></li>
+    <li><a aria-label="books" href={generatePath("/books/")}>Books</a></li>
+    <li><a aria-label="blog" href={generatePath("/blog/")}>Blog</a></li>
+    <li><a aria-label="contact us" href={generatePath("/contact/")}>Contacts</a></li>
   </ul>
 </nav>
 

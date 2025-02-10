@@ -2,6 +2,14 @@
 import Navigation from './blocks/Navigation.astro';
 import Socials from './blocks/Socials.astro';
 import Newsletter from './blocks/Newsletter.vue';
+
+import { getLocale } from "astro-i18n-aut";
+const locale = getLocale(Astro.url);
+
+const generatePath = (path) => {
+  return locale === 'en' ? path : `/${locale}${path}`
+}
+
 ---
 
 <footer>
@@ -15,7 +23,7 @@ import Newsletter from './blocks/Newsletter.vue';
   <Navigation/>
 
   <section class="footer-privacy">
-      <a aria-label="see privacy policy page" href="/privacy-policy/">Privacy Policy</a>
+      <a aria-label="see privacy policy page" href={generatePath('/privacy-policy/')}>Privacy Policy</a>
   </section>
   
 </footer>

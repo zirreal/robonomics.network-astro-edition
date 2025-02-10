@@ -3,11 +3,36 @@ import { defineConfig } from 'astro/config';
 import AutoImport from 'astro-auto-import';
 import mdx from '@astrojs/mdx';
 import vue from '@astrojs/vue';
+import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
+import paraglide from '@inlang/paraglide-astro';
+import sitemap from "@astrojs/sitemap";
+
+const defaultLocale = "en";
+const locales = {
+  ar: "ar", 
+  de: "de",
+  el: "el",
+  en: "en",
+  es: "es",
+  fr: "fr",
+  it: "it",
+  ja: "ja",
+  ko: "ko",
+  nl: "nl",
+  pt: "pt",
+  ru: "ru",
+  uk: "uk",
+  zh: "zh"
+};
 
 export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
     gfm: true,
+  },
+  trailingSlash: "always",
+  build: {
+    format: "directory",
   },
   integrations: [AutoImport({
     imports: [
@@ -25,5 +50,24 @@ export default defineConfig({
       }
     ],
   }), // Make sure the MDX integration is included AFTER astro-auto-import
-  mdx(), vue()],
+    mdx(), 
+    vue(),
+    i18n({
+      locales,
+      defaultLocale,
+    }),
+    paraglide({
+      // recommended settings
+      project: './project.inlang',
+      outdir: './src/paraglide', //where your files should be
+    }),
+    sitemap({
+      i18n: {
+        locales,
+        defaultLocale,
+      },
+      filter: filterSitemapByDefaultLocale({ defaultLocale }),
+    }),
+    
+  ]
 });

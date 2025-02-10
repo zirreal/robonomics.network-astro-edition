@@ -1,8 +1,8 @@
 ---
 import ModelRiskV from '../3dmodels/Server.astro';
 import ModelSwitch from '../3dmodels/Switch.astro';
-import ModelAltruist from '../3dmodels/Altruist.astro';
-
+import ModelAltruist from '../3dmodels/Altruist.astro'
+import { getLocale } from "astro-i18n-aut";;
 // images
 import { Image } from 'astro:assets';
 import Tamagotchi from "../../assets/images/hardware-2025/hikikomori.webp"
@@ -12,10 +12,13 @@ import EnergyMonitor from "../../assets/images/hardware-2025/energy-monitor.webp
 import '../../assets/styles/components/3dmodels.css'
 
 // data
-
 import items from '../../data/devices.js'
 
+const locale = getLocale(Astro.url);
 
+const generatePath = (path) => {
+  return locale === 'en' ? path : `/${locale}${path}/`
+}
 ---
 
 
@@ -24,12 +27,12 @@ import items from '../../data/devices.js'
     <article class="product">
       <h2>
         {product.titleLink ? (
-          <a href={product.titleLink}>{product.title}</a>
+          <a href={generatePath(product.titleLink)}>{$tr(product.title)}</a>
         ) : (
-          <span>{product.title}</span>
+          <span>{$tr(product.title)}</span>
         )}
       </h2>
-      {product.text && <p  set:html={product.text}></p>}
+      {product.text && <p  set:html={$tr(product.text)}></p>}
       {/* {product.cases && (
           <h5>Use cases:</h5>
           <p>{product.cases}</p>
@@ -55,7 +58,7 @@ import items from '../../data/devices.js'
           />
         )} 
         {product.titleLink && (
-          <a href={product.titleLink} class="link-cover"></a>
+          <a href={generatePath(product.titleLink)} class="link-cover"></a>
         )}
       </div>
     </article>
@@ -69,10 +72,10 @@ import items from '../../data/devices.js'
   </div>
 
   <div>
-    <div class="label">Special offer</div>
-    <h2><a href="/devices/rent-unitree-humanoid" target="_blank" aria-label="go rent Unitree G1 Humanoid Robot">Unitree G1 Humanoid Robot</a></h2>
-    <h3>Rent in California, USA</h3>
-    <p>Get exclusive access to one of the first commercially available humanoid robots. Flexible rental options for research, programming and entertainment needs.</p>
+    <div class="label">{$tr('Special offer')}</div>
+    <h2><a href="/devices/rent-unitree-humanoid" target="_blank" aria-label="go rent Unitree G1 Humanoid Robot">{$tr('Unitree G1 Humanoid Robot')}</a></h2>
+    <h3>{$tr('Rent in California, USA')}</h3>
+    <p>{$tr('Get exclusive access to one of the first commercially available humanoid robots. Flexible rental options for research, programming and entertainment needs.')}</p>
   </div>
 </section>
 

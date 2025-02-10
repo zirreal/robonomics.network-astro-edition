@@ -42,7 +42,7 @@ const {post, locale, isCase} = Astro.props;
       </div>
     )}
   </div>
-  {!isCase && (<a class="link-cover" target="_blank" aria-label="check out link" href={'/blog/' + post.url}>Link</a> )}
+  {!isCase && (<a class="link-cover" target="_blank" aria-label="check out link" href={'/blog/' + post.url + '/'}>Link</a> )}
 </div>
 
 
