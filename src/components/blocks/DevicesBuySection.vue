@@ -6,8 +6,8 @@
       <div class="price" v-if="price">
         <div class="price-number">{{ price }}</div>
         <div class="price-desc">
-          <div>Early bird price</div>
-          <div>Coming in early 2025</div>
+          <div>{{ $tr('Early bird price') }}</div>
+          <div>{{ $tr('Coming in early 2025') }}</div>
         </div>
       </div>
 
@@ -18,11 +18,11 @@
         @gsp-onsubmit="onSubmit"
         @gsp-oncaptchanotverified="captchaError"
       >
-        <label class="block"><input type="email" data-gsp-name="Email" :data-gsp-data="email" v-model="email" placeholder='Your email' class="block" required /></label>
+        <label class="block"><input type="email" data-gsp-name="Email" :data-gsp-data="email" v-model="email" :placeholder="$tr('Your email')" class="block" required /></label>
 
-        <label class="block"><input disabled type="checkbox" v-model="deviceupdates" /> <span>Get updates about smart devices</span></label>
+        <label class="block"><input disabled type="checkbox" v-model="deviceupdates" /> <span>{{ $tr('Get updates about smart devices') }}</span></label>
 
-        <label class="block"><input type="checkbox" v-model="regularupdates" /> <span>Receive regular emails from Robonomics</span></label>
+        <label class="block"><input type="checkbox" v-model="regularupdates" /> <span>{{ $tr('Receive regular emails from Robonomics') }}</span></label>
 
         <input type="hidden" data-gsp-name="Location" :data-gsp-data="location" />
         <input type="hidden" data-gsp-name="Tags" :data-gsp-data="tags.toString()" />
@@ -37,8 +37,9 @@
 
 <script setup>
 import { ref, computed, defineAsyncComponent } from 'vue';
-import RoboButton from '../utils/Button.vue';
+import { translate as $tr } from '../../assets/scripts/utils/translate';
 
+import RoboButton from '../utils/Button.vue';
 const GspForm = defineAsyncComponent(() => import('../utils/Form.vue'));
 
 const email = ref('');
@@ -64,14 +65,14 @@ const buttontype = computed(() => ({
 }[status.value] ?? 'primary'));
 
 const buttontext = computed(() => ({
-  'ok': 'Thanks for the submission!',
-  'error': 'Not submitted',
-  'process': 'Submitting',
-}[status.value] ?? 'Submit'));
+  'ok': $tr('Thanks for the submission!'),
+  'error': $tr('Not submitted'),
+  'process': $tr('Submitting'),
+}[status.value] ?? $tr('Submit')));
 
 const captchaError = () => {
   status.value = 'na';
-  message.value = 'Captcha is not verified. Please, check your internet connection';
+  message.value = $tr('Captcha is not verified. Please, check your internet connection');
 };
 
 const beforeSubmit = () => {

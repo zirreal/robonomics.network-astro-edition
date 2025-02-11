@@ -20,7 +20,7 @@ const related = (() => {
 ---
 
 <section class="layout layout__text">
-  <h3>Related posts:</h3>
+  <h3>{$tr('Related posts:')}</h3>
   <section class="relatedPosts">
     {related.map(post => (
       <PostCard post={{...post.data, url: post.id}} />

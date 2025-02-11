@@ -5,6 +5,7 @@ import PostCard from '../../../components/post/PostCard.astro';
 import BlogTagsBanner from '../../../components/blocks/BlogTagsBanner.astro';
 
 import { getCollection } from 'astro:content';
+import { languageTag } from '../../../paraglide/runtime';
 
 
 // data
@@ -34,6 +35,34 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
+const allPosts = [];
+const localizedPosts = posts.filter(post => (post.data.locale === languageTag()))
+const fallbackPosts = posts.filter(post => (post.data.locale === 'en'));
+
+
+function addFallbackPosts() {
+  fallbackPosts.map(p => {
+    const path = p.id.substring(0, p.id.length - 1).split("/").pop();
+
+    const exists = localizedPosts.filter(existingItem => {
+      const localePath = existingItem.id.substring(0, existingItem.id.length - 1).split("/").pop()
+      return localePath === path;
+    });
+
+    if(!exists[0]) {
+      allPosts.push(p)
+    }
+  })
+};
+
+function getAllPosts() {
+  localizedPosts.map(post => {
+    allPosts.push(post)
+  })
+  addFallbackPosts();
+};
+
+getAllPosts();
 
 ---
 
@@ -45,7 +74,7 @@ const { posts } = Astro.props;
   <BlogTagsBanner activeTag={tag}/>
 
   <section class="layout blog_grid">
-    {posts.map((post: any) => <PostCard post={{...post.data, url: post.id}}/>)}
+    {allPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map((post: any) => <PostCard post={{...post.data, url: post.id}}/>)}
   </section>
 
 </Layout>

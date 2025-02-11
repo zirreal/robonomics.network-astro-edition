@@ -6,14 +6,14 @@
     @gsp-onsubmit="onSubmit"
     @gsp-oncaptchanotverified="captchaError"
   >
-    <h4>Sign up for updates</h4>
+    <h4>{{$tr('Sign up for updates')}}</h4>
 
     <input
       type="email"
       data-gsp-name="Email"
       :data-gsp-data="email"
       v-model="email"
-      placeholder="Your email"
+      :placeholder="$tr('Your email')"
       class="block"
       required
     />
@@ -31,16 +31,17 @@
     <span class="text-small error" v-if="message">{{ message }}</span>
 
     <div class="text-small">
-      By clicking on the button “Submit” you agree to receive regular emails from Robonomics (no more than 1 per month) and you agree with
-      <a href="/privacy-policy/" aria-label="check robonomics privacy policy page">Privacy Policy</a>.
+      {{ $tr('By clicking on the button “Submit” you agree to receive regular emails from Robonomics (no more than 1 per month) and you agree with') }}
+      <a href="/privacy-policy/" aria-label="check robonomics privacy policy page">{{ $tr('Privacy Policy') }}</a>.
     </div>
   </gsp-form>
 </template>
 
 <script setup>
 import { ref, computed, defineAsyncComponent } from 'vue';
-import RoboButton from '../utils/Button.vue';
+import { translate as $tr } from '../../assets/scripts/utils/translate';
 
+import RoboButton from '../utils/Button.vue';
 const GspForm = defineAsyncComponent(() => import('../utils/Form.vue'));
 
 const email = ref('');
@@ -58,14 +59,14 @@ const buttontype = computed(() => ({
 }[status.value] ?? 'primary'));
 
 const buttontext = computed(() => ({
-  'ok': 'Thanks for the submission!',
-  'error': 'Not submitted',
-  'process': 'Submitting',
-}[status.value] ?? 'Submit'));
+  'ok': $tr('Thanks for the submission!'),
+  'error': $tr('Not submitted'),
+  'process': $tr('Submitting'),
+}[status.value] ?? $tr('Submit')));
 
 const captchaError = () => {
   status.value = 'na';
-  message.value = 'Captcha is not verified. Please, check your internet connection';
+  message.value = $tr('Captcha is not verified. Please, check your internet connection');
 };
 
 const beforeSubmit = () => {

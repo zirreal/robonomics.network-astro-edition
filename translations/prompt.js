@@ -69,8 +69,7 @@ const translateNewLine = async (from, to, input, locale) => {
     model: "gpt-3.5-turbo", // gpt model
     messages: [
       { role: "system", content: [
-        `Translate this string from ${from} to ${to}`,
-        `If there are any underscores in values, please, replace them with spaces`
+        `Translate this string from ${from} to ${to}`
       ]
         .filter(Boolean)
         .join('\n'), },

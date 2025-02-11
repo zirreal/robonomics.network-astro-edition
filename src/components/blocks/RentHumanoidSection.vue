@@ -6,9 +6,9 @@
     />
 
     <section>
-      <h2 class="title">Rent in California, USA</h2>
+      <h2 class="title">{{$tr('Rent in California, USA')}}</h2>
       <span class="availability block"
-        >Available by the Hour, Day, or Week</span
+        >{{ $tr('Available by the Hour, Day, or Week') }}</span
       >
 
       <gsp-form
@@ -33,17 +33,17 @@
               />
             </label>
             <select v-model="selectedUnit" @change="handleUnitChange">
-              <option value="hour">hour</option>
+              <option value="hour">{{$tr('hour')}}</option>
               <option v-if="selectedUnit == 'hours'" value="hours">
-                hours
+                {{ $tr('hours') }}
               </option>
-              <option value="day">day</option>
+              <option value="day">{{ $tr('day') }}</option>
               <option v-if="selectedUnit == 'days'" value="days">
-                days
+                {{ $tr('days') }}
               </option>
-              <option value="week">week</option>
+              <option value="week">{{$tr('week')}}</option>
               <option v-if="selectedUnit == 'weeks'" value="weeks">
-                weeks
+                {{$tr('weeks')}}
               </option>
             </select>
           </div>
@@ -63,7 +63,7 @@
             data-gsp-name="Email"
             :data-gsp-data="email"
             v-model="email"
-            placeholder="Your email"
+            :placeholder="$tr('Your email')"
             class="block"
             required
         /></label>
@@ -73,7 +73,7 @@
             data-gsp-name="Name"
             :data-gsp-data="name"
             v-model="name"
-            placeholder="Your name"
+            :placeholder="$tr('Your name')"
             class="block"
             required
         /></label>
@@ -82,7 +82,7 @@
             v-model="comment"
             data-gsp-name="Comment"
             :data-gsp-data="comment"
-            placeholder="Your comment"
+            :placeholder="$tr('Your comment')"
             class="block"
             required
           />
@@ -100,7 +100,7 @@
           :type="buttontype"
           >{{ buttontext }}</robo-button
         >
-        <span class="agreement">By clicking this button, you agree to receive an email regarding the rental of the Unitree G1 Humanoid Robot.</span>
+        <span class="agreement">{{ $tr('By clicking this button, you agree to receive an email regarding the rental of the Unitree G1 Humanoid Robot.') }}</span>
         <span class="small-text error"  v-if="message">{{ message }}</span>
       </gsp-form>
     </section>
@@ -109,8 +109,9 @@
 
 <script setup>
 import { ref, computed, watch, defineAsyncComponent } from 'vue';
-import RoboButton from '../utils/Button.vue';
+import { translate as $tr } from '../../assets/scripts/utils/translate';
 
+import RoboButton from '../utils/Button.vue';
 const GspForm = defineAsyncComponent(() => import('../utils/Form.vue'));
 
 const inputValue = ref(1); // default value
@@ -136,15 +137,15 @@ const buttontype = computed(() => {
 
 const buttontext = computed(() => {
   return {
-    'ok': "We'll get in touch shortly!",
-    'error': 'Not submitted'
-  }[status.value] ?? 'Contact me';
+    'ok': $tr("We'll get in touch shortly!"),
+    'error': $tr("Not submitted")
+  }[status.value] ?? $tr("Contact me");
 });
 
 // Methods
 const captchaError = () => {
   status.value = 'na';
-  message.value = 'Captcha is not verified. Please, check your internet connection';
+  message.value = $tr('Captcha is not verified. Please, check your internet connection');
 };
 
 const beforeSubmit = () => {
@@ -220,7 +221,7 @@ watch(selectedUnit, (curr) => {
   } else if (curr === 'day' || curr === 'days') {
     price.value = inputValue.value * 900;
   } else {
-    price.value = 'on demand';
+    price.value = $tr('on demand');
   }
 });
 
@@ -230,7 +231,7 @@ watch(inputValue, (value) => {
   } else if (selectedUnit.value === 'day' || selectedUnit.value === 'days') {
     price.value = value * 900;
   } else {
-    price.value = 'on demand';
+    price.value = $tr('on demand');
   }
 });
 </script>

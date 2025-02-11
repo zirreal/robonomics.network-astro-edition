@@ -13,7 +13,7 @@ const contactlist = contacts.filter(contact => showcontacts.includes(contact.tit
       <div aria-hidden="true" set:html={item.svg}></div>
       <div>
         <a href={item.link}><b>{item.title}</b></a>
-        <span>{item.text}</span>
+        <span>{$tr(item.text)}</span>
       </div>
     </li>
   ))}

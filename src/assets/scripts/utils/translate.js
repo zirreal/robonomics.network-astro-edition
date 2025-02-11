@@ -1,5 +1,4 @@
 // for easier translate function
-
 import * as m from '../../../paraglide/messages'; 
 
 const turnStringToTranslationKey = (string) => {
@@ -15,5 +14,6 @@ function translate(value) {
   return m[key] ? m[key]() : 'Translation not found';  // Prevent 
 }
 
-
 globalThis.$tr = translate;
+
+export {translate}

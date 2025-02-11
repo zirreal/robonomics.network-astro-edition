@@ -19,7 +19,7 @@ const {activeTag} = Astro.props;
 
 <section id="blog-banner" class="section section__solid section__blue">
   <div class="layout">
-      <h1>Important news &amp; announcements</h1>
+      <h1>{$tr('Important news &amp; announcements')}</h1>
       <div class="blog-banner__wrapper">
         <div class="blog-banner__img">
           <img alt="" src="/images/blog-banner-img.svg" aria-hidden="true" />
@@ -31,7 +31,7 @@ const {activeTag} = Astro.props;
             </li>
             {tags.map(tag => (
               <li class="blog-banner__tags-item">
-                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}`}>#{$tr(tag)}</a>
+                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}`}>#{tag}</a>
               </li>
             ))}
 

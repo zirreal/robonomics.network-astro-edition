@@ -18,7 +18,7 @@ const props = Astro.props as typeof defaultProps;
     {props.img && (
       <div class="timeline__header-right">
         <a class="timeline__link-with-arrow" href={props.linkWithImg}>
-          Read our almanac
+          {$tr('Read our almanac')}
         </a>
         <a class="timeline__img" href={props.linkWithImg}>
           <img src={`/images/books/${props.img}`} alt="" loading="lazy" />
@@ -34,7 +34,7 @@ const props = Astro.props as typeof defaultProps;
   </div>
   {props.events && props.events.length > 0 && (
     <div class="timeline__events">
-      <h3>Notable events:</h3>
+      <h3>{$tr('Notable events:')}</h3>
       <ul class="timeline__events-list">
         {props.events.map((event) => (
           <li class="timeline__events-item" key={event.id}>

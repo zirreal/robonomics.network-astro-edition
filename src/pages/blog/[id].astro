@@ -3,19 +3,31 @@
 import Layout from '../../layouts/Layout.astro';
 import PostRelated from '../../components/post/PostRelated.astro';
 
+import { languageTag } from '../../paraglide/runtime';
+
 // data
 import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: { id: post.id },
-    props: { post },
-  }));
+  return posts.map(post => {
+      return {
+        params: { id: post.id.includes('/') ? post.id.split('/')[1] : post.id},
+        props: { page: post },
+      }
+  });
 }
-const { post } = Astro.props;
+
+const id = Astro.params?.id;
+const {page} = Astro.props;
+const posts = await getCollection('blog');
+let post = languageTag() === 'en' ? page : posts.find(p => p.id === `${languageTag()}/${id}`);
+
+if (!post) {
+  console.log(`No post found for locale: ${languageTag()} and ID: ${id}. Loading default locale...`); 
+  post = page;
+}
 
 const { Content } = await render(post);
-
 
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 ---
@@ -44,7 +56,7 @@ const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
           </span>
         )} 
         {(post.data.date || post.data.tags.length > 0) && (<span>/</span>)}
-        <a href="/blog" aria-label="check all posts"><b>All posts</b></a>
+        <a href="/blog/" aria-label="check all posts"><b>All posts</b></a>
       </div>
     </section>
 
