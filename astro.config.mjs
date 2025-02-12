@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import vue from '@astrojs/vue';
 import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
 import paraglide from '@inlang/paraglide-astro';
+import matomo from 'astro-matomo';
 import sitemap from "@astrojs/sitemap";
 
 const defaultLocale = "en";
@@ -68,6 +69,15 @@ export default defineConfig({
       },
       filter: filterSitemapByDefaultLocale({ defaultLocale }),
     }),
-    
+    matomo({
+      enabled: import.meta.env.PROD, // Only load in production
+      // enabled: true, // Only load in production
+      host: 'https://matomo.robonomics.network/',
+      siteId: 3,
+      disableCookies: true,
+      viewTransition: {
+        contentElement: "body"
+      }
+    }),
   ]
 });

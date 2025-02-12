@@ -58,7 +58,7 @@ input[type='checkbox']:last-child {
 }
 
 
-label.block, select.block, input.block, button.block {
+label.block, select.block, input.block, button.block, span.block {
 	display: block;
 	width: 100%;
 	margin-bottom: calc(var(--space)/2);

@@ -1901,6 +1901,11 @@ astro-i18n@^2.2.4:
   resolved "https://registry.yarnpkg.com/astro-i18n/-/astro-i18n-2.2.4.tgz#a2ba310f3b92ab6b981ac77ee5301c97f813a1a8"
   integrity sha512-vhvxBtStNLLghtl63aGhBEtU1DqlYz0D3ggz5Nh2QZok36s9Ss3v9b4txN3mH/OZ90JUwkII13CYQL9wozjXBQ==
 
+astro-matomo@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/astro-matomo/-/astro-matomo-1.8.0.tgz#79853f6f1b32739f92d5654b31ecc3cd715f1796"
+  integrity sha512-yg7XgTEyYrVqVIWi/MiQtlbHdczIa2P/E+a/x3dW/oa3H4haH7rwcgvBLtsCWu++MAJYs+D956rz8Nl9nNvC6Q==
+
 astro@^5.1.8:
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/astro/-/astro-5.1.8.tgz#a5897952f3bef9b4c555ba600eb44311698b033b"
