@@ -25,9 +25,9 @@ mapContactlist();
 ---
 
 <Layout 
-  title="Contacts"
+  title={$tr("Contacts")}
   ogImage="/website_cover_contacts.webp"
-  pageTitle="Contacts"
+  pageTitle={$tr("Contacts")}
 >
 
   <div class="layout layout__text">
@@ -35,7 +35,7 @@ mapContactlist();
       {contactlist.map((item) => (
         <li class="oldy oldy__link">
             <div class="icon" set:html={item.svg} aria-hidden="true"/>
-            <a href={item.link}><b>{item.text}</b></a>
+            <a href={item.link}><b>{$tr(item.text)}</b></a>
         </li>
       ))}
     </ul>

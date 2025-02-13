@@ -6,23 +6,23 @@ import Scheme from '../components/blocks/Scheme.astro';
 ---
 
 <Layout
-  title = "Building Dapps && Web Services for IoT on Robonomics Parachain"
-  description = "The future of humanity itself depends on how we teach robots to handle their capabilities."
+  title = {$tr("Building Dapps && Web Services for IoT on Robonomics Parachain")}
+  description = {$tr("The future of humanity itself depends on how we teach robots to handle their capabilities.")}
   ogImage = "/website_cover.webp"
 >
 
 <div class="page">
   <section class="section section__solid section__dotted_darkblue wide">
-    <h1 class="layout layout__content clean">Building Dapps && Web Services for IoT on Robonomics Parachain</h1>
-    <div class="layout layout__text animate subtitle">Sergei Lonshakov, software architect</div>
+    <h1 class="layout layout__content clean">{$tr("Building Dapps && Web Services for IoT on Robonomics Parachain")}</h1>
+    <div class="layout layout__text animate subtitle">{$tr("Sergei Lonshakov, software architect")}</div>
   </section>
 
   <section class="section">
     <div class="layout layout__text animate-inside grid-2">
       <img aria-hidden="true" alt="" src="/images/intro/person-norbert-wiener.webp" />
       <div class="hyphens">
-        <p>&laquo;Let us remember that the automatic machine is the precise economic equivalent of slave labor. Any labor which competes with slave labor must accept the economic consequences of slave labor.&raquo;</p>
-        <p>― Norbert Wiener, cybernetics</p>
+        <p>&laquo;{$tr('Let us remember that the automatic machine is the precise economic equivalent of slave labor. Any labor which competes with slave labor must accept the economic consequences of slave labor.')}&raquo;</p>
+        <p>― {$tr('Norbert Wiener, cybernetics')}</p>
       </div>
     </div>
   </section>
@@ -31,16 +31,16 @@ import Scheme from '../components/blocks/Scheme.astro';
     <div class="layout layout__text grid-2 middle animate-inside">
       <img aria-hidden="true" alt="" src="/images/intro/robots-handshaking.webp" />
       <div class="hyphens text-big">
-        <p>Robots are like grown-up children today – they already can manage money, and enter into legal relations, be independent.</p>
-        <p>The future of humanity itself depends on how we teach robots to handle their capabilities.</p>
+        <p>{$tr('Robots are like grown-up children today – they already can manage money, and enter into legal relations, be independent.')}</p>
+        <p>{$tr('The future of humanity itself depends on how we teach robots to handle their capabilities.')}</p>
       </div>
     </div>
   </section>
 
   <section class="section section__solid section__blue">
     <div class="layout layout__text animate-inside">
-      <h2>What is Robonomics network?</h2>
-      <p class="hyphens">Robonomics is an open-source platform for IoT applications which enables the exchange of technical and economic information in the form of atomic transactions between user applications, IoT services, and complex robotics.</p>
+      <h2>{$tr('What is Robonomics network?')}</h2>
+      <p class="hyphens">{$tr('Robonomics is an open-source platform for IoT applications which enables the exchange of technical and economic information in the form of atomic transactions between user applications, IoT services, and complex robotics.')}</p>
     </div>
 
     <div class="layout layout__content">
@@ -52,29 +52,29 @@ import Scheme from '../components/blocks/Scheme.astro';
   <section class="section">
 
     <section class="layout section layout__content">
-      <h2 class="animate">Robonomics tools</h2>
+      <h2 class="animate">{$tr('Robonomics tools')}</h2>
       <div class="introTools grid-4 animate-inside">
         <div>
           <img aria-hidden="true" alt="" src="/images/intro/robots-digitalTwins.webp" />
-          <h5 set:html="Operate with digital twins of IoT devices" />
+          <h5 set:html={$tr("Operate with digital twins of IoT devices")} />
         </div>
         <div>
           <img aria-hidden="true" alt="" src="/images/intro/robots-smartContract.webp" />
-          <h5 set:html="The first tools of the robot economy: money for robots, contracts for robots" />
+          <h5 set:html={$tr("The first tools of the robot economy: money for robots, contracts for robots")} />
         </div>
         <div>
           <img aria-hidden="true" alt="" src="/images/intro/robots-cloud.webp" />
-          <h5 set:html="Software for connecting devices to a decentralized cloud" />
+          <h5 set:html={$tr("Software for connecting devices to a decentralized cloud")} />
         </div>
         <div>
           <img aria-hidden="true" alt="" src="/images/intro/robots-console.webp" />
-          <h5 set:html="API library for custom IoT applications" />
+          <h5 set:html={$tr("API library for custom IoT applications")} />
         </div>
       </div>
     </section>
 
     <div class="layout section layout__text hyphens">
-      <p class="animate">Robonomics contains a complete set of tools for developing IoT applications, both on the robotics and the user interface sides. Communication between the user and device happens using the most successful technologies from the Web3 world – IPFS, Ethereum, and Polkadot. Thus, developers can create modern and secure applications for Smart Cities and Industry 4.0.</p>
+      <p class="animate">{$tr('Robonomics contains a complete set of tools for developing IoT applications, both on the robotics and the user interface sides. Communication between the user and device happens using the most successful technologies from the Web3 world – IPFS, Ethereum, and Polkadot. Thus, developers can create modern and secure applications for Smart Cities and Industry 4.0.')}</p>
       <div class="introLogos animate-inside-fast">
         <img alt="Rust" src="/images/logos/rust.webp" />
         <img alt="Python" src="/images/logos/python.svg" />
@@ -96,27 +96,27 @@ import Scheme from '../components/blocks/Scheme.astro';
 
       <section class="layout section layout__content">
         <section class="animate-inside section">
-          <h2>Robonomics Connectivity</h2>
-          <p class="layout__text" set:html="For the developers’ convenience, Robonomics contains a set of software for connecting: IoT devices using the HTTP/MQTT protocol, complex robotic systems using the Robot Operating System (ROS)" />
+          <h2>{$tr('Robonomics Connectivity')}</h2>
+          <p class="layout__text" set:html={$tr("For the developers’ convenience, Robonomics contains a set of software for connecting: IoT devices using the HTTP/MQTT protocol, complex robotic systems using the Robot Operating System (ROS)")} />
         </section>
 
         <div class="introTools grid-3 animate-inside">
           <div>
             <img aria-hidden="true" alt="" src="/images/intro/robots-sensor.webp" />
             <h5>
-              <a href="https://wiki.robonomics.network/docs/connect-sensor-to-robonomics/" target="_blank" aria-label="connect a sensor to the robonomics network">Connect a sensor</a> to the Robonomics network
+              <a href="https://wiki.robonomics.network/docs/connect-sensor-to-robonomics/" target="_blank" aria-label="connect a sensor to the robonomics network">{$tr('Connect a sensor')}</a> {$tr('to the Robonomics network')}
             </h5>
           </div>
           <div>
             <img aria-hidden="true" alt="" src="/images/intro/robonomics-io.webp" />
             <h5>
-              Try <a href="https://wiki.robonomics.network/docs/rio-overview/" target="_blank" aria-label="Robonomics IO overview">Robonomics IO</a> – a simple prototyping tool
+              {$tr('Try')} <a href="https://wiki.robonomics.network/docs/rio-overview/" target="_blank" aria-label="Robonomics IO overview">{$tr('Robonomics IO')}</a> – {$tr('a simple prototyping tool')}
             </h5>
           </div>
           <div>
             <img aria-hidden="true" alt="" src="/images/intro/robots-aira.webp" />
             <h5>
-              Start building your own cyber physical system with <a href="https://wiki.robonomics.network/docs/aira-installation-on-vb/" target="_blank" aria-label="aira installation">Aira OS</a>
+              {$tr('Start building your own cyber physical system with')} <a href="https://wiki.robonomics.network/docs/aira-installation-on-vb/" target="_blank" aria-label="aira installation">{$tr('Aira OS')}</a>
             </h5>
           </div>
         </div>
@@ -127,12 +127,12 @@ import Scheme from '../components/blocks/Scheme.astro';
 
   <section class="introRobots section section__solid section__lightblue">
     <div class="layout layout__content animate">
-      <h2>Robonomics Supports Hundreds of Robots Out of the Box</h2>
+      <h2>{$tr('Robonomics Supports Hundreds of Robots Out of the Box')}</h2>
     </div>
 
     <div class="layout layout__text animate-inside">
       <div class="grid-2 middle">
-        <p class="hyphens text-big">Platform users can connect ROS-compatible robots to digital economy in a matter of minutes. For a complete list of supported robots, please follow the link: <a href="https://robots.ros.org/" target="_blank" aria-label="check the list of supported robots">https://robots.ros.org/</a></p>
+        <p class="hyphens text-big">{$tr('Platform users can connect ROS-compatible robots to digital economy in a matter of minutes. For a complete list of supported robots, please follow the link:')} <a href="https://robots.ros.org/" target="_blank" aria-label="check the list of supported robots">https://robots.ros.org/</a></p>
         <a href="https://robots.ros.org/" target="_blank" aria-label="ros website"><img aria-hidden="true" src="/ros-website.gif"/></a>
       </div>
     </div>
@@ -142,39 +142,39 @@ import Scheme from '../components/blocks/Scheme.astro';
 
   <section class="section section__solid section__gradient-purpleblue">
     <div class="layout layout__content animate">
-      <h2>Decentralized Cloud infrastructure for IoT</h2>
+      <h2>{$tr('Decentralized Cloud infrastructure for IoT')}</h2>
     </div>
 
     <div class="layout layout__content">
 
-      <p class="text-big layout__text_small">Robonomics Web Services (RWS) is the basic infrastructural service for Robotics and IoT on top of Robonomics Parachain and IPFS.</p>
+      <p class="text-big layout__text_small">{$tr('Robonomics Web Services (RWS) is the basic infrastructural service for Robotics and IoT on top of Robonomics Parachain and IPFS.')}</p>
      
       <div class="scheme-rwsPlace animate-inside">
           <div class="item">
-            IoT Device
+            {$tr('IoT Device')}
             <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/schemeRwsPlace-1.webp"/>
             </div>
           </div>
           <div class="item">
-            Robonomics Connectivity
+            {$tr('Robonomics Connectivity')}
             <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/schemeRwsPlace-2.webp"/>
             </div>
           </div>
           <div class="item highlight">
-            Robonomics web services (RWS)
+            {$tr('Robonomics web services (RWS)')}
             <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/schemeRwsPlace-3.webp"/>
             </div>
           </div>
           <div class="item">
-            Robonomics dapp
+            {$tr('Robonomics dapp')}
             <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/schemeRwsPlace-4.webp"/>
             </div>
           </div>
-          <div class="item core">economy of robots</div>
+          <div class="item core">{$tr('economy of robots')}</div>
         </div>
     </div>
   </section>
@@ -183,31 +183,31 @@ import Scheme from '../components/blocks/Scheme.astro';
 
   <section class="section section__solid section__darkpurple">
     <div class="layout layout__content">
-      <h2 class="animate">Core RWS features available for IoT today</h2>
+      <h2 class="animate">{$tr('Core RWS features available for IoT today')}</h2>
        
       <div class="introRwsFeature grid-3 animate-inside">
         <div>
           <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/intro-rwsFeature-1.webp"/>
           </div>
-          <h5>RWS PubSub Message Broker</h5>
-          Use unlimited messaging over a p2p network based on IPFS protocol
+          <h5>{$tr('RWS PubSub Message Broker')}</h5>
+          {$tr('Use unlimited messaging over a p2p network based on IPFS protocol')}
         </div>
 
         <div>
           <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/intro-rwsFeature-2.webp"/>
           </div>
-          <h5>RWS Data Blockchainization Service</h5>
-          Put data into IPFS and store hashes in a public Blockchain
+          <h5>{$tr('RWS Data Blockchainization Service')}</h5>
+          {$tr('Put data into IPFS and store hashes in a public Blockchain')}
         </div>
 
         <div>
           <div class="img" aria-hidden="true">
               <img aria-hidden="true" alt="" src="/images/intro/intro-rwsFeature-3.webp"/>
           </div>
-          <h5>RWS Robot Actions</h5>
-          Switch on / off; launch or stop your IoT devices under the control of a decentralized computer
+          <h5>{$tr('RWS Robot Actions')}</h5>
+          {$tr('Switch on / off; launch or stop your IoT devices under the control of a decentralized computer')}
         </div>
       </div>
     </div>
@@ -215,10 +215,10 @@ import Scheme from '../components/blocks/Scheme.astro';
 
   <hr class="no-margins"/>
   <section class="introDigitalTwins section section__solid section__dotted_darkblue animate-inside">
-    <h2 class="layout layout__content">Heart of Your IoT Application - Digital Twin on Blockchain</h2>
+    <h2 class="layout layout__content">{$tr('Heart of Your IoT Application - Digital Twin on Blockchain')}</h2>
     <div class="layout layout__text hyphens text-big">
-      <p>In the technical architecture, IoT digital twins provide the visibility and monitoring of things and related events (e.g., using IoT devices to automatically capture the origin of a product), and blockchain enables the shared single version of the truth as to the state of these things across their life cycles and associated business events <i>[from Gartner research]</i></p>
-      <p>Robonomics Parachain provides an opportunity to create a model of a digital twin and update its state every 6 seconds.</p>
+      <p>{$tr('In the technical architecture, IoT digital twins provide the visibility and monitoring of things and related events (e.g., using IoT devices to automatically capture the origin of a product), and blockchain enables the shared single version of the truth as to the state of these things across their life cycles and associated business events')} <i>{$tr('[from Gartner research]')}</i></p>
+      <p>{$tr('Robonomics Parachain provides an opportunity to create a model of a digital twin and update its state every 6 seconds.')}</p>
     </div>
     <section class="section layout layout__content img" aria-hidden="true">
         <img aria-hidden="true" alt="" src="/images/intro/digitalTwins.webp"/>

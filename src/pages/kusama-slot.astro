@@ -4,8 +4,8 @@ import RbButton from '../components/RbButton.astro';
 ---
 
 <Layout
-  title="Robonomics Kusama slot"
-  description="During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total."
+  title={$tr("Robonomics Kusama slot")}
+  description={$tr("During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.")}
   ogImage="/website_cover_crowdloan.jpg"
 >
 
@@ -13,25 +13,25 @@ import RbButton from '../components/RbButton.astro';
     <section class="banner-leftside section__solid section__blue">
       <div class="content layout">
         <section class="banner-leftside-title">
-          <h1>Robonomics Kusama slot</h1>
-          <p>4 million transactions<br/> for IoT devices in 2022</p>
+          <h1>{$tr('Robonomics Kusama slot')}</h1>
+          <p>{$tr('4 million transactions')}<br/> {$tr('for IoT devices in 2022')}</p>
         </section>
 
         <section class="banner-leftside-state">
           <div id="confetti-container">
-            <p>Status:</p>
-            <p>сampaign for renewal of slot<br/> is in progress</p>
+            <p>{$tr('Status:')}</p>
+            <p>{$tr('сampaign for renewal of slot')}<br/> {$tr('is in progress')}</p>
             <img id="confetti" src="/images/confetti.webp" aria-hidden="true" alt=""  />
           </div>
         </section>
 
-        <RbButton href="https://parachains.info/auctions/kusama" buttoncolor="vivid-blue" target="_blank">Auction status on Kusama</RbButton>
+        <RbButton href="https://parachains.info/auctions/kusama" buttoncolor="vivid-blue" target="_blank">{$tr('Auction status on Kusama')}</RbButton>
       </div>
     </section>
 
     <section>
     <div class="content layout layout__text text-cite-big">
-      During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.
+      {$tr('During 2022, the Robonomics parachain in Kusama was used in a dozen R&D projects and processed more than 4 million transactions for IoT devices in total.')}
     </div>
     </section>
 
@@ -39,8 +39,8 @@ import RbButton from '../components/RbButton.astro';
     <div class="sec-i-t content layout">
       <img alt="Robonomics dapp smart home" src="/images/dapp-smart-devices.webp" />
       <article>
-        <h3>Decentralized cloud for IoT, updates for wiki, courses for Academy</h3>
-        <p>Our plans for 2023 include the active development around the idea of a decentralized cloud for the control of home IoT infrastructure. Now we are working to ensure that our <a href="https://robonomics.app/" aria-label="check our dapp" target="_blank">decentralized application</a>, <a href="https://wiki.robonomics.network" aria-label="check our wiki" target="_blank">wiki</a> project and our educational resource, the <a href="https://robonomics.academy/" aria-label="check our academy" target="_blank">Robonomics Academy</a>, have all the necessary functions and information for IoT infrastructure owners.</p>
+        <h3>{$tr('Decentralized cloud for IoT, updates for wiki, courses for Academy')}</h3>
+        <p>{$tr('Our plans for 2023 include the active development around the idea of a decentralized cloud for the control of home IoT infrastructure. Now we are working to ensure that our')} <a href="https://robonomics.app/" aria-label="check our dapp" target="_blank">{$tr('decentralized application')}</a>, <a href="https://wiki.robonomics.network" aria-label="check our wiki" target="_blank">{$tr('wiki')}</a> {$tr('project and our educational resource, the')} <a href="https://robonomics.academy/" aria-label="check our academy" target="_blank">{$tr('Robonomics Academy')}</a>{$tr(', have all the necessary functions and information for IoT infrastructure owners.')}</p>
       </article>
     </div>
     </section>
@@ -48,15 +48,15 @@ import RbButton from '../components/RbButton.astro';
     <section id="formula">
     <div class="content layout layout__text text-cite-big">
       <img class="theme-support-light" src="/images/crowdloan-formula.webp" aria-hidden="true" alt=""  />
-      <p>For developers of the Robonomics parachain, finding an option to autonomize the life of the parachain is an important part of building a decentralized cloud for IoT. This year, for the first time, we are trying to launch a crowdloan campaign on behalf of the parachain itself.</p>
-      <p><a href="/blog/robonomics-crowdloan-campaigns-november-2022/" aria-label="find out more in our blog">Read more</a></p>
+      <p>{$tr('For developers of the Robonomics parachain, finding an option to autonomize the life of the parachain is an important part of building a decentralized cloud for IoT. This year, for the first time, we are trying to launch a crowdloan campaign on behalf of the parachain itself.')}</p>
+      <p><a href="/blog/robonomics-crowdloan-campaigns-november-2022/" aria-label="find out more in our blog">{$tr('Read more')}</a></p>
     </div>
     </section>
 
   <section class="participate section__solid section__blue">
     <div class="content layout">
-      <div>Campaign for renewal of slot<br/> is in progress</div>
-      <RbButton href="https://parachains.info/auctions/kusama" buttoncolor="vivid-blue" target="_blank">Check status</RbButton>
+      <div>{$tr('Campaign for renewal of slot')}<br/> {$tr('is in progress')}</div>
+      <RbButton href="https://parachains.info/auctions/kusama" buttoncolor="vivid-blue" target="_blank">{$tr('Check status')}</RbButton>
     </div>
     </section>
 

@@ -31,8 +31,8 @@
     <span class="text-small error" v-if="message">{{ message }}</span>
 
     <div class="text-small">
-      {{ $tr('By clicking on the button “Submit” you agree to receive regular emails from Robonomics (no more than 1 per month) and you agree with') }}
-      <a href="/privacy-policy/" aria-label="check robonomics privacy policy page">{{ $tr('Privacy Policy') }}</a>.
+      {{$tr('By clicking on the button “Submit” you agree to receive regular emails from Robonomics (no more than 1 per month) and you agree with') }}
+      <a href="/privacy-policy/" aria-label="check robonomics privacy policy page">{{$tr('Privacy Policy') }}</a>.
     </div>
   </gsp-form>
 </template>

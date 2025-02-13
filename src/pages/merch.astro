@@ -9,21 +9,21 @@ const stores = [
     link: 'https://robonomics.threadless.com/',
     img: 'threadless.webp',
     locale: 'us',
-    label: 'Threadless Marketplace (USA)'
+    label: $tr('Threadless Marketplace (USA)')
   },
   {
     id: 1,
     link: 'https://www.redbubble.com/people/roboxart/shop?artistUserName=roboxart&iaCode=u-clothing',
     img: 'redbubble.webp',
     locale: 'eu',
-    label: 'Redbubble Marketplace (Europe)'
+    label: $tr('Redbubble Marketplace (Europe)')
   },
   {
     id: 2,
     link: 'https://robonomics.printdirect.ru/',
     img: 'printdirect.webp',
     locale: 'ru',
-    label: 'Printdirect Marketplace (Russia)'
+    label: $tr('Printdirect Marketplace (Russia)')
   }
 ]
 
@@ -31,14 +31,14 @@ const stores = [
 
 
 <Layout 
-  title="Robonomics merch" 
-  description="We created shops on the biggest online markets for artists, check it out and find t-shirts, long sleeves, hoodies, shower curtains, pillows, blankets and other useful stuff."
+  title={$tr("Robonomics merch")}
+  description={$tr("We created shops on the biggest online markets for artists, check it out and find t-shirts, long sleeves, hoodies, shower curtains, pillows, blankets and other useful stuff.")}
   ogImage="/website_cover_merch.webp"
-  pageTitle="Robonomics merch"
+  pageTitle={$tr("Robonomics merch")}
 >
 
   <section class="layout">
-    <p class="layout layout__text">Grab your merch with unique Robonomics art painted by our gorgeous girls. We created shops on the biggest online markets for artists, check it out and find t-shirts, long sleeves, hoodies, shower curtains, pillows, blankets and other useful stuff.</p>
+    <p class="layout layout__text">{$tr('Grab your merch with unique Robonomics art painted by our gorgeous girls. We created shops on the biggest online markets for artists, check it out and find t-shirts, long sleeves, hoodies, shower curtains, pillows, blankets and other useful stuff.')}</p>
 
     <section class="grid-3">
       {stores.map((store) => {
@@ -48,7 +48,7 @@ const stores = [
           console.error(`Image not found for: ${store.img}`);
           return (
             <div class="oldy">
-              <p>Image not available</p>
+              <p>{$tr('Image not available')}</p>
             </div>
           );
         }

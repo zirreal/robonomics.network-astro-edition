@@ -7,25 +7,25 @@ import RbButton from "../components/RbButton.astro";
 const papers =[
   {
     id: 0,
-    title: 'Robonomics White Paper',
-    description: 'Here, you can find and download (completely free, of course) the very first Robonomics white paper, which was introduced in May 2018. While much has evolved since then, the fundamentals of Robonomics are still outlined in this paper.',
+    title: $tr('Robonomics White Paper'),
+    description: $tr('Here, you can find and download (completely free, of course) the very first Robonomics white paper, which was introduced in May 2018. While much has evolved since then, the fundamentals of Robonomics are still outlined in this paper.'),
     buttonicon: '↗',
     withSelect: true,
     year: 2018,
     options: [
       {
         link: 'https://static.robonomics.network/docs/whitepaper/Robonomics-whitepaper-en.pdf',
-        text: 'English',
+        text: $tr('English'),
         id: 0
       },
       {
         link: 'https://static.robonomics.network/docs/whitepaper/Robonomics-whitepaper-ru.pdf',
-        text: 'Russian',
+        text: $tr('Russian'),
         id: 1
       },
       {
         link: 'https://static.robonomics.network/docs/whitepaper/Robonomics-whitepaper-zh.pdf',
-        text: 'Chinese',
+        text: $tr('Chinese'),
         id: 2
       }
     ],
@@ -33,7 +33,7 @@ const papers =[
   },
   {
     id: 1,
-    title: 'Gaka-Chu: A Self-Employed Autonomous Robot Artist',
+    title: $tr('Gaka-Chu: A Self-Employed Autonomous Robot Artist'),
     description: '',
     buttonicon: '↗',
     year: 2023,
@@ -54,7 +54,7 @@ const papers =[
   },
   {
     id: 2,
-    title: 'Cooperative Gradient-Free Localization and Tracking of Moving Environmental Boundaries by Teams of Nonholonomic Robots',
+    title: $tr('Cooperative Gradient-Free Localization and Tracking of Moving Environmental Boundaries by Teams of Nonholonomic Robots'),
     description: '',
     buttonicon: '↗',
     year: 2022,
@@ -75,8 +75,8 @@ const papers =[
   },
   {
     id: 3,
-    title: 'Robot-as-a-Service: From Cloud to Peering Technologies',
-    description: 'Aleksandr Kapitonov, Sergey Lonshakov, Vitaly Bulatov, Babak Kia Montazam, James White',
+    title: $tr('Robot-as-a-Service: From Cloud to Peering Technologies'),
+    description: $tr('Aleksandr Kapitonov, Sergey Lonshakov, Vitaly Bulatov, Babak Kia Montazam, James White'),
     buttonicon: '↗',
     year: 2021,
     options: [
@@ -108,8 +108,8 @@ const papers =[
   },
   {
     id: 4,
-    title: 'Trustable Environmental monitoring by means of sensors networks on swarming autonomous marine vessels and distributed ledger technology',
-    description: 'Ivan Berman, Enrica Zereik, Aleksandr Kapitonov, Fabio Bonsignorio, Alisher Khasanov, Aziza Oripova, Sergey Lonshakov, Vitaly Bulatov',
+    title: $tr('Trustable Environmental monitoring by means of sensors networks on swarming autonomous marine vessels and distributed ledger technology'),
+    description: $tr('Ivan Berman, Enrica Zereik, Aleksandr Kapitonov, Fabio Bonsignorio, Alisher Khasanov, Aziza Oripova, Sergey Lonshakov, Vitaly Bulatov'),
     buttonicon: '↗',
     year: 2020,
     options: [
@@ -135,7 +135,7 @@ const papers =[
   },
   {
     id: 5,
-    title: 'Towards blockchain-based multi-agent robotic systems: Analysis, classification and applications',
+    title: $tr('Towards blockchain-based multi-agent robotic systems: Analysis, classification and applications'),
     description: '',
     buttonicon: '↗',
     year: 2020,
@@ -150,8 +150,8 @@ const papers =[
   },
   {
     id: 6,
-    title:'Digital Passport for Unmanned Vehicles',
-    description: 'Vadim Manaenko, Aleksandr Kapitonov, Ivan Berman',
+    title: $tr('Digital Passport for Unmanned Vehicles'),
+    description: $tr('Vadim Manaenko, Aleksandr Kapitonov, Ivan Berman'),
     buttonicon: '↗',
     year: 2019,
     options: [
@@ -165,8 +165,8 @@ const papers =[
   },
   {
     id: 7,
-    title: 'Robonomics as a Blockchain-based Platform for Unmanned Traffic Management of Mobile Vehicles',
-    description: 'Aleksandr Kapitonov; Ivan Berman; Vadim Manaenko; Vyacheslav Rzhevskiy; Vitaly Bulatov; Artemii Zenkin',
+    title: $tr('Robonomics as a Blockchain-based Platform for Unmanned Traffic Management of Mobile Vehicles'),
+    description: $tr('Aleksandr Kapitonov; Ivan Berman; Vadim Manaenko; Vyacheslav Rzhevskiy; Vitaly Bulatov; Artemii Zenkin'),
     buttonicon: '↗',
     year: 2019,
     options: [
@@ -180,8 +180,8 @@ const papers =[
   },
   {
     id: 8,
-    title: 'Towards blockchain-based multi-agent robotic systems: Analysis, classification and applications',
-    description: 'Ilya Afanasyev, Alexander Kolotov, Ruslan Rezin, Konstantin Danilov, Manuel Mazzara, Subham Chakraborty, Alexey Kashevnik, Andrey Chechulin, Aleksandr Kapitonov, Vladimir Jotsov, Andon Topalov, Nikola Shakev, Sevil Ahmed',
+    title: $tr('Towards blockchain-based multi-agent robotic systems: Analysis, classification and applications'),
+    description: $tr('Ilya Afanasyev, Alexander Kolotov, Ruslan Rezin, Konstantin Danilov, Manuel Mazzara, Subham Chakraborty, Alexey Kashevnik, Andrey Chechulin, Aleksandr Kapitonov, Vladimir Jotsov, Andon Topalov, Nikola Shakev, Sevil Ahmed'),
     buttonicon: '↗',
     year: 2019,
     options: [
@@ -207,8 +207,8 @@ const papers =[
   },
   {
     id: 9,
-    title: 'Robotic Services for New Paradigm Smart Cities Based on Decentralized Technologies',
-    description: 'Aleksandr Kapitonov, Sergey Lonshakov, Ivan Berman, Eduardo Castelló Ferrer, Fabio P Bonsignorio, Vitaly Bulatov, Aleksandr Svistov',
+    title: $tr('Robotic Services for New Paradigm Smart Cities Based on Decentralized Technologies'),
+    description: $tr('Aleksandr Kapitonov, Sergey Lonshakov, Ivan Berman, Eduardo Castelló Ferrer, Fabio P Bonsignorio, Vitaly Bulatov, Aleksandr Svistov'),
     buttonicon: '↗',
     year: 2019,
     options: [
@@ -222,8 +222,8 @@ const papers =[
   },
   {
     id: 10,
-    title: 'Protocol for Organization of a Decentralized Autonomous Agents Network in Factories Using Market Mechanisms',
-    description: 'Aleksandr Kapitonov, Ivan Berman, Sergey Lonshakov, Aleksandr Krupenkin, Vitaly Bulatov',
+    title: $tr('Protocol for Organization of a Decentralized Autonomous Agents Network in Factories Using Market Mechanisms'),
+    description: $tr('Aleksandr Kapitonov, Ivan Berman, Sergey Lonshakov, Aleksandr Krupenkin, Vitaly Bulatov'),
     buttonicon: '↗',
     year: 2019,
     options: [
@@ -237,8 +237,8 @@ const papers =[
   },
   {
     id: 11,
-    title: 'Towards blockchain-based Robonomics: autonomous agents behavior validation',
-    description: 'Konstantin Danilov; Ruslan Rezin; Ilya Afanasyev; Alexander Kolotov',
+    title: $tr('Towards blockchain-based Robonomics: autonomous agents behavior validation'),
+    description: $tr('Konstantin Danilov; Ruslan Rezin; Ilya Afanasyev; Alexander Kolotov'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -276,8 +276,8 @@ const papers =[
   },
   {
     id: 12,
-    title: 'Transforming Climate Finance and Green Investment with Blockchains',
-    description: 'Alastair Marke',
+    title: $tr('Transforming Climate Finance and Green Investment with Blockchains'),
+    description: $tr('Alastair Marke'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -291,8 +291,8 @@ const papers =[
   },
   {
     id: 13,
-    title: 'Robonomics: platform for integration of cyber physical systems into human economy',
-    description: 'Sergey Lonshakov, Aleksandr Krupenkin, Aleksandr Kapitonov, Evgeny Radchenko, Alisher Khassanov, Aleksandr Starostin',
+    title: $tr('Robonomics: platform for integration of cyber physical systems into human economy'),
+    description: $tr('Sergey Lonshakov, Aleksandr Krupenkin, Aleksandr Kapitonov, Evgeny Radchenko, Alisher Khassanov, Aleksandr Starostin'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -306,8 +306,8 @@ const papers =[
   },
   {
     id: 14,
-    title: 'Blockchain based protocol for economical communication in industry 4.0',
-    description: 'Aleksandr Kapitonov, Ivan Berman, Sergey Lonshakov, Aleksandr Krupenkin',
+    title: $tr('Blockchain based protocol for economical communication in industry 4.0'),
+    description: $tr('Aleksandr Kapitonov, Ivan Berman, Sergey Lonshakov, Aleksandr Krupenkin'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -321,8 +321,8 @@ const papers =[
   },
   {
     id: 15,
-    title: 'Robonomics based on blockchain as a principle of creating smart factories',
-    description: 'Aleksandr Kapitonov, Ivan Berman, Vitaly Bulatov, Sergey Lonshakov, Aleksandr Krupenkin',
+    title: $tr('Robonomics based on blockchain as a principle of creating smart factories'),
+    description: $tr('Aleksandr Kapitonov, Ivan Berman, Vitaly Bulatov, Sergey Lonshakov, Aleksandr Krupenkin'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -336,8 +336,8 @@ const papers =[
   },
   {
     id: 16,
-    title: 'Blockchain ecosystem for carbon markets, environmental assets, rights, and liabilities: Concept design and implementation',
-    description: 'Anton Galenovich, Sergey Lonshakov, Alexey Shadrin',
+    title: $tr('Blockchain ecosystem for carbon markets, environmental assets, rights, and liabilities: Concept design and implementation'),
+    description: $tr('Anton Galenovich, Sergey Lonshakov, Alexey Shadrin'),
     buttonicon: '↗',
     year: 2018,
     options: [
@@ -351,8 +351,8 @@ const papers =[
   },
   {
     id: 17,
-    title: 'Blockchain-based protocol of autonomous business activity for multi-agent systems consisting of UAVs',
-    description: 'Aleksandr Kapitonov, Sergey Lonshakov, Aleksandr Krupenkin, Ivan Berman',
+    title: $tr('Blockchain-based protocol of autonomous business activity for multi-agent systems consisting of UAVs'),
+    description: $tr('Aleksandr Kapitonov, Sergey Lonshakov, Aleksandr Krupenkin, Ivan Berman'),
     buttonicon: '↗',
     year: 2017,
     options: [
@@ -377,20 +377,20 @@ let selected = 0;
 ---
 
 <Layout
-  title="Research papers"
-  description="Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives."
+  title={$tr("Research papers")}
+  description={$tr("Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives.")}
   ogImage="/website_cover_papers.webp"
 >
 
 <!-- Papers banner section -->
 <section class="papers__section-blue section__blue">
   <div class="papers__main-title title-with-bg">
-    <h1><span>Research papers</span></h1>
+    <h1><span>{$tr("Research papers")}</span></h1>
   </div>
 
   <div class="layout layout__content papers__banner">
     <div class="papers__banner-wrapper">
-      <p>Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives...</p>
+      <p>{$tr('Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives...')}</p>
       <img src="/images/papers/papers-text.svg" alt="" aria-hidden="true"/>
     </div>
     <div class="papers__banner-img">
@@ -419,7 +419,7 @@ let selected = 0;
             </select>
           )}
           <RbButton id="downloadLink" href={pinned[0].options[selected].link} target="_blank" aria-label="download current paper">
-            Download pdf
+            {$tr('Download pdf')}
           </RbButton>
         </div>
       </div>
