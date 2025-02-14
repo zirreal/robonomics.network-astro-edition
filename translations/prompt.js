@@ -69,7 +69,8 @@ const translateNewLine = async (from, to, input, locale) => {
     model: "gpt-3.5-turbo", // gpt model
     messages: [
       { role: "system", content: [
-        `Translate this string from ${from} to ${to}`
+        `Translate this string from ${from} to ${to}`,
+        `Do NOT add any commas or dots if there are none in the original text and do NOT change the case of the original words`,
       ]
         .filter(Boolean)
         .join('\n'), },
@@ -169,6 +170,7 @@ const translationData = (from, to, input) => {
         `Translate the i18n JSON file from ${from} to ${to} according to the BCP 47 standard. Never translate the keys and leave them in English`,
         `Here are some reference to help with better translation.  ---${defaultReference}---`,
         `If there are any underscores in values, please, replace them with spaces`,
+        `Do NOT add any commas or dots if there are none in the original text and do NOT change the case of the original words`,
         `Keep the keys the same as the original file and make sure the output remains a valid i18n JSON file.`
       ]
         .filter(Boolean)

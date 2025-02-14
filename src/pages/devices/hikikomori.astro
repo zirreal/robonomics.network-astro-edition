@@ -17,11 +17,11 @@ const hikikomori = devices.products.filter(product => product.code === 'hikikomo
 
 
 <Layout 
-  title={hikikomori[0].title} 
-  description="A smart home assistant you’ll enjoy caring for, even when you’re away. Only devs."
+  title={$tr(hikikomori[0].title)} 
+  description={$tr("A smart home assistant you’ll enjoy caring for, even when you’re away. Only devs.")}
   ogImage="/og-pics/devices-hikikomori.webp"
-  pageTitle={hikikomori[0].title} 
-  backlink={{title: 'All hardware', link: '/devices/', label: 'Go to all hardware'}}
+  pageTitle={$tr(hikikomori[0].title)} 
+  backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
 
   <DeviceBuySection price="$75" client:only>
@@ -29,28 +29,28 @@ const hikikomori = devices.products.filter(product => product.code === 'hikikomo
   </DeviceBuySection>
 
   <article class="layout layout__text space-b-2">
-    <p>Hikikomori runs on a ESP32-C6 microcontroller development board, has an LCD display, Wi-Fi 6 and BLE 5 support.</p>
-    <p>Hikikomori is suitable for the quick development of Web3 powered IoT applications. This can be your smart home tamagotchi, a gaming controller, an educational tool - anything you design!</p>
+    <p>{$tr('Hikikomori runs on a ESP32-C6 microcontroller development board, has an LCD display, Wi-Fi 6 and BLE 5 support.')}</p>
+    <p>{$tr('Hikikomori is suitable for the quick development of Web3 powered IoT applications. This can be your smart home tamagotchi, a gaming controller, an educational tool - anything you design!')}</p>
   </article>
 
 
-  <h2 class="layout title-lined"><span>Device Specifications</span></h2>
+  <h2 class="layout title-lined"><span>{$tr('Device Specifications')}</span></h2>
 
   <article class="layout layout__text space-b-2">
     <ul>
-      <li> Equipped with a high-performance <b>32-bit RISC-V processor</b> with clock speed up to 160 MHz, and a low-power 32-bit RISC-V processor with clock speed up to 20MHz</li>
-      <li><b>Supports</b> 2.4GHz Wi-Fi 6 (802.11 b/g/n) and Bluetooth 5 (LE), with onboard antenna </li>
-      <li> <b> Built in</b> 320KB ROM, 512KB of HP SRAM, 16KB LP SRAM and 4MB Flash memory</li>
-      <li><b>Onboard</b> 1.47inch LCD display, 172x320 resolution, 262K color</li>
-      <li> <b>Adapting</b> multiple IO interfaces, <b>integrates</b> full-speed USB-С port
+      <li> {$tr('Equipped with a high-performance')} <b>{$tr('32-bit RISC-V processor')}</b> {$tr('with clock speed up to 160 MHz, and a low-power 32-bit RISC-V processor with clock speed up to 20MHz')}</li>
+      <li><b>{$tr('Supports')}</b> {$tr('2.4GHz Wi-Fi 6 (802.11 b/g/n) and Bluetooth 5 (LE), with onboard antenna')}</li>
+      <li> <b> {$tr('Built in')}</b> {$tr('320KB ROM, 512KB of HP SRAM, 16KB LP SRAM and 4MB Flash memory')}</li>
+      <li><b>{$tr('Onboard')}</b> {$tr('1.47inch LCD display, 172x320 resolution, 262K color')}</li>
+      <li> <b>{$tr('Adapting')}</b> {$tr('multiple IO interfaces,')} <b>{$tr('integrates')}</b> {$tr('full-speed USB-С port')}
       </li>
-      <li> Onboard TF card slot</b> for external TF card storage of pictures or files</li>
-      <li><b>Supports accurate control</b> such as flexible clock and multiple power modes to realize low power consumption in different scenarios</li>
-      <li><b>Built-in RGB LED</b> with clear acrylic sandwich panel for cool lighting effect</li>
-      <li><b>Battery Level Gauge'</b></li>
-      <li><b>Low-Power I2C Temperature sensor</b></li>
-      <li><b>RV-3032-C7 Real-Time Clock Module</b></li>
-      <li><b>Battery 180mA</b></li>
+      <li> {$tr('Onboard TF card slot</b> for external TF card storage of pictures or files')}</li>
+      <li><b>{$tr('Supports accurate control')}</b> {$tr('such as flexible clock and multiple power modes to realize low power consumption in different scenarios')}</li>
+      <li><b>{$tr('Built-in RGB LED')}</b> {$tr('with clear acrylic sandwich panel for cool lighting effect')}</li>
+      <li><b>{$tr('Battery Level Gauge')}</b></li>
+      <li><b>{$tr('Low-Power I2C Temperature sensor')}</b></li>
+      <li><b>{$tr('RV-3032-C7 Real-Time Clock Module')}</b></li>
+      <li><b>{$tr('Battery 180mA')}</b></li>
     </ul>
   </article>
 

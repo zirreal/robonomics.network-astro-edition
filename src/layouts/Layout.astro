@@ -18,7 +18,7 @@ import '../assets/styles/main.css';
 ---
 
 <!doctype html>
-<html lang={languageTag()}>
+<html lang={languageTag()} amp dir={languageTag() === 'ar' ? 'rtl' : 'ltr'}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -106,7 +106,7 @@ import '../assets/styles/main.css';
     text-transform: uppercase;
   }
 
-  [dir="rtl"]  .backlink  {
+  html[dir="rtl"]  .backlink  {
     margin-left: 0;
     margin-right: var(--layout-sidepadding);
   }

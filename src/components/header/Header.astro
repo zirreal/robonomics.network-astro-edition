@@ -79,12 +79,6 @@ const {translated = false} = Astro.props;
     text-decoration: none;
   }
 
-  [dir="rtl"] .header-logo a {
-    display: block;
-    position: relative;
-    right: -100px;
-  }
-
 
   .logo-robot__eye {
     animation-name: blinkEye;
@@ -115,7 +109,7 @@ const {translated = false} = Astro.props;
     padding-right: var(--screen-padding-right);
   }
 
-  [dir="rtl"] .header-content {
+  html[dir="rtl"] .header-content {
     padding-right: var(--logo-padding);
     padding-left: var(--screen-padding-right);
   }
@@ -126,6 +120,18 @@ const {translated = false} = Astro.props;
     align-items: stretch;
     gap: calc(var(--space) / 3);
   } 
+
+
+  html[dir="rtl"] .header-logo a {
+    display: block;
+    position: relative;
+    right: -100px;
+  }
+
+  html[dir="rtl"] .header-content {
+    padding-right: var(--logo-padding);
+    padding-left: var(--screen-padding-right);
+  }
 
 
   @media screen and (max-width: 425px) {
@@ -140,7 +146,7 @@ const {translated = false} = Astro.props;
     }
 
 
-      [dir="rtl"] .header-logo  {
+      html[dir="rtl"] .header-logo  {
         margin-right: 0;
       }
   }

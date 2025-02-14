@@ -12,8 +12,8 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
 ---
 
 <Layout 
-  title = "Whitepaper 2022"
-  description = "Before we start creating secure, serverless and futuristic IoT applications using the Robonomics platform, let’s dive a little into theory."
+  title = {$tr("Whitepaper 2022")}
+  description = {$tr("Before we start creating secure, serverless and futuristic IoT applications using the Robonomics platform, let’s dive a little into theory.")}
   ogImage="/website_cover_white_paper_2022.webp"
 >
 
@@ -21,7 +21,7 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
 
     <!-- main banner -->
     <section class="wp__banner section section__solid">
-        <h1>Robonomics whitepaper 2022 welcome guide</h1>
+        <h1>{$tr('Robonomics whitepaper 2022 welcome guide')}</h1>
 
       <div class="small-colony">
         <img src="/images/white-paper-2022/small-colony.svg"  alt="small-colone"/>
@@ -91,7 +91,7 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
     <section class="section wp-introduction">
       <div class="layout layout__content animate-inside in-viewport" data-in-viewport="i20" v-in-viewport.once>
         <p class="hyphens wp-introduction__text">
-        We have developed a techno-economic machine communication protocol running on top of Ethereum and IPFS, and complement it with elements of a cloud-based IoT platform based on the Polkadot parachain. Today, we already have a hybrid platform for creating futuristic IoT applications. It provides interaction with devices under the control of a global decentralized computer. Before we start creating secure, serverless and futuristic IoT applications using the Robonomics platform, let’s dive a little into theory...
+        {$tr('We have developed a techno-economic machine communication protocol running on top of Ethereum and IPFS, and complement it with elements of a cloud-based IoT platform based on the Polkadot parachain. Today, we already have a hybrid platform for creating futuristic IoT applications. It provides interaction with devices under the control of a global decentralized computer. Before we start creating secure, serverless and futuristic IoT applications using the Robonomics platform, let’s dive a little into theory...')}
         </p>
       </div>
     </section>
@@ -101,40 +101,40 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
       <div class="container--left chapter__container">
         <div class="first-chapter__text chapter__text">
           <h2 class="first-chapter__title chapter__title"> 
-            <span class="chapter-accent">Chapter 1.</span>
-            At the intersection of cybernetics and economics
+            <span class="chapter-accent">{$tr('Chapter 1.')}</span>
+            {$tr('At the intersection of cybernetics and economics')}
           </h2>
           <p class="first-chapter__descr chapter__descr hyphens">
-            We presented an economic system in which robotic devices act as independent agents capable of performing key economic activities, previously reserved for humans. In this chapter, we will talk about the relevance of the robot economy, which can become an important part of people's lives and change the current level of the economy into fully automated services in the future.
+            {$tr("We presented an economic system in which robotic devices act as independent agents capable of performing key economic activities, previously reserved for humans. In this chapter, we will talk about the relevance of the robot economy, which can become an important part of people's lives and change the current level of the economy into fully automated services in the future.")}
           </p>
-          <h3 class="first-chapter__subtitle chapter__subtitle">In this chapter you will learn:</h3>
+          <h3 class="first-chapter__subtitle chapter__subtitle">{$tr('In this chapter you will learn:')}</h3>
           <ul class="first-chapter__list chapter__list">
             <li class="first-chapter__item chapter__item">
-              Ronald Coase and The Nature of the Firm
+              {$tr('Ronald Coase and The Nature of the Firm')}
             </li>
             <li class="first-chapter__item chapter__item">
-              CPS - cyber-physical system
+              {$tr('CPS - cyber-physical system')}
             </li>
             <li class="first-chapter__item chapter__item">
-              Norbert Wiener and the search for patterns in living and machine
+              {$tr('Norbert Wiener and the search for patterns in living and machine')}
             </li>
             <li class="first-chapter__item chapter__item">
-              The Fourth Industrial Revolution, Money for Robots and Bitcoin
+              {$tr('The Fourth Industrial Revolution, Money for Robots and Bitcoin')}
             </li>
             <li class="first-chapter__item chapter__item">
-              Ethereum Smart Contracts
+              {$tr('Ethereum Smart Contracts')}
             </li>
             <li class="first-chapter__item chapter__item">
-              Polkadot Parachains
+              {$tr('Polkadot Parachains')}
             </li>
             <li class="first-chapter__item chapter__item">
-              Polkadot VS Ethereum 2.0
+              {$tr('Polkadot VS Ethereum 2.0')}
             </li>
             <li class="first-chapter__item chapter__item">
-              Open questions of teleology and Mises' work
+              {$tr("Open questions of teleology and Mises' work")}
             </li>
           </ul>
-          <RbButton buttoncolor="white" href="/vision">Read chapter 1</RbButton>
+          <RbButton buttoncolor="white" href="/vision/">{$tr('Read chapter 1')}</RbButton>
         </div>
         <div class="first-chapter__images chapter__images">
           <div class="first-chapter__images--top">
@@ -160,57 +160,57 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
       <div class="container--left chapter__container">
         <div class="second-chapter__text chapter__text">
           <h2 class="second-chapter__title chapter__title"> 
-            <span class="chapter-accent">Chapter 2.</span>
-            Robonomics architecture
+            <span class="chapter-accent">{$tr('Chapter 2.')}</span>
+            {$tr('Robonomics architecture')}
           </h2>
           <p class="second-chapter__descr chapter__descr hyphens">
-            In the second chapter, you will read about human-machine interaction using modern Internet technology - from IoT devices to a decentralized and globally accessible network of providers. We will look at the basics of the Internet of Things in order to highlight the problems and main challenges faced by the creators of IoT systems and to the solution of which Robonomics is aimed.
+            {$tr('In the second chapter, you will read about human-machine interaction using modern Internet technology - from IoT devices to a decentralized and globally accessible network of providers. We will look at the basics of the Internet of Things in order to highlight the problems and main challenges faced by the creators of IoT systems and to the solution of which Robonomics is aimed.')}
           </p>
-          <h3 class="second-chapter__subtitle chapter__subtitle">In this chapter you will learn:</h3>
+          <h3 class="second-chapter__subtitle chapter__subtitle">{$tr('In this chapter you will learn:')}</h3>
           <ol class="second-chapter__list chapter__list">
             <li class="second-chapter__item chapter__item">
-              Overview of the state of the Internet of Things (IoT)
+              {$tr('Overview of the state of the Internet of Things (IoT)')}
               <ul class="chapter__sub-list chapter__list">
                 <li class="second-chapter__item chapter__item">
-                  Classification of IoT devices
+                  {$tr('Classification of IoT devices')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Embedded IoT systems
+                  {$tr('Embedded IoT systems')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Edge-systems: IoT gateways and controllers
+                  {$tr('Edge-systems: IoT gateways and controllers')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Autonomous Systems
+                  {$tr('Autonomous Systems')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Internet of Things providers
+                  {$tr('Internet of Things providers')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Digital twins are the heart of the Internet of Things
+                  {$tr('Digital twins are the heart of the Internet of Things')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  IoT data flows in cloud service
+                  {$tr('IoT data flows in cloud service')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Popular examples of IoT solutions
+                  {$tr('Popular examples of IoT solutions')}
                 </li>
                 <li class="second-chapter__item chapter__item">
-                  Current problems of building IoT solutions
+                  {$tr('Current problems of building IoT solutions')}
                 </li>
               </ul>
             </li>
             <li class="second-chapter__item chapter__item">
-              Main tasks of Robonomics architecture
+              {$tr('Main tasks of Robonomics architecture')}
             </li>
             <li class="second-chapter__item chapter__item">
-              Basic components of Robonomics architecture
+              {$tr('Basic components of Robonomics architecture')}
             </li>
             <li class="second-chapter__item chapter__item">
-              A simple representation of Robonomics architecture
+              {$tr('A simple representation of Robonomics architecture')}
             </li>
           </ol>
-          <RbButton buttoncolor="white" href="/architecture">Read chapter 2</RbButton>
+          <RbButton buttoncolor="white" href="/architecture/">{$tr('Read chapter 2')}</RbButton>
         </div>
         <div class="second-chapter__images chapter__images">
           <div class="scheme-image">
@@ -279,11 +279,11 @@ const discord = contacts.filter(contact => contact.title === 'Discord');
     <section class="discord__section section__solid section section__blue animate-inside in-viewport below-viewport">
       <div class="layout discord__layout">
         <p class="discord__text hyphens">
-         We continue to update the white paper of Robonomics, <br/> stay tuned for new parts on our website and in Discord. 
+         {$tr('We continue to update the white paper of Robonomics,')} <br/> {$tr('stay tuned for new parts on our website and in Discord. ')}
         </p>
         <RbButton extraCls="wp__button" buttoncolor="violet" href={discord[0].link}>
           <img src="/images/white-paper-2022/discord.svg" class="button-icon" alt="" aria-hidden="true" />
-          Join our discord
+          {$tr('Join our discord')}
         </RbButton>
         <div class="elegant-robot">
           <img src="/images/white-paper-2022/elegant-robot.svg" aria-hidden="true" alt=""/>

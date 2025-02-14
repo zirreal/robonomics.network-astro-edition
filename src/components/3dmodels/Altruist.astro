@@ -151,6 +151,10 @@ const { vertical = false, noanimation = false,  class: className, ...attrs} = As
     z-index: 8;
   }
 
+  html[dir="rtl"] .model img:nth-child(1) {
+    left: -50%;
+  }
+
   .model img:nth-child(2) {
     z-index: 7;
   }

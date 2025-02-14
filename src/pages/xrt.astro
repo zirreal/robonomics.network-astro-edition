@@ -39,14 +39,14 @@ if (response.ok) {
 ---
 
 <Layout
-  title="XRT tokenomics"
-  description="XRT is the utility token that will make it possible to control IoT devices on top of the Ethereum network and the Robonomics parachain."
+  title={$tr("XRT tokenomics")}
+  description={$tr("XRT is the utility token that will make it possible to control IoT devices on top of the Ethereum network and the Robonomics parachain.")}
   ogImage="/website_cover_token.webp"
   pageImageHeight="650"
 >
   <section class="section__blue section__title-with-bg">
     <div class="token__main-title title-with-bg">
-      <h1><span>Robonomics tokenomics</span></h1>
+      <h1><span>{$tr('Robonomics tokenomics')}</span></h1>
     </div>
   </section>
 
@@ -56,23 +56,21 @@ if (response.ok) {
         <div class="grid-2 token__intro">
           <div class="token__intro-container">
             <p>
-              <span class="token__big-text">XRT</span> is the utility token that
-              will make it possible to control IoT devices on top of the Ethereum
-              network and the Robonomics parachain in Polkadot ecosystem.'
+              <span class="token__big-text">{$tr('XRT')}</span> {$tr('is the utility token that will make it possible to control IoT devices on top of the Ethereum network and the Robonomics parachain in Polkadot ecosystem.')}
             </p>
           </div>
           <div class="token__intro-container">
             <p style="font-weight: 200;font-size: 120%;">
-              <b>Total supply current:</b><br />
+              <b>{$tr('Total supply current:')}</b><br />
               <b>{circulation} XRT</b><br />
               Ethereum: <b>{ethereum} XRT</b><br />
               Polkadot: <b>{polkadot} XRT</b><br />
               Kusama: <b>{kusama} XRT</b>
             </p>
             <p>
-              Total supply on 01.01.2024:<br />
+              {$tr('Total supply on 01.01.2024:')}<br />
               <b>{archive} XRT</b><br />
-              Total deflation: {deflation}%
+              {$tr('Total deflation:')} {deflation}%
             </p>
           </div>
         </div>
@@ -92,14 +90,10 @@ if (response.ok) {
         </div>
         <div class="xrt-bridge__text token__intro">
           <p>
-            <span class="token__big-text">The task</span> of the Robonomics token
-            is to ensure the operation of a decentralized network for the maintenance
-            of Smart Cities and Industry 4.0 in blockchain infrastructure. In order
-            to achieve this goal, the token economy needs to reflect the incentives
-            for the implementation of the network.
+            <span class="token__big-text">{$tr('The task')}</span> {$tr('of the Robonomics token is to ensure the operation of a decentralized network for the maintenance of Smart Cities and Industry 4.0 in blockchain infrastructure. In order to achieve this goal, the token economy needs to reflect the incentives for the implementation of the network.')}
           </p>
           <div class="section-align-right">
-            <RbButton href="https://robonomics.app/">Try our Dapp</RbButton>
+            <RbButton href="https://robonomics.app/">{$tr('Try our Dapp')}</RbButton>
           </div>
         </div>
       </div>
@@ -110,21 +104,18 @@ if (response.ok) {
     <section class="token-additional-info section__solid">
       <div class="layout token__top">
         <p class="token-additional-info__txt">
-          <span class="token__big-text">In addition</span> you can operate XRT within
-          blockchains using tools provided by different independent teams in Polkadot
-          (Kusama) and Ethereum communities.
+          <span class="token__big-text">{$tr('In addition')}</span> {$tr('you can operate XRT within blockchains using tools provided by different independent teams in Polkadot (Kusama) and Ethereum communities.')}
         </p>
 
         <div class="token-additional-info__wrapper grid-2">
           <div class="token-additional-info__kusama">
             <p>
-              Within the Kusama network, you have the capability use <a
+              {$tr('Within the Kusama network, you have the capability use')} <a
                 class="link-light"
                 href="https://wiki.polkadot.network/docs/learn-xcm-transport"
                 aria-label="check out XCMP"
-                target="_blank">XCMP</a
-              > communication between the Robonomics parachain and other parachains
-              using various decentralized applications (dApps):
+                target="_blank">{$tr('XCMP')}</a
+              > {$tr('communication between the Robonomics parachain and other parachains using various decentralized applications (dApps):')}
             </p>
             <ul class="list-simple">
               <li class="bold-text">
@@ -152,13 +143,12 @@ if (response.ok) {
           </div>
           <div class="token-additional-info__ethereum">
             <p>
-              Within the Ethereum network you can use decentralized application
-              powered by the <a
+              {$tr('Within the Ethereum network you can use decentralized application powered by the')} <a
                 class="bold-text"
                 href="https://app.uniswap.org/"
                 target="_blank"
                 aria-label="check out uniswap">Uniswap</a
-              > Protocol.
+              > {$tr('Protocol.')}
             </p>
           </div>
         </div>
@@ -169,38 +159,22 @@ if (response.ok) {
     <section class="pink-block">
       <div class="layout token__top">
         <p class="text-abstract token__text-abstract">
-          <b>Be aware of scammers</b>: please use only well known markets to
-          exchange XRT. Do not send your tokens to accounts that are given to
-          you in private messages whatever transaction you would like to carry
-          out (buy or sell token). If you received any ‘loud statements’ about
-          Robonomics token (scammers often use something like airdrop
-          announcement), please check this website(https://robonomics.network/)
-          or our <a
+          <b>{$tr('Be aware of scammers')}</b>{$tr(': please use only well known markets to exchange XRT. Do not send your tokens to accounts that are given to you in private messages whatever transaction you would like to carry out (buy or sell token). If you received any ‘loud statements’ about Robonomics token (scammers often use something like airdrop announcement), please check this website(https://robonomics.network/) or our')} <a
             href={twitter[0].link}
             target="_blank"
-            aria-label="check out our Twitter">Twitter</a
-          > for official updates. Be careful, be safe.
+            aria-label="check out our Twitter">{$tr('Twitter')}</a
+          > {$tr('for official updates. Be careful, be safe.')}
         </p>
       </div>
     </section>
   </section>
 
   <section class="layout layout__content xrt-ethereum">
-    <h2>XRT in Ethereum</h2>
+    <h2>{$tr('XRT in Ethereum')}</h2>
 
     <section>
       <p>
-        Implementing Robonomics project in 2015 - 2018, the project team needed
-        to find a connection between the provision of a useful function by
-        Robonomics Network, namely the launch of IoT devices according to the
-        robot-as-a-service model, and the reimbursement of the costs to
-        Robonomics providers for gas fees in Ethereum. We needed to think about
-        the lifecycle of each individual smart device’s liability to perform a
-        service. As a result of the early R&D in Robonomics, the team came up
-        with a mechanism for mining new tokens to reward each created
-        robot-as-a-service smart contract. This model remains viable for future
-        of Robonomics on Ethereum, but only with a significant improvements in
-        Ethereum.
+        {$tr("Implementing Robonomics project in 2015 - 2018, the project team needed to find a connection between the provision of a useful function by Robonomics Network, namely the launch of IoT devices according to the robot-as-a-service model, and the reimbursement of the costs to Robonomics providers for gas fees in Ethereum. We needed to think about the lifecycle of each individual smart device’s liability to perform a service. As a result of the early R&D in Robonomics, the team came up with a mechanism for mining new tokens to reward each created robot-as-a-service smart contract. This model remains viable for future of Robonomics on Ethereum, but only with a significant improvements in Ethereum.")}
       </p>
     </section>
 
@@ -217,11 +191,10 @@ if (response.ok) {
             target="_blank"
             aria-label="check out out timeline page"
           >
-            <h3 class="token__subtitle">Timeline</h3>
+            <h3 class="token__subtitle">{$tr('Timeline')}</h3>
           </a>
           <p>
-            Read this to know historical background and long-term plans of team
-            for XRT in Ethereum ecosystem.
+            {$tr('Read this to know historical background and long-term plans of team for XRT in Ethereum ecosystem.')}
           </p>
         </div>
         <div class="token__link enterscan">
@@ -230,10 +203,10 @@ if (response.ok) {
             target="_blank"
             aria-label="check out the etherscan profile"
           >
-            <h3 class="token__subtitle">Etherscan profile</h3>
+            <h3 class="token__subtitle">{$tr('Etherscan profile')}</h3>
           </a>
           <p>
-            View token smart contract and transactions in Ethereum network here.
+            {$tr('View token smart contract and transactions in Ethereum network here.')}
           </p>
         </div>
         <div class="token__link coingecko">
@@ -242,60 +215,47 @@ if (response.ok) {
             target="_blank"
             aria-label="check out coingecko markets"
           >
-            <h3 class="token__subtitle">Coingecko market</h3>
+            <h3 class="token__subtitle">{$tr('Coingecko market')}</h3>
           </a>
-          <p>Here you can find CEX and DEX markets for trading XRT.</p>
+          <p>{$tr('Here you can find CEX and DEX markets for trading XRT.')}</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="layout layout__content xrt-polkadot">
-    <h2>XRT In Polkadot</h2>
+    <h2>{$tr('XRT In Polkadot')}</h2>
 
     <section>
       <p class="xrt-polkadot__text">
-        Moving from Ethereum to Polkadot, we need to do a “scaling up” in
-        tokenomics. Parachains in the Polkadot ecosystem are not the equivalent
-        of a smart contract, but are a fully programmable blockchain that leases
-        a segment of the overall network.
+        {$tr('Moving from Ethereum to Polkadot, we need to do a “scaling up” in tokenomics. Parachains in the Polkadot ecosystem are not the equivalent of a smart contract, but are a fully programmable blockchain that leases a segment of the overall network.')}
       </p>
 
       <p class="xrt-polkadot__text">
-        The actual payment on the part of Polkadot and Kusama parachains is
-        long-term bonding of native Relay chain tokens (DOT / KSM) in sufficient
-        quantity to win one of the auctions. The XRT in the Robonomics parachain
-        supports slot renewal and rewards for stakeholders. The XRT burning
-        mechanism underlying the activation of IoT subscriptions is designed to
-        reduce inflation to a minimum, and in case of increased interest to
-        zero.<a
+        {$tr('The actual payment on the part of Polkadot and Kusama parachains is long-term bonding of native Relay chain tokens (DOT / KSM) in sufficient quantity to win one of the auctions. The XRT in the Robonomics parachain supports slot renewal and rewards for stakeholders. The XRT burning mechanism underlying the activation of IoT subscriptions is designed to reduce inflation to a minimum, and in case of increased interest to zero.')}<a
           href="https://twitter.com/EnsRationis/status/1607327921793892354"
           target="_blank"
-          aria-label="learn more in this twitter thread">Learn more</a
-        > in Twitter thread from our network architect.
+          aria-label="learn more in this twitter thread">{$tr('Learn more')}</a
+        > {$tr('in Twitter thread from our network architect.')}
       </p>
 
       <div class="xrt-polkadot__info">
-        <h3 class="token__subtitle">Usage:</h3>
+        <h3 class="token__subtitle">{$tr('Usage:')}</h3>
         <p>
-          XRT can be used both to pay fees for performing transactions on the
-          parachain or to purchase an IoT subscription that guarantees priority
-          processing of device or user IoT transactions.
+          {$tr('XRT can be used both to pay fees for performing transactions on the parachain or to purchase an IoT subscription that guarantees priority processing of device or user IoT transactions.')}
         </p>
       </div>
 
       <div class="xrt-polkadot__info">
-        <h3 class="token__subtitle">Rewards:</h3>
+        <h3 class="token__subtitle">{$tr('Rewards:')}</h3>
         <p>
-          Throughout the year, the parachain issues a small amount of XRT to
-          incentivize parachain collators.<a
+          {$tr('Throughout the year, the parachain issues a small amount of XRT to incentivize parachain collators.')}<a
             href="https://robonomics.polkassembly.io/proposal/5"
             target="_blank"
             aria-label="learn more about the proposals"
           >
-            The parameter of the total reward</a
-          > for collators for the year is determined by on-chain voting of token
-          holders, and can be changed by holding a referendum.
+            {$tr('The parameter of the total reward')}</a
+          > {$tr('for collators for the year is determined by on-chain voting of token holders, and can be changed by holding a referendum.')}
         </p>
       </div>
 
@@ -312,12 +272,10 @@ if (response.ok) {
               target="_blank"
               aria-label="check out our dapp"
             >
-              <h3 class="token__subtitle">Use XRT</h3>
+              <h3 class="token__subtitle">{$tr('Use XRT')}</h3>
             </a>
             <p>
-              Buy IoT subscription in our decentralized application. Control
-              your smart devices over blockchain without any centralized
-              corporation observing.
+              {$tr('Buy IoT subscription in our decentralized application. Control your smart devices over blockchain without any centralized corporation observing.')}
             </p>
           </div>
           <div class="token__link subscan">
@@ -326,9 +284,9 @@ if (response.ok) {
               target="_blank"
               aria-label="check out our subscan profile"
             >
-              <h3 class="token__subtitle">Subscan profile</h3>
+              <h3 class="token__subtitle">{$tr('Subscan profile')}</h3>
             </a>
-            <p>View token statistics on top of Polkadot ecosystem.</p>
+            <p>{$tr('View token statistics on top of Polkadot ecosystem.')}</p>
           </div>
           <div class="token__link coingecko">
             <a
@@ -336,9 +294,9 @@ if (response.ok) {
               target="_blank"
               aria-label="check out xrt on coingecko markets"
             >
-              <h3 class="token__subtitle">Coingecko markets</h3>
+              <h3 class="token__subtitle">{$tr('Coingecko markets')}</h3>
             </a>
-            <p>Here you can find CEX and DEX markets for trading XRT.</p>
+            <p>{$tr('Here you can find CEX and DEX markets for trading XRT.')}</p>
           </div>
         </div>
       </div>
@@ -346,33 +304,23 @@ if (response.ok) {
   </section>
 
   <section class="layout layout__content xrt-questions">
-    <h2>Other questions</h2>
+    <h2>{$tr('Other questions')}</h2>
 
     <div class="xrt-polkadot__info">
-      <h3 class="token__subtitle">What is RWS?</h3>
+      <h3 class="token__subtitle">{$tr('What is RWS?')}</h3>
       <p>
-        [Under development of core functionality] For engineers, Core Dev team
-        will try to make different Robonomics usage models and the first step in
-        this way is launching lifetime subscription token - RWS token. Each RWS
-        token will give you 1 transaction per second (tps) from/to your IoT
-        device over Robonomics Parachain. Activate your RWS token and make "free
-        gas" transactions with prior to execute and predictable latency.
-        Deactivate RWS token and trade it on DEX.
+        {$tr('[Under development of core functionality] For engineers, Core Dev team will try to make different Robonomics usage models and the first step in this way is launching lifetime subscription token - RWS token. Each RWS token will give you 1 transaction per second (tps) from/to your IoT device over Robonomics Parachain. Activate your RWS token and make "free gas" transactions with prior to execute and predictable latency. Deactivate RWS token and trade it on DEX.')}
       </p>
     </div>
 
     <div class="xrt-polkadot__info">
-      <h3 class="token__subtitle">What is AIRA/AIR ID?</h3>
+      <h3 class="token__subtitle">{$tr('What is AIRA/AIR ID?')}</h3>
       <p>
-        Pre-XRT token distributed in 2017 as a autonomous part of futher
-        Robonomics infrastructure on Ethereum. After successful launch of
-        Robonomics over Ethereum in 2019 AIRA tokens was connected to created
-        infrastructure of the project through <a
+        {$tr('Pre-XRT token distributed in 2017 as a autonomous part of futher Robonomics infrastructure on Ethereum. After successful launch of Robonomics over Ethereum in 2019 AIRA tokens was connected to created infrastructure of the project through')} <a
           href="https://github.com/airalab/robonomics_contracts/blob/master/contracts/misc/AbstractAmbix.sol"
           target="_blank"
-          aria-label="check out ambix smart contract">ambix smart contract</a
-        > which guaranteed autonomous and independent process of swapping pre-XRT
-        to ERC-20 XRT.
+          aria-label="check out ambix smart contract">{$tr('ambix smart contract')}</a
+        > {$tr('which guaranteed autonomous and independent process of swapping pre-XRT to ERC-20 XRT.')}
       </p>
     </div>
   </section>
@@ -674,7 +622,7 @@ if (response.ok) {
     text-align: left;
   }
 
-  [dir="rtl"] .token__link {
+  html[dir="rtl"] .token__link {
     text-align: right;
   }
 
@@ -689,7 +637,7 @@ if (response.ok) {
     background-position: left;
   }
 
-  [dir="rtl"] .token__link h3 {
+  html[dir="rtl"] .token__link h3 {
     text-align: right;
     background-position: right;
     padding-right: 34px;
