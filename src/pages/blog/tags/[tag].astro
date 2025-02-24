@@ -74,7 +74,7 @@ getAllPosts();
   <BlogTagsBanner activeTag={tag}/>
 
   <section class="layout blog_grid">
-    {allPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map((post: any) => <PostCard post={{...post.data, url: post.id}}/>)}
+    {allPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map((post: any) => <PostCard post={{...post.data, url: !post.id.includes(`${languageTag()}/`) ? post.id : post.id.split('/')[1]}}/>)}
   </section>
 
 </Layout>

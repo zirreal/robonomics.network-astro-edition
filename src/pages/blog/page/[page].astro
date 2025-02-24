@@ -2,9 +2,24 @@
 import Layout from '../../../layouts/BlogLayout.astro';
 import PostCard from '../../../components/post/PostCard.astro';
 import { getCollection } from 'astro:content';
+import { languageTag } from '../../../paraglide/runtime';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog'); // Fetch posts inside getStaticPaths
+
+  const allPosts = await getCollection('blog'); // Fetch posts inside getStaticPaths
+
+  const posts = [];
+
+  const localizedPosts = allPosts.filter(post => (post.data.locale === languageTag())) // getting only english/default posts for better filtering
+
+  function getAllPosts() {
+    localizedPosts.map(post => {
+      posts.push(post)
+    })
+  };
+
+  getAllPosts();
+
   const postsPerPage = 12;
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
@@ -15,8 +30,40 @@ export async function getStaticPaths() {
 }
 
 const { posts, totalPages, postsPerPage } = Astro.props; // Get the passed props
+
+const allPosts = await getCollection('blog');
+const localizedPosts = allPosts.filter(post => (post.data.locale === languageTag()))
+
+const filteredPosts = [];
+
+function addFallbackPosts() {
+  posts.map(p => {
+    const path = p.id.substring(0, p.id.length - 1).split("/").pop();
+
+    const exists = localizedPosts.filter(existingItem => {
+      const localePath = existingItem.id.substring(0, existingItem.id.length - 1).split("/").pop()
+      return localePath === path;
+    });
+
+    if(!exists[0]) {
+      filteredPosts.push(p)
+    }
+  })
+};
+
+function getAllPosts() {
+  localizedPosts.map(post => {
+    filteredPosts.push(post)
+  })
+  if(languageTag() !== 'en') {
+    addFallbackPosts();
+  }
+};
+
+getAllPosts();
+
 const currentPage = parseInt(Astro.params.page || '1', 10);
-const paginatedPosts = posts
+const paginatedPosts = filteredPosts
   .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
   .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
@@ -33,7 +80,7 @@ const paginatedPosts = posts
   ) : (
     <section class="layout blog_grid">
       {paginatedPosts.map((post) => (
-        post.data.published && <PostCard post={{...post.data, url: post.id}} />)
+        post.data.published && <PostCard post={{...post.data, url: !post.id.includes(`${languageTag()}/`) ? post.id: post.id.split('/')[1]}} locale={languageTag()} />)
       )}
     </section>
   )}

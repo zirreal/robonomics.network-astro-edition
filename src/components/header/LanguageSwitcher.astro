@@ -57,7 +57,7 @@ let initialLocale = locale ? locale : 'en';
 
     });
 
-    if(localStorage.getItem('locale') && !path.includes(localStorage.getItem('locale')) && localStorage.getItem('locale') !== 'en' ) {
+    if(localStorage.getItem('locale') && !path.includes(`/${localStorage.getItem('locale')}/`) && localStorage.getItem('locale') !== 'en' ) {
       changeURL(localStorage.getItem('locale'))
       return
     }

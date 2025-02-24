@@ -32,7 +32,10 @@ function getAllPosts() {
   localizedPosts.map(post => {
     posts.push(post)
   })
-  addFallbackPosts();
+  if(languageTag() !== 'en') {
+    addFallbackPosts();
+  }
+  
 };
 
 getAllPosts();
@@ -59,7 +62,9 @@ const paginatedPosts = posts
   ) : (
     <section class="layout blog_grid">
       {paginatedPosts.map((post) => (
-        post.data.published && <PostCard post={{...post.data, url: !post.id.includes(languageTag()) ? post.id : post.id.split('/')[1]}} />)
+        post.data.published && <PostCard post={{...post.data, url: !post.id.includes(`${languageTag()}/`) ? post.id: post.id.split('/')[1]}} locale={languageTag()} />
+      )
+
       )}
     </section>
   )} 

@@ -15,8 +15,7 @@ export const config = {
 export const configMD = {
   key: process.env.PUBLIC_OPENAI_KEY, // your OPENAI key
   inputFolder: './src/blog/', // folder with markdown files
-  inputFolderName: 'blog',
-  outputFolder: './src/blog', // endpoint translations folder
+  outputFolder: './src/blog/', // endpoint translations folder
   defaultLocale: 'en',
-  locales: ["ar","de","el","en","es","fr","it","ja","ko","nl","pt","ru","uk","zh"], // array with all locales
+  locales: ["ar","de","el","es","fr","it","ja","ko","nl","pt","ru","uk","zh"], // array with all locales
 }

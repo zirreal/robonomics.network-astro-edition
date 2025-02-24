@@ -40,8 +40,8 @@ const checkExistingFiles = (path) => {
 
 const deleteFile = (path) => {
   locales.map(locale => {
-    if(fs.existsSync(`${outputFolder}${locale}/${configMD.inputFolderName}/${path}`))
-    fs.unlinkSync(`${outputFolder}${locale}/${configMD.inputFolderName}/${path}`)
+    if(fs.existsSync(`${outputFolder}${locale}/${path}`))
+    fs.unlinkSync(`${outputFolder}${locale}/${path}`)
   })
 
 }
@@ -135,8 +135,8 @@ const translateMD = async(from, to, input, output, file, locale) => {
 
 // check if doc in default folder was removed and delete the doc from all the locales
 const checkDeletedFile = () => {
-  const defaultDir = fs.readdirSync(inputFolder).filter(f => f.includes('md'));
-  const localeDir = fs.readdirSync(`${outputFolder}${locales[0]}/${configMD.inputFolderName}/`).filter(f => f.includes('md'))
+  const defaultDir = fs.readdirSync(inputFolder).filter(f => f.includes('mdx'));
+  const localeDir = fs.readdirSync(`${outputFolder}${locales[0]}/`).filter(f => f.includes('mdx'))
 
   if (JSON.stringify(defaultDir) !== JSON.stringify(localeDir)) {
     const res = localeDir.filter(x => !defaultDir.includes(x));
@@ -153,8 +153,8 @@ const getFileUpdatedDate = (path) => {
 
   let randomLocaleFile = 0;
 
-  if(fs.existsSync(`${outputFolder}ru/${configMD.inputFolderName}/${path.split("/").pop()}`)) {
-    randomLocaleFile = fs.statSync(`${outputFolder}ru/${configMD.inputFolderName}/${path.split("/").pop()}`);
+  if(fs.existsSync(`${outputFolder}ru/${path.split("/").pop()}`)) {
+    randomLocaleFile = fs.statSync(`${outputFolder}ru/${path.split("/").pop()}`);
   }
 
   if(stats.mtimeMs > ago24 && randomLocaleFile.mtimeMs < stats.mtimeMs && !changedFiles.includes(path.split("/").pop())) {
@@ -169,8 +169,8 @@ const getFileUpdatedDate = (path) => {
 const setChangedFiles = async () => {
   
   for await (const file of fs.readdirSync(inputFolder)) {
-    if (file.includes('md')) {
-      getFileUpdatedDate(`${outputFolder}${configMD.inputFolderName}/${file}`)
+    if (file.includes('mdx')) {
+      getFileUpdatedDate(`${outputFolder}${file}`)
     }
   }
 
@@ -186,10 +186,10 @@ const set = async () => {
   console.log(chalk.yellow('🤖 getting markdown files from 🤖 ', inputFolder))
   for await (const locale of locales) {
     for await (const file of fs.readdirSync(inputFolder)) {
-      if(file.includes('md')) {
-        if(!checkExistingFiles(`${outputFolder}${locale}/${configMD.inputFolderName}/${file}`)) {
+      if(file.includes('mdx')) {
+        if(!checkExistingFiles(`${outputFolder}${locale}/${file}`)) {
           isInProgress.push('+');
-          await translateMD(defaultLocale, locale, readMarkdown(inputFolder + file), `${outputFolder}${locale}/${configMD.inputFolderName}/${file}`, file, locale)
+          await translateMD(defaultLocale, locale, readMarkdown(inputFolder + file), `${outputFolder}${locale}/${file}`, file, locale)
         }
       }
     }

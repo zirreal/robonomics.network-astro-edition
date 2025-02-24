@@ -1,5 +1,6 @@
 ---
 const {post, locale, isCase} = Astro.props;
+// console.log(post)
 ---
 
 <div class:list={['post-card oldy', {'post-card--case': isCase}]}>
@@ -25,7 +26,7 @@ const {post, locale, isCase} = Astro.props;
 
     {!isCase && ( <h4 class="post-card__title" set:html={post.title} /> )}
     <p class="post-card__description" set:html={post.description} />
-    {locale && (<span class="post-card__locale">{locale}</span>)}
+    <!-- {locale && (<span class="post-card__locale">{locale}</span>)} -->
     {isCase && (
       <div class="post-card__cases-bottom">
         <div class="post-card__tags">
@@ -42,7 +43,7 @@ const {post, locale, isCase} = Astro.props;
       </div>
     )}
   </div>
-  {!isCase && (<a class="link-cover" target="_blank" aria-label="check out link" href={'/blog/' + post.url + '/'}>Link</a> )}
+  {!isCase && (<a class="link-cover" target="_blank" aria-label="check out link" href={ '/blog/' + post.url + '/'}>Link</a> )}
 </div>
 
 
