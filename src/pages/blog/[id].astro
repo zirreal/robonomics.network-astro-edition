@@ -8,10 +8,11 @@ import { languageTag } from '../../paraglide/runtime';
 // data
 import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const allPosts = await getCollection('blog');
+  const posts = allPosts.filter(post => (post.data.locale === languageTag())) // getting only english/default posts 
   return posts.map(post => {
       return {
-        params: { id:  decodeURI(post.id)},
+        params: { id: post.id.includes('/') ? post.id.split('/')[1] : post.id},
         props: { page: post },
       }
   });

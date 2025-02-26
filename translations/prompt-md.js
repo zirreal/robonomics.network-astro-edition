@@ -55,11 +55,15 @@ const translationData = (from, to, input) => {
     model: "gpt-3.5-turbo", // gpt model
     messages: [
       { role: "system", content: [
-        `Translate the markdown file from ${from} to ${to} according to the BCP 47 standard. DO NOT add anything new tags or additional markdown tags. DO NOT CHANGE custom tags that start or end with '{%' or add additional custom tags that start or end with '{%'.Translate ONLY given prompt, do not add anything new.`,
+        `Translate the markdown file from ${from} to ${to} according to the BCP 47 standard. DO NOT add anything, new tags or additional markdown tags. DO NOT CHANGE custom tags as well. Translate ONLY given prompt, do not add anything new.`,
         "ALSO make sure to remove - '```'" + to + "",
+        `Change locale value in frontmatter from ${from} to ${to} if necessary.`,
+        `DO NOT change or translate related value in frontmatter.`,
+        `DO NOT change or translate any tags (the tags usually starts with <).`,
+        `DO NOT change or translate any link or url paths.`,
         `Here are some reference to help with better translation.  ---${defaultReference}---`,
         `Make sure the output remains a valid markdown file.`,
-        `REMEMBER do NOT add anything new, just return the same text but translated to specific language`,
+        `REMEMBER do NOT add anything new, just return the same text but translated to specific language.`,
       ]
         .filter(Boolean)
         .join('\n'), },
@@ -82,14 +86,14 @@ const translateMD = async(from, to, input, output, file, locale) => {
 
   // checking token count due to token limit (4096)
   // setting 1000 token because greek takes way more than other locales and outputs incorrect document
-  if(countTokens(input) > 1000) {
+  if(countTokens(input) > 1500) {
     // if it's a big doc than we cut text in chunks for correct output in all locales (greek especially)
-    const parts =  Math.ceil(countTokens(input) / 350);
+    const parts =  Math.ceil(countTokens(input) / 500);
     let sliceAmount = 0;
 
     for (let i = 0; i < parts; i++) {
-      chunksOfDoc.push(decode(encode(input).slice(sliceAmount, sliceAmount + 350)))
-      sliceAmount += 350;
+      chunksOfDoc.push(decode(encode(input).slice(sliceAmount, sliceAmount + 500)))
+      sliceAmount += 500;
     }
   }  
 
@@ -182,7 +186,7 @@ const setChangedFiles = async () => {
 }
 
 const set = async () => {
-  await setChangedFiles();
+  // await setChangedFiles();
   console.log(chalk.yellow('🤖 getting markdown files from 🤖 ', inputFolder))
   for await (const locale of locales) {
     for await (const file of fs.readdirSync(inputFolder)) {
@@ -200,5 +204,5 @@ const set = async () => {
   }
 }
 
-checkDeletedFile();
+// checkDeletedFile();
 set();
