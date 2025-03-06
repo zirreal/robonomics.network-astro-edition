@@ -86,7 +86,7 @@ const translateMD = async(from, to, input, output, file, locale) => {
 
   // checking token count due to token limit (4096)
   // setting 1000 token because greek takes way more than other locales and outputs incorrect document
-  if(countTokens(input) > 1500) {
+  if(countTokens(input) > 1000) {
     // if it's a big doc than we cut text in chunks for correct output in all locales (greek especially)
     const parts =  Math.ceil(countTokens(input) / 500);
     let sliceAmount = 0;
