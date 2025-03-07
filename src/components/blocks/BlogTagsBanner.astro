@@ -1,15 +1,18 @@
 ---
 // data
 import { getCollection } from 'astro:content';
+import { languageTag } from '../../paraglide/runtime';
 
 const allPosts = await getCollection('blog'); 
+
+console.log(languageTag())
 
 const tags = [
   ...new Set(
     allPosts
-    .map((post: any) => post.data.tags)
-    .flat()
-    .map((tag: string) => tag.toLowerCase()) 
+      .filter((post: any) => post.data.locale === languageTag()) // Filter valid posts
+      .flatMap((post: any) => post.data.tags) // Flatten the tags array
+      .map((tag: string) => tag.toLowerCase()) // Convert to lowercase
   ),
 ]
 
@@ -31,7 +34,7 @@ const {activeTag} = Astro.props;
             </li>
             {tags.map(tag => (
               <li class="blog-banner__tags-item">
-                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}`}>#{tag}</a>
+                <a class="blog-banner__tags-link" class:list={[{'inactiveTag': activeTag !== '' && tag !== activeTag}]}href={`/blog/tags/${encodeURIComponent(tag)}/`}>#{tag}</a>
               </li>
             ))}
 
