@@ -4,6 +4,7 @@ import PostCard from './PostCard.astro';
 
 // data
 import { getCollection } from 'astro:content';
+import { languageTag } from '../../paraglide/runtime';
 
 const pageRelated = Astro.props.pageRelated; // Page data passed via props
 const pages = await getCollection('blog'); // All posts
@@ -14,8 +15,22 @@ const related = (() => {
     return [];
   }
 
-  const relatedTitles = pageRelated ; // Array of related titles
-  return pages.filter(post => relatedTitles.includes(post.data.title));
+  const relatedTitles = pageRelated ; 
+  const defaultPosts = pages.filter(post => {
+    if(post.data.locale === 'en') {
+      return relatedTitles.includes(post.data.title)
+    }
+  });
+
+  if(languageTag() !== 'en') {
+    const matchingPosts = pages.filter(post =>
+     defaultPosts.some(selected => (`${languageTag()}/${selected.id}`) === post.id)
+    );
+    return matchingPosts
+  } else {
+    return defaultPosts
+  }
+
 })();
 ---
 
@@ -23,7 +38,7 @@ const related = (() => {
   <h3>{$tr('Related posts:')}</h3>
   <section class="relatedPosts">
     {related.map(post => (
-      <PostCard post={{...post.data, url: post.id}} />
+      <PostCard post={{...post.data, url: !post.id.includes(`${languageTag()}/`) ? post.id: post.id.split('/')[1]}} locale={languageTag()} />
     ))}
   </section>
 

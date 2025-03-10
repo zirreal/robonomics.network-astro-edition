@@ -186,7 +186,7 @@ const setChangedFiles = async () => {
 }
 
 const set = async () => {
-  // await setChangedFiles();
+  await setChangedFiles();
   console.log(chalk.yellow('🤖 getting markdown files from 🤖 ', inputFolder))
   for await (const locale of locales) {
     for await (const file of fs.readdirSync(inputFolder)) {
@@ -204,5 +204,5 @@ const set = async () => {
   }
 }
 
-// checkDeletedFile();
+checkDeletedFile();
 set();
