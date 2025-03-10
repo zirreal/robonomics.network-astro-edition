@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "translate": "node ./translations/prompt.js",
     "translate-md": "node ./translations/prompt-md.js",
+    "translate-all": "node ./translations/prompt.js && node ./translations/prompt-md.js",
     "astro": "astro"
   },
   "dependencies": {
