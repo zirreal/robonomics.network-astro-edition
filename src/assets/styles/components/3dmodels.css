@@ -28,10 +28,6 @@
   overflow: hidden;
 }
 
-.product-picture img {
-  height: 100%;
-}
-
 .product-picture-server {
   margin: 0 auto;
 }

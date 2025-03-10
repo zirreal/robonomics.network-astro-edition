@@ -7,7 +7,7 @@
 
     <section>
       <h2 class="title">{{$tr('Rent in California, USA')}}</h2>
-      <span class="availability block"
+      <span class="availability block italic-text"
         >{{ $tr('Available by the Hour, Day, or Week') }}</span
       >
 
@@ -273,11 +273,6 @@ textarea::placeholder {
 }
 
 .availability {
-  font-size: calc(var(--base-font-size) * 0.75);
-  font-variation-settings: "wght" 500, "wdth" 100, "opsz" 26, "XTRA" 468,
-    "XOPQ" 96, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514,
-    "YTUC" 712, "slnt" -10;
-  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: var(--space);
 }

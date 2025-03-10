@@ -6,9 +6,25 @@ import devices from '../../data/devices.js';
 
 // components import 
 import DeviceBuySection from '../../components/blocks/DevicesBuySection.vue';
-import ModelAltruist from '../../components/3dmodels/Altruist.astro';
+import ModelAltruist from '../../components/3dmodels/Altruist.vue';
 
 // images
+import { Image } from 'astro:assets';
+import AltruistPhoto1 from "../../assets/images/hardware-2025/altruist-photo-6.webp";
+import AltruistPhoto2 from "../../assets/images/hardware-2025/altruist-photo.webp";
+import AltruistPhoto3 from "../../assets/images/hardware-2025/altruist-photo-2.webp";
+import AltruistPhoto4 from "../../assets/images/hardware-2025/altruist-photo-3.webp";
+import AltruistPhoto5 from "../../assets/images/hardware-2025/altruist-photo-4.webp";
+import AltruistPhoto6 from "../../assets/images/hardware-2025/altruist-photo-5.webp";
+
+const imagesAltruist = [
+  AltruistPhoto1,
+  AltruistPhoto2,
+  AltruistPhoto3,
+  AltruistPhoto4,
+  AltruistPhoto5,
+  AltruistPhoto6
+];
 
 // Filter products to get the current one
 const altruist = devices.products.filter(product => product.code === 'altruist');
@@ -23,9 +39,8 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
   backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
 
-  <DeviceBuySection price="$95" client:only>
-    <ModelAltruist vertical noanimation class="model-hide-mobile" />
-    <ModelAltruist noanimation class="model-hide"/>
+  <DeviceBuySection price="$95" isAltruist="true" client:only>
+    <ModelAltruist noanimation client:only/>
   </DeviceBuySection>
 
   <article class="layout layout__content space-b-2">
@@ -35,6 +50,27 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
       <a aria-label="go to decentralized sensor map" href="https://sensors.social/" target="_blank">{$tr('decentralized sensor map')}</a>.
     </p>
   </article>
+
+  <h2 class="layout title-lined"><span>{ $tr('In its natural habitat') }</span></h2>
+
+  <article class="layout layout--text-center space-b-2">
+    <div class="grid-3 space-b-2 grid-with-scroll">
+      {imagesAltruist.map((src, index) => (
+        <Image src={src} alt={`altruist photo ${index + 1}`} loading="lazy" aria-hidden="true" />
+      ))}
+    </div>
+
+    <div class="twitter-share oldy">
+      <img alt="x/twitter logo" aria-hidden="true" src="/images/twitter.webp"/>
+      <div>
+        <h2>📸 { $tr('Share Your “Altruist” in Action') }</h2>
+        <p class="text-center"><b>{$tr('Tag')} <a href="https://x.com/RobonomicsHW" aria-label="robonomics hardware twitter and share your photo!">@RobonomicsHW</a> {$tr('(Robonomics Hardware) in your post with a photo.')}</b></p>
+      </div>
+    </div>
+  </article>
+
+
+  <h2 class="layout title-lined"><span>{ $tr('3 highlights for you') }</span></h2>
 
   <article class="layout space-b-2">
     <div class="grid-3">
@@ -220,3 +256,52 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
 
   
 </Layout>
+
+<style>
+
+  .twitter-share {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space);
+    gap: var(--space);
+  }
+
+  .twitter-share img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .twitter-share h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .twitter-share p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .twitter-share p b {
+    font-variation-settings: var(--font-flex-bold);
+  }
+
+  @media screen and (max-width: 560px)  {
+    .twitter-share h2 {
+      font-size: calc(var(--space) * 0.8)
+    }
+  }
+
+  @media screen and (max-width: 460px)  {
+    .twitter-share {
+      padding: var(--space) calc(var(--space) * 1);
+    }
+    .twitter-share h2 {
+      font-size: calc(var(--space)  * 1.08)
+    }
+  }
+
+  .text-big {
+    font-weight: 500;
+  }
+</style>
