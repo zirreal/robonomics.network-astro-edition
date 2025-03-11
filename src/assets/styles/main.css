@@ -12,6 +12,8 @@
 
 /* components */
 @import "./forms.css";
+@import './components/3dmodels.css';
+@import './components/postCard.css';
 
 
 
