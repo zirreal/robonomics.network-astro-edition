@@ -43,7 +43,7 @@
               loading="lazy" />
           </a>
           <div class="post-card__content">
-            <a :href="caseItem.done ? caseItem.path + '/' : '/cases/'" target="_blank"
+            <a :href="caseItem.done ? '/' + caseItem.path + '/' : '/cases/'" target="_blank"
               aria-label="learn more about the case">
               <h4 class="post-card__title" v-html="caseItem.title" />
             </a>

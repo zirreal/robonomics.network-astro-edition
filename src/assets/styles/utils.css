@@ -293,6 +293,14 @@ background: transparent; /* Optional: make buttons invisible if you want */
 .space-b-2 {
   margin-bottom: calc(var(--space) * 2);
 }
+
+.no-mt {
+  margin-top: 0;
+}
+
+.no-mb {
+  margin-bottom: 0;
+}
 /* - margins & other space */
 
 .link-cover {
