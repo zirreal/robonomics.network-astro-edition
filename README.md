@@ -1,35 +1,38 @@
-# Official website of Robonomics Network
+# Official Website of Robonomics Network
 
-This website is supposed to contain all useful information for our community. 
+This website serves as a hub for all essential information for our community.
 
-### How to suggest any changes
+## How to Suggest Changes
 
-1. Create an issue for this repo.
-2. Be sure you checked website carefully and the description of issue is quite clear.
-3. We will consider your suggestion as soon as we can and give you reply.
+1. **Create an issue** in this repository.
+2. **Review the website carefully** to ensure your issue is valid and clearly described.
+3. We will review your suggestion as soon as possible and respond accordingly.
 
-## For developers
+## For Developers
 
-* Built with [Astro](https://astro.build/).
-* Please, use [yarn](https://yarnpkg.com/) to install packages
-* Node version must be **>=18.17.1**
+- Built with [Astro](https://astro.build/).
+- Use [yarn](https://yarnpkg.com/) to manage dependencies.
+- Node.js version must be **>=18.17.1**.
 
-To start it locally you need install node.js and [Astro framework](https://astro.build/).
+### Getting Started
 
-**Start**
+Ensure you have Node.js and the [Astro framework](https://astro.build/) installed before proceeding.
+
+- **Install dependencies:** 
 `yarn i`
 
-**Develop**
+- **Start development server**
 `yarn dev`
 
-**Build**
+- **Build for production**
 `yarn build`
 
 ### How to add a new post
 
-1. You need to create **markdown(mdx)** file in ``content/posts``. File name must be in *kebab case*: e.g `digital-twins-introduction.mdx`.
+1. Create a **Markdown (MDX)** file in the /scr/blog/ directory.
+- Use *kebab-case* for filenames (e.g., digital-twins-introduction.mdx).
 
-2. Then, you need to add ***Frontmatter***:
+2. Add **Frontmatter** metadata at the top of the file:
  
 It must be at the top of the Markdown file, and must take the form of valid YAML set between triple-dashed lines. Between the triple-dashed lines, you can set or edit following options:
 
@@ -47,16 +50,16 @@ translated: true # add this parameter if you translated the post by yourself and
 ---
 ```
 
-3. Add contents of the post following markdown syntax.
+3. Write the post content using **Markdown syntax**.
 
-### Custom components for a post
+### Custom Components for Posts
 
 #### Images 
 
-- Create a folder with the same name as your post in `public/blog/images/url-of-your-post`. Upload images in the folder.
+- Create a folder with the same name as your post in `/public/blog/images/url-of-your-post`. Upload images in the folder.
 
-  - For localized posts:
-      Create folder with the locale you are using in `public/blog/images/locale`. Then, create folder with the same name as your post in `content/posts/images/locale/url-of-your-post`. Upload images in the folder.
+- For localized posts:
+  Create folder with the locale you are using in `public/blog/images/locale`. Then, create folder with the same name as your post in `/public/blog/images/locale/url-of-your-post`. Upload images in the folder.
 
 - There are two ways for inserting pictures in your post:
 
@@ -110,7 +113,7 @@ If you need to localize your cover than your *cover_image* will look something l
 
 #### Grid 
 
-The component helps to position elements in grid. 
+To structure content in a grid: 
 
 - Use grid wrapper component first: 
 
@@ -216,7 +219,7 @@ You may use text card `<TextCard>` component to accentuate you text block:
 | `className` | `Boolean` | `false` | `true` | if additional classes need to be added |
 
 
-### YouTube
+### YouTube Embeds
 
 You may add YouTube video to a post like that:
 
@@ -227,11 +230,11 @@ You may add YouTube video to a post like that:
 Learn more about properties [here](https://astro-embed.netlify.app/components/youtube/)
 
 
-### How to translate a post
+### How to Translate a Post
 
-You must create **.env** file and add *OPENAI_KEY* variable with your key!
+- You must create **.env** file and add *OPENAI_KEY* variable with your key!
 
-If you wish to translate your md document you need to run the command: 
+- If you wish to translate your md document you need to run the command: 
  
 ```bash
 yarn translate-md

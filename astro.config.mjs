@@ -50,7 +50,7 @@ export default defineConfig({
         'astro-embed': ['Tweet', 'YouTube']
       }
     ],
-  }), // Make sure the MDX integration is included AFTER astro-auto-import
+  }),
     mdx(), 
     vue(),
     i18n({
@@ -58,7 +58,6 @@ export default defineConfig({
       defaultLocale,
     }),
     paraglide({
-      // recommended settings
       project: './project.inlang',
       outdir: './src/paraglide', //where your files should be
     }),

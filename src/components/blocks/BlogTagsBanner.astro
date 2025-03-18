@@ -5,8 +5,6 @@ import { languageTag } from '../../paraglide/runtime';
 
 const allPosts = await getCollection('blog'); 
 
-console.log(languageTag())
-
 const tags = [
   ...new Set(
     allPosts
