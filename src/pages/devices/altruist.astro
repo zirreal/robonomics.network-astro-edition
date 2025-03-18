@@ -39,7 +39,7 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
   backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
 
-  <DeviceBuySection price="$95" isAltruist="true" client:only>
+  <DeviceBuySection price="$95" title={altruist[0].title} orderLinks={altruist[0].orderLinks} info={altruist[0].info} available={altruist[0].available} client:only>
     <ModelAltruist noanimation client:only/>
   </DeviceBuySection>
 

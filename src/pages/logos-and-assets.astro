@@ -106,6 +106,31 @@ const rwsLogos = [
 		srcSVG: '/logos/logos-rws/rws-logo.svg'
 	}
 ]
+const hwLogos = [
+	{
+		id: 0,
+		srcImg: 'robo-hw-logo-blue.svg',
+		alt: "robonomics hardware logo blue",
+		srcPNG: '/logos/logos-robonomics-hw/robo-hw-logo-blue.png',
+		srcSVG: '/logos/logos-robonomics-hw/robo-hw-logo-blue.svg',
+		background: 'light'
+	},
+	{
+		id: 1,
+		srcImg: 'robo-hw-logo-white.svg',
+		alt: "robonomics hardware white",
+		srcPNG: '/logos/logos-robonomics-hw/robo-hw-logo-white.png',
+		srcSVG: '/logos/logos-robonomics-hw/robo-hw-logo-white.svg',
+		background: 'alto'
+	},
+	{
+		id: 2,
+		srcImg: 'robo-hw-logo-black.svg',
+		alt: "robonomics hardware black",
+		srcPNG: '/logos/logos-robonomics-hw/robo-hw-logo-black.png',
+		srcSVG: '/logos/logos-robonomics-hw/robo-hw-logo-black.svg',
+	},
+]
 
 ---
 
@@ -139,6 +164,24 @@ const rwsLogos = [
 
 			<ul class="logos__wrapper logos__xrt grid-3 list-simple">
 				{robonomicsLogos.map((logo) => (
+					<LogosItem
+						srcImg={logo.srcImg}
+						alt={logo.alt}
+						srcPNG={logo.srcPNG}
+						srcSVG={logo.srcSVG}
+						itemBackground={logo.background}
+					/>
+				))}
+			</ul>
+
+			<!-- hardware -->
+			<div class="logos-and-assets__header">
+				<h2>{$tr('Robonomics Hardware logos')}</h2>
+				<a href="/logos/logos-robonomics-hw.zip" download>{ $tr('Download all') }</a>
+			</div>
+
+			<ul class="logos__wrapper logos__hardware grid-3 list-simple">
+				{hwLogos.map((logo) => (
 					<LogosItem
 						srcImg={logo.srcImg}
 						alt={logo.alt}
@@ -289,7 +332,10 @@ const rwsLogos = [
   .logos__robonomics {
     margin-bottom: calc((var(--space) * 3.5));
   }
-  
+
+	.logos__hardware :global(img) {
+		width: 50%
+	}
 
   .color-pallet__item {
     height: 369px;

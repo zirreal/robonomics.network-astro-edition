@@ -85,6 +85,11 @@ h5 {
   padding: 0 var(--space);
 }
 
+html[lang="de"] .title-lined,
+html[lang="nl"] .title-lined {
+  hyphens: auto;
+}
+
 /* - Title with line throw */
 
 .title-with-bg {

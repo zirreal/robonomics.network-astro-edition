@@ -24,7 +24,7 @@ const eMonitor = devices.products.filter(product => product.code === 'energy-mon
   backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
 
-  <DeviceBuySection price="$45" client:only>
+  <DeviceBuySection price="$45" title={eMonitor[0].title} orderLinks={eMonitor[0].orderLinks} info={eMonitor[0].info} available={eMonitor[0].available} client:only>
     <Image src={EMonitorImage} alt={'Energy Monitor picture'}/>
   </DeviceBuySection>
 
@@ -56,9 +56,3 @@ const eMonitor = devices.products.filter(product => product.code === 'energy-mon
     </ul>
   </article>
 </Layout>
-
-<style>
-  img {
-    height: 80%;
-  }
-</style>

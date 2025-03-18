@@ -24,7 +24,7 @@ const hikikomori = devices.products.filter(product => product.code === 'hikikomo
   backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
 
-  <DeviceBuySection price="$75" client:only>
+  <DeviceBuySection price="$75" title={hikikomori[0].title} orderLinks={hikikomori[0].orderLinks} info={hikikomori[0].info} available={hikikomori[0].available} client:only>
     <Image src={HikikomoriImage} alt={'Hikikomori smart Tamagotchi picture'}/>
   </DeviceBuySection>
 

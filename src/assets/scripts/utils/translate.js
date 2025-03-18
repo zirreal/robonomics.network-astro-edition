@@ -11,7 +11,7 @@ const turnStringToTranslationKey = (string) => {
 
 function translate(value) {
   const key = turnStringToTranslationKey(value);
-  return m[key] ? m[key]() : 'Translation not found';  // Prevent 
+  return m[key] ? m[key]() : value;  // Prevent 
 }
 
 globalThis.$tr = translate;
