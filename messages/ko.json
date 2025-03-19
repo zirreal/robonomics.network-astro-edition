@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "전기 소비량의 실시간 모니터링",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "독립된 분산 데이터 백업",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "오픈소스 하드웨어 & 소프트웨어",
-	"Robonomics_Hardware_logos": "로보노믹스 하드웨어 로고"
+	"Robonomics_Hardware_logos": "로보노믹스 하드웨어 로고",
+	"Page_not_found": "페이지를 찾을 수 없습니다",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "어떤 이유에서인지 찾고 있던 페이지를 찾을 수 없습니다. 아마도 폐기되었거나 URL에 오타가 있을 수 있습니다. 어쨌든, 필요한 정보를 찾으려면 robonomics.network의 내비게이션을 사용할 수 있습니다.",
+	"This_page_is_out_of_your_space": "이 페이지는 당신의 공간을 벗어났습니다",
+	"Check_url_once_more_or_create_an": "한 번 더 URL을 확인하거나 새로 만드세요",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "현재 404 오류가 발생했다고 알려주시는 중입니다 (현재 URL을 언급하지 않는 것을 잊지 마세요)"
 }

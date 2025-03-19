@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "電力消費のリアルタイムモニター",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "独立分散型データバックアップ",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "オープンソースハードウェア＆ソフトウェア",
-	"Robonomics_Hardware_logos": "Robonomicsハードウェアのロゴ"
+	"Robonomics_Hardware_logos": "Robonomicsハードウェアのロゴ",
+	"Page_not_found": "ページが見つかりません",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "何らかの理由で、お探しのページが見つかりませんでした。おそらく非推奨になっているか、URL に誤字があるかもしれません。とにかく、必要な情報を見つけるために robonomics.network のナビゲーションをご利用いただけます。",
+	"This_page_is_out_of_your_space": "このページはあなたのスペース外です",
+	"Check_url_once_more_or_create_an": "もう一度URLを確認するか、新しいものを作成してください",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "現在のURLを忘れずに、404エラーが発生していることをお知らせください"
 }

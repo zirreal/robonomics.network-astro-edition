@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "实时监控电力消耗",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "独立去中心化数据备份",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "开源硬件和软件",
-	"Robonomics_Hardware_logos": "Robonomics 硬件标志"
+	"Robonomics_Hardware_logos": "Robonomics 硬件标志",
+	"Page_not_found": "页面未找到",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "由于某种原因，您要查找的页面未找到。也许它已被弃用或URL有拼写错误。无论如何，您可以使用robonomics.network上的导航找到您需要的内容。",
+	"This_page_is_out_of_your_space": "这页不在你的空间",
+	"Check_url_once_more_or_create_an": "再次检查url或创建一个",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "告诉我们您遇到了404错误（不要忘记提到当前的URL）"
 }

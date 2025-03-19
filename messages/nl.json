@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "Real-time monitor van elektriciteitsverbruik",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "ONAFHANKELIJKE DECENTRALISEERDE gegevensback-up",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "OPEN BRON HARDWARE & SOFTWARE",
-	"Robonomics_Hardware_logos": "Robonomics Hardware logo's"
+	"Robonomics_Hardware_logos": "Robonomics Hardware logo's",
+	"Page_not_found": "Pagina niet gevonden",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "Om een of andere reden werd de pagina die je zocht niet gevonden. Misschien is deze verouderd of bevat de URL een typefout. Hoe dan ook, je kunt de navigatie op robonomics.network gebruiken om te vinden wat je nodig hebt.",
+	"This_page_is_out_of_your_space": "Deze pagina is niet binnen jouw ruimte",
+	"Check_url_once_more_or_create_an": "Controleer de url nogmaals of maak een nieuwe aan",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "vertel ons dat je een 404-fout hebt (vergeet niet om de huidige url te vermelden)"
 }

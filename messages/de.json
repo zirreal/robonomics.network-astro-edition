@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "Echtzeitüberwachung des Stromverbrauchs",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "UNABHÄNGIGE DEZENTRALISIERTE Datensicherung",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "OPEN-SOURCE HARDWARE & SOFTWARE",
-	"Robonomics_Hardware_logos": "Robonomics Hardware Logos"
+	"Robonomics_Hardware_logos": "Robonomics Hardware Logos",
+	"Page_not_found": "Seite nicht gefunden",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "Aus irgendeinem Grund wurde die von Ihnen gesuchte Seite nicht gefunden. Möglicherweise wurde sie veraltet oder die URL enthält einen Tippfehler. Wie auch immer, Sie können die Navigation auf robonomics.network verwenden, um zu finden, was Sie benötigen.",
+	"This_page_is_out_of_your_space": "Diese Seite ist nicht in Ihrem Bereich",
+	"Check_url_once_more_or_create_an": "Überprüfen Sie die URL noch einmal oder erstellen Sie eine",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "uns mitzuteilen, dass du einen 404-Fehler hast (vergiss nicht, die aktuelle URL zu erwähnen)"
 }

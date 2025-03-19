@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "Πραγματικού χρόνου παρακολούθηση κατανάλωσης ηλεκτρικής ενέργειας",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "ΑΝΕΞΑΡΤΗΤΗ ΑΠΟΚΕΝΤΡΩΜΕΝΗ αντιγραφή ασφαλείας δεδομένων",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "ΑΝΟΙΚΤΟΥ ΚΩΔΙΚΑ ΥΛΙΚΟΥ & ΛΟΓΙΣΜΙΚΟΥ",
-	"Robonomics_Hardware_logos": "Λογότυπα υλικού Robonomics"
+	"Robonomics_Hardware_logos": "Λογότυπα υλικού Robonomics",
+	"Page_not_found": "Η σελίδα δεν βρέθηκε",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "Για κάποιο λόγο η σελίδα που αναζητούσατε δεν βρέθηκε. Ίσως να έχει αποσυρθεί ή η διεύθυνση URL να έχει κάποιο τυπογραφικό λάθος. Πάντως, μπορείτε να χρησιμοποιήσετε την πλοήγηση στο robonomics.network για να βρείτε αυτό που χρειάζεστε.",
+	"This_page_is_out_of_your_space": "Αυτή η σελίδα είναι εκτός του χώρου σας",
+	"Check_url_once_more_or_create_an": "Ελέγξτε ξανά το url ή δημιουργήστε ένα",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "λέγοντάς μας ότι έχετε σφάλμα 404 (μην ξεχάσετε να αναφέρετε το τρέχον url)"
 }

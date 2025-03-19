@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "مراقبة استهلاك الكهرباء في الوقت الحقيقي",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "مركز بيانات مستقل ولامركزي",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "معدات وبرمجيات مفتوحة المصدر",
-	"Robonomics_Hardware_logos": "شعارات هاردوير روبونوميكس"
+	"Robonomics_Hardware_logos": "شعارات هاردوير روبونوميكس",
+	"Page_not_found": "صفحة غير موجودة",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "في بعض الأسباب، لم يتم العثور على الصفحة التي كنت تبحث عنها. ربما تم إلغاؤها أو يحتوي رابطها على خطأ مطبعي. على كل حال، يمكنك استخدام الملاحة على robonomics.network للعثور على ما تحتاجه.",
+	"This_page_is_out_of_your_space": "هذه الصفحة خارج مساحتك",
+	"Check_url_once_more_or_create_an": "تحقق من عنوان URL مرة أخرى أو أنشئ واحدًا",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "أخبرنا أن لديك خطأ 404 (لا تنسى ذكر عنوان URL الحالي)"
 }

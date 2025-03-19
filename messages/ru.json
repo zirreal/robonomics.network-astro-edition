@@ -1340,5 +1340,10 @@
 	"Real_time_monitor_of_electricity_consumption": "Мониторинг электропотребления в реальном времени",
 	"INDEPENDENT_DECENTRALIZED_data_backup": "НЕЗАВИСИМОЕ ДЕЦЕНТРАЛИЗОВАННОЕ резервное копирование данных",
 	"OPEN_SOURCE_HARDWARE___SOFTWARE": "ОТКРЫТОЕ АППАРАТНОЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ",
-	"Robonomics_Hardware_logos": "Логотипы Robonomics Hardware"
+	"Robonomics_Hardware_logos": "Логотипы Robonomics Hardware",
+	"Page_not_found": "Страница не найдена",
+	"In_some_reason_the_page_you_were_looking_for_was_not_found__Maybe_it_was_deprecated_or_url_has_a_typo__Anyway__you_may_use_navigation_on_robonomics_network_to_find_what_you_need_": "По какой-то причине страница, которую вы искали, не была найдена. Возможно, она была устаревшей или в URL была опечатка. В любом случае, вы можете использовать навигацию на robonomics.network, чтобы найти то, что вам нужно.",
+	"This_page_is_out_of_your_space": "Эта страница находится вне вашего пространства",
+	"Check_url_once_more_or_create_an": "Проверьте URL еще раз или создайте новый",
+	"telling_us_that_you_ve_got_404_error__do_not_forget_to_mention_current_url_": "сообщите нам, что у вас ошибка 404 (не забудьте упомянуть текущий URL)"
 }
