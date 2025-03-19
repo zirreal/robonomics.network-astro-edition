@@ -19,7 +19,7 @@ This website serves as a hub for all essential information for our community.
 Ensure you have Node.js and the [Astro framework](https://astro.build/) installed before proceeding.
 
 - **Install dependencies:** 
-`yarn i`
+`yarn install`
 
 - **Start development server**
 `yarn dev`
