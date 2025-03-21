@@ -38,10 +38,10 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
   pageTitle={$tr(altruist[0].title)} 
   backlink={{title: $tr('All hardware'), link: '/devices/', label: $tr('Go to all hardware')}}
 >
-
   <DeviceBuySection price="$95" title={altruist[0].title} orderLinks={altruist[0].orderLinks} info={altruist[0].info} available={altruist[0].available} client:only>
-    <ModelAltruist noanimation client:only/>
+    <ModelAltruist noanimation client:visible/>
   </DeviceBuySection>
+
 
   <article class="layout layout__content space-b-2">
     <p>{$tr('With the Altruist Outdoor Sensor, you become a force in decentralized environmental monitoring. Capture noise, dust, and temperature data—encrypted, mapped, and shared across a distributed network.')}</p>
@@ -56,7 +56,7 @@ const altruist = devices.products.filter(product => product.code === 'altruist')
   <article class="layout layout--text-center space-b-2">
     <div class="grid-3 space-b-2 grid-with-scroll">
       {imagesAltruist.map((src, index) => (
-        <Image src={src} alt={`altruist photo ${index + 1}`} loading="lazy" aria-hidden="true" />
+        <Image src={src} alt={`altruist photo ${index + 1}`} aria-hidden="true" />
       ))}
     </div>
 

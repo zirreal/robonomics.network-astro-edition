@@ -52,7 +52,7 @@ export default defineConfig({
     ],
   }),
     mdx(), 
-    vue(),
+    vue({ devtools: true }),
     i18n({
       locales,
       defaultLocale,
