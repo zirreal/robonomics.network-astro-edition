@@ -97,17 +97,30 @@ import DecorImage4 from '../assets/images/home/home__hands.webp';
     }
   };
 
+  // Пример: разрешаем сдвиг до maxShift
   const onScroll = () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         const y = window.scrollY;
-        bannerShift = (y > 20 && y < window.innerHeight / 2) ? y / 3 : 0;
+
+        // Можно задать maxShift = (window.innerHeight / 2) / 3
+        // чтобы на высоте ~window.innerHeight/2 сдвиг переставал расти
+        const maxShift = (window.innerHeight / 2) / 3;
+
+        if (y > 20) {
+          // Сдвигаем баннер пропорционально y, но не более maxShift
+          bannerShift = Math.min(y / 3, maxShift);
+        } else {
+          bannerShift = 0;
+        }
+
         updateStyles();
         ticking = false;
       });
       ticking = true;
     }
   };
+
 
   document.addEventListener('DOMContentLoaded', () => {
 
