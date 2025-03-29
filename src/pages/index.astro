@@ -15,7 +15,7 @@ import DevicesList from '../components/blocks/DevicesList.astro';
 import DecorImage1 from '../assets/images/home/lined-scalable.svg';
 import DecorImage2 from '../assets/images/home/lined-wave.svg';
 import DecorImage3 from '../assets/images/home/lined-key.svg';
-import DecorImage4 from '../assets/images/home/home__hands.webp';
+import DecorImage4 from '/images/home/home-hands.webp';
 
 ---
 
@@ -62,7 +62,7 @@ import DecorImage4 from '../assets/images/home/home__hands.webp';
     </div>
 
     <div class="timeline align-center">
-      <Image src={DecorImage4} aria-hidden="true" alt="" />
+      <Image src="/images/home/home-hands.webp" aria-hidden="true" alt="" width={2226} height={645} />
       <h3 class="m-t-0">{$tr('Interested in how the team reached this stage?')}</h3>
       <a href="/timeline/" aria-label="check robonomics timeline" class="highlight">{$tr('The Robonomics Timeline')}</a>
       <p>{$tr('can guide you through our journey')}</p>
@@ -273,7 +273,7 @@ import DecorImage4 from '../assets/images/home/home__hands.webp';
 
   .banner:before {
     background-color: var(--color-blue-notheme);
-    background-image: url('../assets/images/robonomics-pattern.webp');
+    background-image: url('/images/home/robonomics-pattern.webp');
     background-size: 600px;
     border-radius: 4px;
     bottom: var(--layout-sidepadding);

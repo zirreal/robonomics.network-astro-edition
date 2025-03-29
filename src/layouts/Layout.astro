@@ -37,6 +37,8 @@ const pageImageFinal = caseData.length ? caseData[0]?.metaImg : ogImage || `${si
 
 // Import styles
 import '../assets/styles/main.css';
+
+const isHome = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -70,6 +72,14 @@ import '../assets/styles/main.css';
 	<meta name="twitter:image" content={pageImageFinal}>
 	<meta name="twitter:site" content="@AIRA_Robonomics">
 	<meta name="twitter:creator" content="@AIRA_Robonomics">
+
+  {isHome && (
+    <!-- Preload important graphics -->
+    <>
+      <link rel="preload" as="fetch" href="/images/home/home-banner.svg" type="image/svg+xml" fetchpriority="high" />
+      <link rel="preload" as="image" href="/images/home/robonomics-pattern.webp" type="image/webp" />
+    </>
+  )}
 </head>
 	<body transition:animate="fade">
       <!-- <div class="loader-wrapper" style="display: {!isLoaded ? 'block' : 'none'}">
