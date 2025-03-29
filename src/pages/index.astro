@@ -16,7 +16,6 @@ import DecorImage1 from '../assets/images/home/lined-scalable.svg';
 import DecorImage2 from '../assets/images/home/lined-wave.svg';
 import DecorImage3 from '../assets/images/home/lined-key.svg';
 import DecorImage4 from '../assets/images/home/home__hands.webp';
-import bannerSvg from '../assets/images/home/banner-optimized.svg?raw';
 
 ---
 
@@ -26,9 +25,7 @@ import bannerSvg from '../assets/images/home/banner-optimized.svg?raw';
 >
 	<div class="banner">
 		<div class="banner-content">
-      <div class="banner-svg" id="banner-svg-wrapper">
-        <div id="svg-container" set:html={bannerSvg}></div>
-      </div>
+      <div id="banner-svg-wrapper" class="banner-svg"></div>
 			<h1>{$tr('Begin your adventure in the world of cyber punks')}</h1>
 			<h4>#DePIN, #NetworkStates</h4>
 			<a href="/devices/" class="highlight">{$tr('Smart devices from Robonomics')}</a>
@@ -114,6 +111,15 @@ import bannerSvg from '../assets/images/home/banner-optimized.svg?raw';
 
   document.addEventListener('DOMContentLoaded', () => {
 
+    // Подставляем свг для баннера после ΔΟΜ
+    const wrapper = document.getElementById("banner-svg-wrapper");
+    fetch("/images/home/home-banner.svg")
+      .then((r) => r.text())
+      .then((svg) => {
+        wrapper.innerHTML = svg;
+        wrapper.classList.add("svg-animate-ready");
+      });
+
     // + Инициализация скролл-эффекта
     bannerContent = document.querySelector('.banner-content');
 
@@ -141,10 +147,27 @@ import bannerSvg from '../assets/images/home/banner-optimized.svg?raw';
 
 
 <style is:global>
-  /* До загрузки: отключаем анимации */
-  .banner-svg:not(.svg-animate-ready) * {
-    animation: none !important;
-    transition: none !important;
+  /* До загрузки: отключаем анимации и резервируем место под баннер, чтобы не скакало */
+
+  #banner-svg-wrapper {
+    aspect-ratio: 700 / 597;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner-svg:not(.svg-animate-ready) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .svg-animate-ready {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out 0s, visibility 0s linear 0.2s;
   }
 
   /* + banner svg */
@@ -152,7 +175,10 @@ import bannerSvg from '../assets/images/home/banner-optimized.svg?raw';
     --delay: 0.5s;
     --speed: 1.4s;
     display: block;
-    max-width: 700px;
+    /* max-width: 700px; */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     margin: var(--space) auto;
   }
   

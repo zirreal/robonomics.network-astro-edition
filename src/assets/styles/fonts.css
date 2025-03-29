@@ -6,6 +6,6 @@
  */
 @font-face {
   font-family: 'Roboto Flex';
-  src: url('/fonts/RobotoFlex-VariableFont.woff2') format('woff2');
+  src: url('/fonts/RobotoFlex-CustomSubset.woff2') format('woff2');
   font-display: swap;
 }
