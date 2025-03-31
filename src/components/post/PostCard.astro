@@ -15,5 +15,5 @@ const {post, locale, isCase, cls} = Astro.props;
     <h4 class="post-card__title" set:html={post.title} /> 
     <p class="post-card__description" set:html={post.description} />
   </div>
-  <a class="link-cover" target="_blank" aria-label="check out link" href={ '/blog/' + post.url + '/'}>Link</a>
+  <a class="link-cover" aria-label="check out link" href={ '/blog/' + post.url + '/'}>Link</a>
 </div>

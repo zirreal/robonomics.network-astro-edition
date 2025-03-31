@@ -35,7 +35,7 @@ mapContactlist();
       {contactlist.map((item) => (
         <li class="oldy oldy__link">
             <div class="icon" set:html={item.svg} aria-hidden="true"/>
-            <a href={item.link}><b>{$tr(item.text)}</b></a>
+            <a href={item.link} aria-label={`go to ${item.text}`} target="_blank"><b>{$tr(item.text)}</b></a>
         </li>
       ))}
     </ul>

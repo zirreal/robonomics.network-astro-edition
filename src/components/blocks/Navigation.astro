@@ -11,16 +11,16 @@ const generatePath = (path) => {
 <nav class="navigation">
   <ul aria-label="Use it">
     <li><a aria-label="Robonomics smart devices" href={generatePath("/devices/")}>{$tr('Smart devices')}</a></li>
-    <li><a aria-label="Robonomics dapp" href="https://robonomics.app/">{$tr('dapp')}</a></li>
+    <li><a aria-label="Robonomics dapp" href="https://robonomics.app/" target="_blank">{$tr('dapp')}</a></li>
     <li><a aria-label="Robonomics merch" href={generatePath("/merch/")}>{$tr('Wearable merch')}</a></li>
   </ul>
 
   <ul aria-label="Learn">
-    <li><a aria-label="Robonomics academy" href="https://robonomics.academy/">{$tr('Academy')}</a></li>
-    <li><a aria-label="Robonomics wiki" href="https://wiki.robonomics.network/">{$tr('Wiki')}</a></li>
+    <li><a aria-label="Robonomics academy" href="https://robonomics.academy/" target="_blank">{$tr('Academy')}</a></li>
+    <li><a aria-label="Robonomics wiki" href="https://wiki.robonomics.network/" target="_blank">{$tr('Wiki')}</a></li>
   </ul>
 
-  <ul :aria-label="Explore website">
+  <ul aria-label="Explore website">
     <li><a aria-label="about XRT" href={generatePath("/xrt/")}>{$tr('Tokenomics')}</a></li>
     <li><a aria-label="Robonomics papers" href={generatePath("/papers/")}>{$tr('Science & White paper')}</a></li>
     <!-- <li><a aria-label="use cases" href="/cases/">Cases</a></li> -->

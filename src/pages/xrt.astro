@@ -626,12 +626,13 @@ if (response.ok) {
     text-align: right;
   }
 
-  .token__link:not(last-child) {
-    margin-bottom: var(--space);
+  .token__link:not(:last-of-type) {
+    margin-bottom: calc(var(--space) * 2);
   }
 
   .token__link h3 {
     padding-left: 34px;
+    margin-top: 0;
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: left;
@@ -665,6 +666,7 @@ if (response.ok) {
   }
 
   .token__link p {
+    margin-bottom: 0;
     color: var(--color-dark);
   }
 

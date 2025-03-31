@@ -9,7 +9,7 @@ const selectInButton = (event) => {
 ---
 
 <div direction="ltr" class="papers__item oldy" onClick={selectInButton}>
-  <h3 class="papers__item-title">{asset.title}</h3>
+  <h5 class="papers__item-title">{asset.title}</h5>
   <div class="papers__info">
     {asset.options.map((option) => (
         <a href={option.link} 
@@ -31,17 +31,10 @@ const selectInButton = (event) => {
 <style>
   .papers__item {
     margin-bottom: var(--space);
-    border: none;
   }
 
   .papers__item-title {
-    margin-bottom: calc(var(--space) * 0.5);
-    font-weight: 500;
-    font-family: var(--font-family);
     font-size: calc(var(--base-font-size) * 1.2);
-    text-align: left;
-    text-transform: none;
-    letter-spacing: 0;
   }
 
   .papers__info {
@@ -60,10 +53,13 @@ const selectInButton = (event) => {
 
   .papers__link {
     display: block;
+    max-width: 190px;
   }
 
   .papers__link img {
     min-height: 44px;
+    height: 100%;
+    width: 100%;
   }
 
   .papers__link.center {

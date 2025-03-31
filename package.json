@@ -24,11 +24,6 @@
     "astro-i18n": "^2.2.4",
     "astro-i18n-aut": "^0.7.3",
     "astro-matomo": "^1.8.0",
-    "axios": "^1.7.9",
-    "chalk": "4.1.2",
-    "dotenv": "^16.4.7",
-    "glob": "^11.0.1",
-    "gpt-tokenizer": "^2.8.1",
     "parallax-js": "^3.1.0",
     "ping-ipfs-gateway": "^1.0.1",
     "three": "^0.168.0",
@@ -36,7 +31,12 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "axios": "^1.8.4",
+    "chalk": "^5.4.1",
     "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "glob": "^11.0.1",
+    "gpt-tokenizer": "^2.9.0",
     "sharp": "^0.33.5",
     "svgo": "^3.3.2"
   }

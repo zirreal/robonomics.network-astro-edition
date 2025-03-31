@@ -149,7 +149,7 @@ const hwLogos = [
 
 		<div class="layout layout__content text-center container">
 			<img class="logos-and-assets__banner-logo" src="/images/logos-and-assets/logo-banner.svg" alt="robonomics logo"/>
-			<p class="logos-and-assets__banner-text">{$tr("Download the Robonomics logos here. We've got two options for your")} <u>{$tr('basic needs')}</u> {$tr('and one designed for')} <u>XRT</u> {$tr('token. Additionally, discover the optimal')} <u>{$tr('color palette')}</u>  {$tr('for the distinguished Robonomics brand.')}</p>
+			<p class="logos-and-assets__banner-text">{$tr("Download the Robonomics logos here. We've got two options for your")} <a href="#robonomicsLogos"><u>{$tr('basic needs')}</u></a> {$tr('and one designed for')}  <a href="#xrtLogos"><u>XRT</u></a> {$tr('token. Additionally, discover the optimal')} <a href="#colorPalette"><u>{$tr('color palette')}</u> </a> {$tr('for the distinguished Robonomics brand.')}</p>
 			<img aria-hidden="true" alt="" src="/images/logos-and-assets/logo-banner-text.svg" />
 		</div>
 	</section>
@@ -158,7 +158,7 @@ const hwLogos = [
 	<section class="logos">
 		<div class="layout text-center container">
 			<div class="logos-and-assets__header">
-				<h2>{$tr('Robonomics logos')}</h2>
+				<h2 id="robonomicsLogos">{$tr('Robonomics logos')}</h2>
 				<a href="/logos/logos-robonomics.zip" download>{$tr('Download all')}</a>
 			</div>
 
@@ -194,7 +194,7 @@ const hwLogos = [
 
 			<!-- XRT -->
 			<div class="logos-and-assets__header">
-				<h2>{$tr('XRT logos')}</h2>
+				<h2 id="xrtLogos">{$tr('XRT logos')}</h2>
 				<a href="/logos/logos-xrt.zip" download>{$tr('Download all')}</a>
 			</div>
 
@@ -235,7 +235,7 @@ const hwLogos = [
 	<section class="color-pallet animate-inside">
 		<div class="layout text-center container">
 			<div class="logos-and-assets__header">
-				<h2>
+				<h2 id="colorPalette">
 					{$tr('Recommended color palette')}
 				</h2>
 			</div>
@@ -270,8 +270,6 @@ const hwLogos = [
 
 </Layout>
 
-
-
 <style>
 
   h2, h3 {
@@ -282,6 +280,10 @@ const hwLogos = [
     text-align: left;
     text-transform: none;
   }
+
+	a u {
+		color: var(--color-light)
+	}
 
   .container {
     max-width: 1080px;

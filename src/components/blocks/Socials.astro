@@ -12,7 +12,7 @@ const contactlist = contacts.filter(contact => showcontacts.includes(contact.tit
     <li class="oldy oldy__link">
       <div aria-hidden="true" set:html={item.svg}></div>
       <div>
-        <a href={item.link}><b>{item.title}</b></a>
+        <a href={item.link} aria-label={`go to ${item.text}`} target="_blank"><b>{item.title}</b></a>
         <span>{$tr(item.text)}</span>
       </div>
     </li>

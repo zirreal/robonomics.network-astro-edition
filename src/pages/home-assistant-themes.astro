@@ -26,7 +26,7 @@ import RobonomicsTheme from '../assets/images/themes/robonomics-theme.webp';
   <div class="blue-banner-layout themes__banner-layout layout layout__content">
       <img class="themes__banner-img" aria-hidden="true" alt=""  src="/images/themes/themes-banner.webp"/>
     <div class="themes-banner-content">
-      <p class="blue-banner__text">{$tr('Customize your Home Assistant with our free to use themes. Follow the instructions for installation on')} <u>{$tr('Github')}</u></p>
+      <p class="blue-banner__text">{$tr('Customize your Home Assistant with our free to use themes. Follow the instructions for installation on')} <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check robonomics theme for home assistant"><u>{$tr('Github')}</u></a> </p>
       <img aria-hidden="true" alt="" src="/images/logos-and-assets/logo-banner-text.svg" />
     </div>
   </div>
@@ -34,18 +34,22 @@ import RobonomicsTheme from '../assets/images/themes/robonomics-theme.webp';
 
 <section class="themes">
   <div class="layout layout__mid grid-2">
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check robonomics theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={RobonomicsTheme}/></a>
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check black and white theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={BWTheme}/></a>
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check neon theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={NeonTheme}/></a>
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check dark theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={DarkTheme}/></a>
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check neon green theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={NeonGreenTheme}/></a>
-    <a href="https://github.com/airalab/home-assistant-themes" target="_blank" aria-label="check ai theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={AITheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/robonomics.yaml" target="_blank" aria-label="check robonomics theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={RobonomicsTheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/black-and-white.yaml" target="_blank" aria-label="check black and white theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={BWTheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/neon-theme.yaml" target="_blank" aria-label="check neon theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={NeonTheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/dark-theme.yaml" target="_blank" aria-label="check dark theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={DarkTheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/neon-green-theme.yaml" target="_blank" aria-label="check neon green theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={NeonGreenTheme}/></a>
+    <a href="https://github.com/airalab/home-assistant-themes/blob/main/themes/ai-theme.yaml" target="_blank" aria-label="check ai theme for home assistant"><Image class="themes__banner-img" aria-hidden="true" alt="" src={AITheme}/></a>
   </div>
 </section>
 </Layout>
 
 
 <style>
+
+  a u {
+    color: var(--color-light)
+  }
 
   img {
     height: unset;

@@ -390,7 +390,7 @@ let selected = 0;
 
   <div class="layout layout__content papers__banner">
     <div class="papers__banner-wrapper">
-      <p>{$tr('Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives...')}</p>
+      <p>{$tr('Without academic research, the advancement of complex systems that can be integrated into our daily lives may lose its purpose or even pose risks. We must carefully contemplate our direction, objectives, and potential consequences. The spheres where Robonomics operates, specifically Robotics, Economic relations, and Web3 technologies, are worth studying individually, exploring how they can be integrated with each other, and assessing their potential impact on our lives.')}</p>
       <img src="/images/papers/papers-text.svg" alt="" aria-hidden="true"/>
     </div>
     <div class="papers__banner-img">
@@ -448,6 +448,10 @@ let selected = 0;
 
 <style>
 
+  select {
+    background-position: calc(100% - 10px) 50%;
+  }
+
   .papers__section-blue {
     position: relative;
     margin-bottom: var(--space);
@@ -496,7 +500,7 @@ let selected = 0;
     padding-top: 0;
     padding-left: 0;
     margin-bottom: calc(var(--space) * 2);
-    border: none;
+    border-top: none;
     text-align: left;
   }
 
@@ -532,13 +536,10 @@ let selected = 0;
 
   .papers-pinned h3 {
     margin-top: 0;
+    margin-bottom: 0;
     margin-left: calc(var(--space) * 0.7);
-    font-weight: 500;
-    font-family: var(--font-family);
     font-size: calc(var(--base-font-size) * 1.4);
     text-align: left;
-    letter-spacing: 0;
-    text-transform: none;
   }
 
   .papers-pinned__actions {
@@ -560,11 +561,13 @@ let selected = 0;
   }
 
   .papers-pinned__actions a {
+    min-width: 180px;
     box-shadow: none;
-    text-align: center;
-    font-weight: 500;
     display: flex;
     align-items: center;
+    font-size: calc(var(--base-font-size)* 0.8);
+    font-weight: 500;
+    text-align: center;
   }
 
   .papers-pinned__text {
