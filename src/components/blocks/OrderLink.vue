@@ -75,6 +75,7 @@ const props = defineProps({
   background-position: 98% 17px;
   background-repeat: no-repeat;
   font-variation-settings: var(--font-flex-italicbold);
+  cursor: pointer;
 }
 
 .order-item .region {

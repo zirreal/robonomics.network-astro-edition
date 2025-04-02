@@ -39,7 +39,7 @@
 
 <script setup>
 import { ref, computed, defineAsyncComponent } from 'vue';
-import { translate as $tr } from '../../assets/scripts/utils/translate';
+import { translateVue as $tr} from '../../assets/scripts/utils/translate';
 
 import RoboButton from '../utils/Button.vue';
 const GspForm = defineAsyncComponent(() => import('../utils/Form.vue'));

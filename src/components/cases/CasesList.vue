@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { translate as $tr } from '../../assets/scripts/utils/translate.js'
+import { translateVue as $tr } from '../../assets/scripts/utils/translate.js'
 import items from '../../data/cases.js';
 
 // Computed properties

@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { translate as $tr } from "../assets/scripts/utils/translate";
+import { translateVue as $tr} from "../assets/scripts/utils/translate";
 
 const optOut = ref(false);
 const optText = ref("You are currently opted out. Click here to opt in.");
