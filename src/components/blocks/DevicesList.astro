@@ -1,5 +1,5 @@
 ---
-import ModelRiskV from '../3dmodels/Server.astro';
+import ModelRiskV from '../3dmodels/Server.vue';
 import ModelSwitch from '../3dmodels/Switch.astro';
 import ModelAltruist from '../3dmodels/Altruist.vue'
 import { getLocale } from "astro-i18n-aut";;
@@ -36,7 +36,7 @@ const generatePath = (path) => {
       <div class="product-picture">
         {product.code === 'altruist' && <ModelAltruist client:only />}
         {product.code === 'server' && (
-            <ModelRiskV classList="product-picture-server" />
+            <ModelRiskV classList="product-picture-server" client:only />
             <ModelSwitch classList="product-picture-switch" />
         )}
         {product.code === 'hikikomori' && (

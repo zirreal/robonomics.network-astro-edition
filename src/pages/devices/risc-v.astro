@@ -6,7 +6,7 @@ import devices from '../../data/devices.js';
 
 // components import 
 import DeviceBuySection from '../../components/blocks/DevicesBuySection.vue';
-import RiscVModel from '../../components/3dmodels/Server.astro';
+import RiscVModel from '../../components/3dmodels/Server.vue';
 
 // images
 
@@ -24,7 +24,7 @@ const riscv = devices.products.filter(product => product.code === 'server');
 >
 
   <DeviceBuySection price="$275" client:only>
-    <RiscVModel noanimation />
+    <RiscVModel noanimation client:visible/>
   </DeviceBuySection>
 
   <article class="layout layout__text space-b-2">
