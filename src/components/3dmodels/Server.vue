@@ -7,15 +7,21 @@
     </div>
 
     <div class="img">
-      <img src="/images/hardware-2025/risc-v/pink/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
-      <img v-if="showColor === 'yellow'" src="/images/hardware-2025/risc-v/yellow/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
-      <img v-if="showColor === 'blue'" src="/images/hardware-2025/risc-v/blue/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
+      <img src="/images/hardware-2025/risc-v/pink/RiscV-Layout-5.1.webp" alt="Altruist Layout 5.1" />
+      <img v-if="showColor === 'yellow'" src="/images/hardware-2025/risc-v/yellow/RiscV-Layout-5.1.webp" alt="Altruist Layout 5.1" />
+      <img v-if="showColor === 'blue'" src="/images/hardware-2025/risc-v/blue/RiscV-Layout-5.1.webp" alt="Altruist Layout 5.1" />
     </div>
 
     <img class="img" src="/images/hardware-2025/risc-v/RiscV-Layout-3.webp" alt="Altruist Layout 3" />
 
 
     <img class="img" src="/images/hardware-2025/risc-v/RiscV-Layout-4.webp" alt="Altruist Layout 4" />
+
+    <div class="img">
+      <img src="/images/hardware-2025/risc-v/pink/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
+      <img v-if="showColor === 'yellow'" src="/images/hardware-2025/risc-v/yellow/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
+      <img v-if="showColor === 'blue'" src="/images/hardware-2025/risc-v/blue/RiscV-Layout-1.webp" alt="Altruist Layout 1" />
+    </div>
 
     <div class="img">
       <img src="/images/hardware-2025/risc-v/pink/RiscV-Layout-5.webp" alt="Altruist Layout 5" />
@@ -97,7 +103,7 @@ const {
   z-index: 10;
 }
 
-.model .img img:nth-child(2), .model .img img:nth-child(5) {
+.model .img img:nth-child(2), .model .img img:nth-child(5),  .model .img img:nth-child(6) {
   position: absolute;
   top: 0;
   left: 0;
@@ -109,7 +115,7 @@ const {
 }
 
 .model .img:nth-child(2) {
-  z-index: 7;
+  z-index: 9;
   transform: translateY(calc(var(--opengap) * var(--koef) * 4));
 }
 
@@ -123,7 +129,7 @@ const {
   transform: translateY(calc(var(--opengap) * var(--koef) * 2));
 }
 
-.model .img:nth-child(5) {
+.model .img:nth-child(5),.model .img:nth-child(6) {
   z-index: 3;
   transform: translateY(calc(var(--opengap) * var(--koef) * 4));
 }
