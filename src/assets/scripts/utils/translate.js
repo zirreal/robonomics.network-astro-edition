@@ -15,7 +15,7 @@ const turnStringToTranslationKey = (string) => {
 async function translate(value) {
   const m  = await import(`../../../paraglide/messages/${languageTag()}.js`);
   const key = turnStringToTranslationKey(value);
-  return m[key] ? m[key]() : value;  // Prevent 
+  return m[key] ? m[key]() : value; 
 }
 
 function translateVue(value) {

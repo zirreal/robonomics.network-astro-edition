@@ -277,7 +277,7 @@ const toValidJSKey = (str) => {
 const set = async () => {
   const res = await allFiles();
   const data = [];
-  const trRegex = /\$tr\(["'`](.*?)["'`]\)/g; 
+  const trRegex = /\$(?:tr|trVue)\(["'`](.*?)["'`]\)/g;
   // creating json files from all content (excluding markdown)
   res.forEach(item => {
     if (item && !item.includes(config.includeJSON)) {

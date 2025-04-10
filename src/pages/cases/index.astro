@@ -2,6 +2,8 @@
 // components
 import Layout from "../../layouts/Layout.astro";
 import CasesList from "../../components/cases/CasesList.vue";
+
+import items from '../../data/cases.js';
 ---
 
 <Layout
@@ -21,7 +23,7 @@ import CasesList from "../../components/cases/CasesList.vue";
 </div>
 
 <section class="cases">
-  <CasesList client:only/>
+  <CasesList items={items} client:only/>
 </section>
 
 </Layout>

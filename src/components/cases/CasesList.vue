@@ -78,11 +78,17 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { translateVue as $tr } from '../../assets/scripts/utils/translate.js'
-import items from '../../data/cases.js';
+import { translateVue as $tr } from '../../assets/scripts/utils/translate';
+
+const props = defineProps({
+  items: {
+    type: Array,
+    default: []
+  },
+})
 
 // Computed properties
-const cases = computed(() => items.cases);
+const cases = computed(() => props.items.cases);
 
 // Data variables using ref()
 const caseDate = ref('recent');
